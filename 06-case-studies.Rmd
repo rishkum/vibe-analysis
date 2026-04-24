@@ -6,11 +6,13 @@ In this chapter, we explore realistic case studies and research demonstrating wh
 
 ## The Illusion of Productivity
 
-A significant psychological trap of vibe coding is the "Illusion of Productivity."
+A significant psychological trap of the vibe coding mechanism is the "Illusion of Productivity."
 
-When you use GitHub Copilot, you *feel* extremely productive because lines of code appear on your screen instantaneously. However, a recent industry study found an interesting contradiction: while developers subjectively felt 20% faster when using AI tools, they were actually **19% slower** when executing complex tasks compared to traditional coding methods.
+When you use GitHub Copilot, you *feel* extremely productive because lines of code appear on your screen instantaneously. However, empirical evidence paints a more complicated picture. In a 2024 study by GitClear (*"Coding on Copilot: 2023 Data Suggests Downward Pressure on Code Quality"*), researchers analyzed 153 million changed lines of code authored between 2020 and 2023. They found that as AI assistance increased, "code churn"; the percentage of code pushed to a repo that is reverted or updated within two weeks; grew rapidly.
 
-**Why?** Because generating the code took seconds, but identifying the subtle logical flaws the AI introduced took hours. Reading and debugging unfamiliar, AI-generated code is often harder than writing it yourself.
+Furthermore, isolated internal studies frequently find a contradiction: while developers subjectively feel faster when using AI tools, they are often slower when executing complex, highly-specific tasks compared to traditional coding methods. 
+
+**Why?** Because generating the script took seconds, but identifying the subtle logical flaws the AI introduced took hours. Reading and debugging unfamiliar, AI-generated statistics pipelines is often harder than writing them yourself.
 
 ## Case Study 1: The "Happy Path" Data Join
 
@@ -51,7 +53,7 @@ churn_summary <- user_data %>%
   )
 ```
 
-**The Failure:** This code looks mathematically flawless. However, the business logic locally defined a "churned user" as someone who cancelled *and* didn't reactivate within 14 days. The AI had no way of knowing this specific domain context. It relied on its training data to generate a generic, plausible definition of churn. The reporting was fundamentally wrong.
+**The Failure:** This code looks mathematically flawless. However, the business logic locally defined a "churned user" as someone who cancelled *and* didn't reactivate within 14 days. The AI had no way of knowing this specific domain context. It relied on its training data to generate a generic, plausible definition of churn. The reporting was fundamentally wrong. This aligns with findings from software engineering studies showing that Large Language Models struggle with "implicit domain constraints"; rules that exist in the business logic but aren't written explicitly in the database schema.
 
 ## The Velocity Gap
 

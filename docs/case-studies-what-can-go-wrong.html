@@ -205,6 +205,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.3" data-path="auditing-ai-code-review-templates.html"><a href="auditing-ai-code-review-templates.html#the-ai-code-review-template"><i class="fa fa-check"></i><b>7.3</b> The AI Code Review Template</a>
 <ul>
 <li class="chapter" data-level="7.3.1" data-path="auditing-ai-code-review-templates.html"><a href="auditing-ai-code-review-templates.html#pull-request-review-ai-assisted-code"><i class="fa fa-check"></i><b>7.3.1</b> Pull Request Review: AI-Assisted Code</a></li>
+<li class="chapter" data-level="7.3.2" data-path="auditing-ai-code-review-templates.html"><a href="auditing-ai-code-review-templates.html#practical-language-examples"><i class="fa fa-check"></i><b>7.3.2</b> Practical Language Examples</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i><b>8</b> Conclusion</a>
@@ -237,9 +238,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>In this chapter, we explore realistic case studies and research demonstrating what happens when the “Review” phase of the vibe-coding workflow is skipped.</p>
 <div id="the-illusion-of-productivity" class="section level2 hasAnchor" number="6.1">
 <h2><span class="header-section-number">6.1</span> The Illusion of Productivity<a href="case-studies-what-can-go-wrong.html#the-illusion-of-productivity" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>A significant psychological trap of vibe coding is the “Illusion of Productivity.”</p>
-<p>When you use GitHub Copilot, you <em>feel</em> extremely productive because lines of code appear on your screen instantaneously. However, a recent industry study found an interesting contradiction: while developers subjectively felt 20% faster when using AI tools, they were actually <strong>19% slower</strong> when executing complex tasks compared to traditional coding methods.</p>
-<p><strong>Why?</strong> Because generating the code took seconds, but identifying the subtle logical flaws the AI introduced took hours. Reading and debugging unfamiliar, AI-generated code is often harder than writing it yourself.</p>
+<p>A significant psychological trap of the vibe coding mechanism is the “Illusion of Productivity.”</p>
+<p>When you use GitHub Copilot, you <em>feel</em> extremely productive because lines of code appear on your screen instantaneously. However, empirical evidence paints a more complicated picture. In a 2024 study by GitClear (<em>“Coding on Copilot: 2023 Data Suggests Downward Pressure on Code Quality”</em>), researchers analyzed 153 million changed lines of code authored between 2020 and 2023. They found that as AI assistance increased, “code churn”; the percentage of code pushed to a repo that is reverted or updated within two weeks; grew rapidly.</p>
+<p>Furthermore, isolated internal studies frequently find a contradiction: while developers subjectively feel faster when using AI tools, they are often slower when executing complex, highly-specific tasks compared to traditional coding methods.</p>
+<p><strong>Why?</strong> Because generating the script took seconds, but identifying the subtle logical flaws the AI introduced took hours. Reading and debugging unfamiliar, AI-generated statistics pipelines is often harder than writing them yourself.</p>
 </div>
 <div id="case-study-1-the-happy-path-data-join" class="section level2 hasAnchor" number="6.2">
 <h2><span class="header-section-number">6.2</span> Case Study 1: The “Happy Path” Data Join<a href="case-studies-what-can-go-wrong.html#case-study-1-the-happy-path-data-join" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -263,7 +265,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb21-5"><a href="case-studies-what-can-go-wrong.html#cb21-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">churned_users =</span> <span class="fu">sum</span>(status <span class="sc">==</span> <span class="st">&quot;cancelled&quot;</span>),</span>
 <span id="cb21-6"><a href="case-studies-what-can-go-wrong.html#cb21-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">churn_rate =</span> churned_users <span class="sc">/</span> total_users</span>
 <span id="cb21-7"><a href="case-studies-what-can-go-wrong.html#cb21-7" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
-<p><strong>The Failure:</strong> This code looks mathematically flawless. However, the business logic locally defined a “churned user” as someone who cancelled <em>and</em> didn’t reactivate within 14 days. The AI had no way of knowing this specific domain context. It relied on its training data to generate a generic, plausible definition of churn. The reporting was fundamentally wrong.</p>
+<p><strong>The Failure:</strong> This code looks mathematically flawless. However, the business logic locally defined a “churned user” as someone who cancelled <em>and</em> didn’t reactivate within 14 days. The AI had no way of knowing this specific domain context. It relied on its training data to generate a generic, plausible definition of churn. The reporting was fundamentally wrong. This aligns with findings from software engineering studies showing that Large Language Models struggle with “implicit domain constraints”; rules that exist in the business logic but aren’t written explicitly in the database schema.</p>
 </div>
 <div id="the-velocity-gap" class="section level2 hasAnchor" number="6.4">
 <h2><span class="header-section-number">6.4</span> The Velocity Gap<a href="case-studies-what-can-go-wrong.html#the-velocity-gap" class="anchor-section" aria-label="Anchor link to header"></a></h2>

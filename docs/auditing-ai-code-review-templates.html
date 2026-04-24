@@ -205,6 +205,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.3" data-path="auditing-ai-code-review-templates.html"><a href="auditing-ai-code-review-templates.html#the-ai-code-review-template"><i class="fa fa-check"></i><b>7.3</b> The AI Code Review Template</a>
 <ul>
 <li class="chapter" data-level="7.3.1" data-path="auditing-ai-code-review-templates.html"><a href="auditing-ai-code-review-templates.html#pull-request-review-ai-assisted-code"><i class="fa fa-check"></i><b>7.3.1</b> Pull Request Review: AI-Assisted Code</a></li>
+<li class="chapter" data-level="7.3.2" data-path="auditing-ai-code-review-templates.html"><a href="auditing-ai-code-review-templates.html#practical-language-examples"><i class="fa fa-check"></i><b>7.3.2</b> Practical Language Examples</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i><b>8</b> Conclusion</a>
@@ -242,8 +243,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><strong>The Run Gate (Safety):</strong> Before you even assess if the code is logically correct, you must evaluate its impact alias “blast radius.” Does this code interact with a database? Does it write files to disk? Could it alter external states? <em>Do not execute the code locally until you have cleared it through the Run Gate.</em></li>
 <li><strong>The Ship Gate (Quality):</strong> Once deemed safe to run, review the logic, the edge cases, and whether it solves the actual business requirement.</li>
 </ol>
-<div class="DiagrammeR html-widget html-fill-item" id="htmlwidget-bd8b77701cc73c868c4e" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-bd8b77701cc73c868c4e">{"x":{"diagram":"\nflowchart LR\n    A[\"AI Code Submitted\"] --> B{\"Run Gate (Safety)\"}\n    B -->|\"Unsafe / Has DB writes\"| C[\"Reject or Sandbox\"]\n    B -->|\"Safe / Local processing\"| D{\"Ship Gate (Quality)\"}\n    D -->|\"Logic Flaws / Missed Edge Cases\"| E[\"Request Changes\"]\n    D -->|\"Passes Evidence & Tests\"| F[\"Approve & Merge\"]\n    \n    style B fill:#ffeeba,stroke:#ffc107,stroke-width:2px\n    style D fill:#cce5ff,stroke:#007bff,stroke-width:2px\n    style C fill:#f8d7da,stroke:#dc3545,stroke-width:2px\n    style F fill:#d4edda,stroke:#28a745,stroke-width:2px\n"},"evals":[],"jsHooks":[]}</script>
+<div class="DiagrammeR html-widget html-fill-item" id="htmlwidget-011865c36c1024d5a481" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-011865c36c1024d5a481">{"x":{"diagram":"\ngraph LR\n    A[\"AI Code Submitted\"] --> B{\"Run Gate (Safety)\"}\n    B -->|\"Unsafe / DB writes\"| C[\"Reject or Sandbox\"]\n    B -->|\"Safe / Local\"| D{\"Ship Gate (Quality)\"}\n    D -->|\"Logic Flaws\"| E[\"Request Changes\"]\n    D -->|\"Passes Evidence\"| F[\"Approve & Merge\"]\n    \n    style B fill:#ffeeba,stroke:#ffc107\n    style D fill:#cce5ff,stroke:#007bff\n    style C fill:#f8d7da,stroke:#dc3545\n    style F fill:#d4edda,stroke:#28a745\n"},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="demanding-evidence" class="section level2 hasAnchor" number="7.2">
 <h2><span class="header-section-number">7.2</span> Demanding Evidence<a href="auditing-ai-code-review-templates.html#demanding-evidence" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -253,25 +254,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="the-ai-code-review-template" class="section level2 hasAnchor" number="7.3">
 <h2><span class="header-section-number">7.3</span> The AI Code Review Template<a href="auditing-ai-code-review-templates.html#the-ai-code-review-template" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>To ensure these best practices are embedded in your team’s workflow, we recommend using a standardized review template. You can copy the following checklist into your Pull Request templates on GitHub, GitLab, or Bitbucket.</p>
-<hr />
 <div id="pull-request-review-ai-assisted-code" class="section level3 hasAnchor" number="7.3.1">
 <h3><span class="header-section-number">7.3.1</span> Pull Request Review: AI-Assisted Code<a href="auditing-ai-code-review-templates.html#pull-request-review-ai-assisted-code" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p><strong>1. Safety &amp; Impact Analysis (The “Run Gate”)</strong>
-- [ ] <strong>Blast Radius:</strong> Does this code modify persistent data, write to a database, or alter systems (e.g., <code>dbWriteTable</code> in R)?
-- [ ] <strong>Data Access:</strong> Does this script process sensitive data or PII? If so, does it log or expose it unnecessarily?
-- [ ] <strong>Dependencies:</strong> Have any new CRAN or GitHub packages been introduced by the AI? Are they vetted?</p>
-<p><strong>2. Functional Correctness (The “Ship Gate”)</strong>
-- [ ] <strong>Context vs Assumption:</strong> Does this code solve our specific problem, or did the AI hallucinate a simpler problem? Did it use correct business logic for metrics (e.g., how we calculate Revenue)?
-- [ ] <strong>Edge Cases Handle:</strong> How does this code handle missing values (<code>NA</code>), empty data frames, or duplicate records?
-- [ ] <strong>Data Loss:</strong> Are there any <code>inner_join</code>s or <code>filter</code> steps that silently drop expected data?</p>
-<p><strong>3. Architecture &amp; Traceability</strong>
-- [ ] <strong>Reinvention:</strong> Did the AI reinvent functionality that already exists in our internal packages or utility scripts?
-- [ ] <strong>Evidence:</strong> Has the submitter provided unit test results or output logs showing the execution works for boundary cases?</p>
-<p><strong>Reviewer Verdict:</strong>
-- [ ] <strong>Approve</strong> (Changes are safe and logically sound)
-- [ ] <strong>Request Changes</strong> (Logic gaps, edge cases missed, or unnecessary abstraction)
-- <strong>Confidence Score (1-5):</strong> ______ (How confident are you in the AI’s logic?)</p>
-<hr />
+<p><strong>1. Safety Check (Run Gate)</strong>
+- [ ] No unsafe database writes or system modifications.
+- [ ] No untrusted dependencies introduced.
+- [ ] Sensitive PII data is not logged or exposed.</p>
+<p><strong>2. Logic &amp; Data Integrity (Ship Gate)</strong>
+- [ ] Validates edge cases: handles missing values, zero-row tables, and duplicates.
+- [ ] Business logic strictly aligns with organizational definitions; no AI hallucinated metrics.
+- [ ] No silent data loss: filtering or joins don’t discard intended scope.</p>
+<p><strong>3. Quality &amp; Evidence</strong>
+- [ ] Avoids reinventing internal utility functions.
+- [ ] Includes output logs or tests proving logic handles boundary cases correctly.</p>
+<p><strong>Verdict:</strong> [ ] Approve | [ ] Request Changes | <strong>Confidence (1-5):</strong> ___</p>
+</div>
+<div id="practical-language-examples" class="section level3 hasAnchor" number="7.3.2">
+<h3><span class="header-section-number">7.3.2</span> Practical Language Examples<a href="auditing-ai-code-review-templates.html#practical-language-examples" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>When using the template above, you are looking for specific AI quirks based on the language.</p>
+<p><strong>R Example:</strong>
+If an AI generates <code>combined &lt;- inner_join(sales, regions, by = "id")</code>, the reviewer must enforce the <strong>Logic &amp; Data Integrity</strong> check. <code>inner_join</code> drops unmatched records natively. The reviewer should request evidence that no critical regional data was silently dismissed, or demand the code be refactored to a <code>left_join</code>.</p>
+<p><strong>Python Example:</strong>
+If an AI uses pandas and writes <code>df['price'] = df['price'].fillna(method='ffill')</code> for gap filling in time-series, the reviewer must catch the hallucinated metric check. Was forward-filling the correct domain treatment for pricing data, or will that skew financial aggregations artificially? The Reviewer should request alternative logic before approving.</p>
 <p>By enforcing this structure, you close the Velocity Gap. You ensure that the speed of vibe coding does not come at the expense of accuracy and reliability in your analytical output.</p>
 
 </div>

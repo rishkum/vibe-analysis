@@ -49,4 +49,4 @@ Sometimes, the logic is just complex. If you are writing a custom simulation or 
 
 When the code gets messy, delete it.
 
-Go back to plain English. Write a multi-line comment essentially talking to the AI (or a rubber duck) about what you are trying to achieve, step-by-step. Let it generate the code one tiny block at a time. Forcing the AI—and yourself—to slow down and explain the logic often solves the problem.
+Go back to plain English. Write a multi-line comment essentially talking to the AI (or a rubber duck) about what you are trying to achieve, step-by-step. Let it generate the code one tiny block at a time. Forcing the AI; and yourself; to slow down and explain the logic often solves the problem.

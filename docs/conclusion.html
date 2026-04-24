@@ -205,6 +205,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.3" data-path="auditing-ai-code-review-templates.html"><a href="auditing-ai-code-review-templates.html#the-ai-code-review-template"><i class="fa fa-check"></i><b>7.3</b> The AI Code Review Template</a>
 <ul>
 <li class="chapter" data-level="7.3.1" data-path="auditing-ai-code-review-templates.html"><a href="auditing-ai-code-review-templates.html#pull-request-review-ai-assisted-code"><i class="fa fa-check"></i><b>7.3.1</b> Pull Request Review: AI-Assisted Code</a></li>
+<li class="chapter" data-level="7.3.2" data-path="auditing-ai-code-review-templates.html"><a href="auditing-ai-code-review-templates.html#practical-language-examples"><i class="fa fa-check"></i><b>7.3.2</b> Practical Language Examples</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i><b>8</b> Conclusion</a>
@@ -244,7 +245,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><strong>Validate continuously.</strong> Check your row counts after joins. Check your distributions after mutations.</li>
 <li><strong>Embrace the conversational workflow.</strong> When you hit an error, don’t revert to manual debugging immediately. Paste the error into the chat and let the assistant figure it out.</li>
 </ol>
-<p>The goal of learning R is no longer to be a walking syntax dictionary. The goal is to understand how to manipulate data conceptually so that you can effectively guide your AI to write the syntax for you.</p>
+<p>Consider a scenario of a junior analyst tasked with forecasting Q4 sales. A year ago, they would have spent two hours fighting <code>ggplot2</code> themes to get a legend aligned horizontally, and another three hours debugging a <code>lubridate</code> time zone issue. Today, using Vibe Analysis, they generate the chart and date logic in five minutes.</p>
+<p>Because they saved five hours of manual typing, they have the cognitive energy to actually look at the output. They notice a strange dip in November. Digging deeper, they realize the AI-generated data cleaning script silently omitted a specific region due to an implicit <code>inner_join</code>. They didn’t just ship the code; they reviewed the logic, found the bias, and fixed it before the executive presentation.</p>
+<p><em>That</em> is the role of an Architect. You spend less time wrestling with commas and more time wrestling with truth.</p>
+<p>The goal of learning R or Python is no longer to be a walking syntax dictionary. The goal is to understand how to manipulate data conceptually so that you can effectively guide your AI to write the syntax for you.</p>
 <p>Welcome to the future of data analysis. Happy Vibe Analysis.</p>
 
 </div>

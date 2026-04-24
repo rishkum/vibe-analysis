@@ -205,6 +205,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.3" data-path="auditing-ai-code-review-templates.html"><a href="auditing-ai-code-review-templates.html#the-ai-code-review-template"><i class="fa fa-check"></i><b>7.3</b> The AI Code Review Template</a>
 <ul>
 <li class="chapter" data-level="7.3.1" data-path="auditing-ai-code-review-templates.html"><a href="auditing-ai-code-review-templates.html#pull-request-review-ai-assisted-code"><i class="fa fa-check"></i><b>7.3.1</b> Pull Request Review: AI-Assisted Code</a></li>
+<li class="chapter" data-level="7.3.2" data-path="auditing-ai-code-review-templates.html"><a href="auditing-ai-code-review-templates.html#practical-language-examples"><i class="fa fa-check"></i><b>7.3.2</b> Practical Language Examples</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i><b>8</b> Conclusion</a>
@@ -252,14 +253,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="the-contrast-in-workflow" class="section level3 unnumbered hasAnchor">
 <h3>The Contrast in Workflow<a href="index.html#the-contrast-in-workflow" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The following chart illustrates why extracting insights requires a different, more rigorous workflow than building standard software applications:</p>
-<div class="DiagrammeR html-widget html-fill-item" id="htmlwidget-3cac44b761d8dd028001" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-3cac44b761d8dd028001">{"x":{"diagram":"\ngraph TD\n    A[\"Natural Language Prompt\"] --> B{\"What is the Goal?\"}\n    \n    B -->|\"Building an App\"| C[\"Vibe Coding\"]\n    C --> D[\"AI Generates Code\"]\n    D --> E{\"Does it compile/run?\"}\n    E -->|\"Yes\"| F[\"Ship It!\"]\n    E -->|\"No\"| D\n    \n    B -->|\"Extracting Insights\"| G[\"Vibe Analysis\"]\n    G --> H[\"AI Generates Code\"]\n    H --> I[\"SDLC & Code Review\"]\n    I --> J[\"Statistical Validation\"]\n    J --> K{\"Is logic sound?\"}\n    K -->|\"No\"| H\n    K -->|\"Yes\"| L[\"Publish Analysis\"]\n\n    style C fill:#fce4ec,stroke:#f06292,stroke-width:2px\n    style G fill:#e3f2fd,stroke:#64b5f6,stroke-width:2px\n"},"evals":[],"jsHooks":[]}</script>
+<div class="DiagrammeR html-widget html-fill-item" id="htmlwidget-b1256dcc91ff77fc3a02" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-b1256dcc91ff77fc3a02">{"x":{"diagram":"\ngraph TD\n    A[\"Natural Language Prompt\"] --> B{\"What is the Goal?\"}\n    \n    B -->|\"Building an App\"| C[\"Vibe Coding\"]\n    C --> D[\"AI Generates Code\"]\n    D --> E{\"Does it compile/run?\"}\n    E -->|\"Yes\"| F[\"Ship It!\"]\n    E -->|\"No\"| D\n    \n    B -->|\"Extracting Insights\"| G[\"Vibe Analysis\"]\n    G --> H[\"AI Generates Code\"]\n    H --> I[\"SDLC & Code Review\"]\n    I --> J[\"Statistical Validation\"]\n    J --> K{\"Is logic sound?\"}\n    K -->|\"No\"| H\n    K -->|\"Yes\"| L[\"Publish Analysis\"]\n\n    style C fill:#fce4ec,stroke:#f06292\n    style G fill:#e3f2fd,stroke:#64b5f6\n"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <div id="why-vibe-analysis" class="section level2 unnumbered hasAnchor">
 <h2>Why Vibe Analysis?<a href="index.html#why-vibe-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>In traditional data analysis, the bottleneck is often the translation of a statistical idea into programming syntax. You have a question (“How do sales compare across regions over the last three quarters?”), but you must spend time writing boilerplate code to group, summarize, and plot the data.</p>
-<p>With AI assistants—specifically <strong>GitHub Copilot</strong>, the focus of this book—you can write the question in plain English as a comment, and the assistant will synthesize the code. Your role changes:</p>
+<p>With AI assistants; specifically <strong>GitHub Copilot</strong>, the focus of this book; you can write the question in plain English as a comment, and the assistant will synthesize the code. Your role changes:</p>
 <ol style="list-style-type: decimal">
 <li><strong>From typist to director</strong>: You set the overarching strategy.</li>
 <li><strong>From debugger to auditor</strong>: You review and validate the logic the AI proposes.</li>

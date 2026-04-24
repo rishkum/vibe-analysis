@@ -31,5 +31,6 @@ the-two-gate-mental-model
 demanding-evidence
 the-ai-code-review-template
 pull-request-review-ai-assisted-code
+practical-language-examples
 conclusion
 becoming-an-architect

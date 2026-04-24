@@ -48,8 +48,8 @@ graph TD
     K -->|"No"| H
     K -->|"Yes"| L["Publish Analysis"]
 
-    style C fill:#fce4ec,stroke:#f06292,stroke-width:2px
-    style G fill:#e3f2fd,stroke:#64b5f6,stroke-width:2px
+    style C fill:#fce4ec,stroke:#f06292
+    style G fill:#e3f2fd,stroke:#64b5f6
 ')
 ```
 
@@ -57,7 +57,7 @@ graph TD
 
 In traditional data analysis, the bottleneck is often the translation of a statistical idea into programming syntax. You have a question ("How do sales compare across regions over the last three quarters?"), but you must spend time writing boilerplate code to group, summarize, and plot the data.
 
-With AI assistants—specifically **GitHub Copilot**, the focus of this book—you can write the question in plain English as a comment, and the assistant will synthesize the code. Your role changes:
+With AI assistants; specifically **GitHub Copilot**, the focus of this book; you can write the question in plain English as a comment, and the assistant will synthesize the code. Your role changes:
 
 1.  **From typist to director**: You set the overarching strategy.
 2.  **From debugger to auditor**: You review and validate the logic the AI proposes.
