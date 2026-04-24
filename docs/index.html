@@ -142,7 +142,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
 <ul>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#vibe-coding-vs.-vibe-analysis"><i class="fa fa-check"></i>Vibe Coding vs. Vibe Analysis</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#vibe-coding-vs.-vibe-analysis"><i class="fa fa-check"></i>Vibe Coding vs. Vibe Analysis</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#the-contrast-in-workflow"><i class="fa fa-check"></i>The Contrast in Workflow</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#why-vibe-analysis"><i class="fa fa-check"></i>Why Vibe Analysis?</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#best-practices-for-the-vibe-workflow"><i class="fa fa-check"></i>Best Practices for the Vibe Workflow</a></li>
 </ul></li>
@@ -231,8 +234,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>If you spend more time trying to remember the exact arguments of <code>dplyr::pivot_longer()</code> or the aesthetics of a <code>ggplot2</code> chart than thinking about the insights your data contains, this book is for you.</p>
 <div id="vibe-coding-vs.-vibe-analysis" class="section level2 unnumbered hasAnchor">
 <h2>Vibe Coding vs. Vibe Analysis<a href="index.html#vibe-coding-vs.-vibe-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>While “vibe coding” generally refers to building software tools or applications through natural language interactions with AI, <strong>Vibe Analysis</strong> applies this paradigm specifically to data science and analytics.</p>
-<p>Vibe coding might focus on creating a functioning React component or a Python backend service, prioritizing whether the code compiles and runs. Vibe Analysis, however, holds a higher standard: statistical correctness, reproducibility, and rigorous logic. A vibe-coded web app might look slightly off but still work; a vibe-analysed dataset with a silent hallucination in an aggregation step will lead to fundamentally wrong business or research conclusions.</p>
+<p>To ensure clarity throughout this book, we distinguish these concepts as follows:</p>
+<ul>
+<li><strong>Vibe Coding</strong>: The general <em>mechanism</em> of writing software using natural language prompts. It prioritizes speed, compilation, and execution.</li>
+<li><strong>Vibe Analysis</strong>: The rigorous <em>methodology</em> of applying the vibe coding mechanism to data science. It introduces statistical rigor, Code Reviews (the SDLC), and hypothesis testing to ensure the rapid code generation doesn’t produce hallucinated insights.</li>
+</ul>
+<p>Vibe coding might focus on creating a functioning React component or a Python backend service, prioritizing whether the code compiles and runs. Vibe Analysis, however, holds a higher standard. A vibe-coded web app might look slightly off but still work; a vibe-analysed dataset with a silent hallucination in an aggregation step will lead to fundamentally wrong business or research conclusions.</p>
+<div id="the-contrast-in-workflow" class="section level3 unnumbered hasAnchor">
+<h3>The Contrast in Workflow<a href="index.html#the-contrast-in-workflow" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The following chart illustrates why extracting insights requires a different, more rigorous workflow than building standard software applications:</p>
+</div>
 </div>
 <div id="why-vibe-analysis" class="section level2 unnumbered hasAnchor">
 <h2>Why Vibe Analysis?<a href="index.html#why-vibe-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
