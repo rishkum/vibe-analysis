@@ -4,23 +4,23 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Vibe Coding for Data Analysis</title>
-  <meta name="description" content="A guide to natural language programming and vibe coding for data analysis using GitHub Copilot and R." />
+  <title>Vibe Analysis: A Practical Guide to AI-Assisted Data Science</title>
+  <meta name="description" content="A practical guide to rigorous, AI-assisted data analysis using GitHub Copilot. Learn how to move beyond vibe coding and towards disciplined analytical workflows." />
   <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Vibe Coding for Data Analysis" />
+  <meta property="og:title" content="Vibe Analysis: A Practical Guide to AI-Assisted Data Science" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:description" content="A guide to natural language programming and vibe coding for data analysis using GitHub Copilot and R." />
+  <meta property="og:description" content="A practical guide to rigorous, AI-assisted data analysis using GitHub Copilot. Learn how to move beyond vibe coding and towards disciplined analytical workflows." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Vibe Coding for Data Analysis" />
+  <meta name="twitter:title" content="Vibe Analysis: A Practical Guide to AI-Assisted Data Science" />
   
-  <meta name="twitter:description" content="A guide to natural language programming and vibe coding for data analysis using GitHub Copilot and R." />
+  <meta name="twitter:description" content="A practical guide to rigorous, AI-assisted data analysis using GitHub Copilot. Learn how to move beyond vibe coding and towards disciplined analytical workflows." />
   
 
-<meta name="author" content="Rishabh" />
+<meta name="author" content="Rishabh Kumar" />
 
 
 <meta name="date" content="2026-04-24" />
@@ -239,7 +239,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Vibe Coding for Data Analysis</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Vibe Analysis: A Practical Guide to AI-Assisted Data Science</a>
           </h1>
         </div>
 
@@ -248,50 +248,56 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="header">
-<h1 class="title">Vibe Coding for Data Analysis</h1>
-<p class="author"><em>Rishabh</em></p>
+<h1 class="title">Vibe Analysis: A Practical Guide to AI-Assisted Data Science</h1>
+<p class="author"><em>Rishabh Kumar</em></p>
 <p class="date"><em>2026-04-24</em></p>
 </div>
 <div id="preface" class="section level1 unnumbered hasAnchor">
 <h1>Preface<a href="index.html#preface" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Welcome to <strong>Vibe Coding for Data Analysis</strong>.</p>
-<p>“Vibe coding” is a somewhat colloquial term for a profound shift in software development and data science: the practice of using natural language models to translate intent directly into executable code. It represents moving away from manual syntax reproduction and towards becoming an <em>architect</em> of analysis.</p>
-<p>If you spend more time trying to remember the exact arguments of <code>dplyr::pivot_longer()</code> or the aesthetics of a <code>ggplot2</code> chart than thinking about the insights your data contains, this book is for you.</p>
+<p>Welcome to <strong>Vibe Analysis</strong>.</p>
+<blockquote>
+<p><em>The views and opinions expressed in this book are those of the author alone and do not represent the views of his employer.</em></p>
+</blockquote>
+<p>This book is about a simple but consequential idea: the way we write code for data analysis is changing fundamentally, and the skills required to do it well are changing with it.</p>
+<p>“Vibe coding”; the practice of using natural language to instruct AI models to generate executable code; has captured the imagination of the software world. Tools like GitHub Copilot can translate a plain English comment into a working function in seconds. For building applications, this is a revolution. For extracting analytical insights, it is a loaded gun.</p>
+<p>The difference matters. A vibe-coded web application with a minor UI bug still works. A vibe-coded data pipeline with a silent aggregation error produces numbers that look perfectly plausible but are fundamentally wrong. Decisions get made, reports get published, and nobody realises the foundation was flawed until it is too late.</p>
+<p><strong>Vibe Analysis</strong> is the methodology this book proposes to bridge that gap. It takes the speed and accessibility of vibe coding and layers on the rigour that analytical work demands: structured code reviews, statistical validation, explicit assumption-testing, and human ownership of every result.</p>
+<p>If you spend more time trying to remember the exact arguments of <code>dplyr::pivot_longer()</code> or the aesthetics of a <code>ggplot2</code> chart than thinking about the insights your data contains, this book is for you. If you manage a team of analysts who have started using AI tools and you want to know what questions to ask, this book is also for you.</p>
 <div id="vibe-coding-vs.-vibe-analysis" class="section level2 unnumbered hasAnchor">
 <h2>Vibe Coding vs. Vibe Analysis<a href="index.html#vibe-coding-vs.-vibe-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>To ensure clarity throughout this book, we distinguish these concepts as follows:</p>
+<p>To ensure clarity throughout this book, we distinguish two related but critically different concepts:</p>
 <ul>
-<li><strong>Vibe Coding</strong>: The general <em>mechanism</em> of writing software using natural language prompts. It prioritizes speed, compilation, and execution.</li>
-<li><strong>Vibe Analysis</strong>: The rigorous <em>methodology</em> of applying the vibe coding mechanism to data science. It introduces statistical rigor, Code Reviews (the SDLC), and hypothesis testing to ensure the rapid code generation doesn’t produce hallucinated insights.</li>
+<li><strong>Vibe Coding</strong>: The general <em>mechanism</em> of writing software using natural language prompts. It prioritises speed, compilation, and whether the code runs.</li>
+<li><strong>Vibe Analysis</strong>: The rigorous <em>methodology</em> of applying that mechanism to data science. It introduces statistical rigour, code reviews drawn from the Software Development Lifecycle (SDLC), and hypothesis testing to ensure the rapid code generation does not produce hallucinated insights.</li>
 </ul>
-<p>Vibe coding might focus on creating a functioning React component or a Python backend service, prioritizing whether the code compiles and runs. Vibe Analysis, however, holds a higher standard. A vibe-coded web app might look slightly off but still work; a vibe-analysed dataset with a silent hallucination in an aggregation step will lead to fundamentally wrong business or research conclusions.</p>
 <div id="the-contrast-in-workflow" class="section level3 unnumbered hasAnchor">
 <h3>The Contrast in Workflow<a href="index.html#the-contrast-in-workflow" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The following chart illustrates why extracting insights requires a different, more rigorous workflow than building standard software applications:</p>
-<div class="DiagrammeR html-widget html-fill-item" id="htmlwidget-c1023f279c254f1a44c8" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-c1023f279c254f1a44c8">{"x":{"diagram":"\ngraph TD\n    A[\"Natural Language Prompt\"] --> B{\"What is the Goal?\"}\n    \n    B -->|\"Building an App\"| C[\"Vibe Coding\"]\n    C --> D[\"AI Generates Code\"]\n    D --> E{\"Does it compile/run?\"}\n    E -->|\"Yes\"| F[\"Ship It!\"]\n    E -->|\"No\"| D\n    \n    B -->|\"Extracting Insights\"| G[\"Vibe Analysis\"]\n    G --> H[\"AI Generates Code\"]\n    H --> I[\"SDLC & Code Review\"]\n    I --> J[\"Statistical Validation\"]\n    J --> K{\"Is logic sound?\"}\n    K -->|\"No\"| H\n    K -->|\"Yes\"| L[\"Publish Analysis\"]\n\n    style C fill:#fce4ec,stroke:#f06292\n    style G fill:#e3f2fd,stroke:#64b5f6\n"},"evals":[],"jsHooks":[]}</script>
+<div class="DiagrammeR html-widget html-fill-item" id="htmlwidget-b663ca988942d09cca68" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-b663ca988942d09cca68">{"x":{"diagram":"\ngraph TD\n    A[\"Natural Language Prompt\"] --> B{\"What is the Goal?\"}\n    \n    B -->|\"Building an App\"| C[\"Vibe Coding\"]\n    C --> D[\"AI Generates Code\"]\n    D --> E{\"Does it compile/run?\"}\n    E -->|\"Yes\"| F[\"Ship It!\"]\n    E -->|\"No\"| D\n    \n    B -->|\"Extracting Insights\"| G[\"Vibe Analysis\"]\n    G --> H[\"AI Generates Code\"]\n    H --> I[\"SDLC & Code Review\"]\n    I --> J[\"Statistical Validation\"]\n    J --> K{\"Is logic sound?\"}\n    K -->|\"No\"| H\n    K -->|\"Yes\"| L[\"Publish Analysis\"]\n\n    style C fill:#fce4ec,stroke:#f06292\n    style G fill:#e3f2fd,stroke:#64b5f6\n"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <div id="why-vibe-analysis" class="section level2 unnumbered hasAnchor">
 <h2>Why Vibe Analysis?<a href="index.html#why-vibe-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>In traditional data analysis, the bottleneck is often the translation of a statistical idea into programming syntax. You have a question (“How do sales compare across regions over the last three quarters?”), but you must spend time writing boilerplate code to group, summarize, and plot the data.</p>
-<p>With AI assistants; specifically <strong>GitHub Copilot</strong>, the focus of this book; you can write the question in plain English as a comment, and the assistant will synthesize the code. Your role changes:</p>
+<p>In traditional data analysis, the bottleneck is often the translation of a statistical idea into programming syntax. You have a question (“How do sales compare across regions over the last three quarters?”), but you must spend time writing boilerplate code to group, summarise, and plot the data.</p>
+<p>With AI assistants; specifically <strong>GitHub Copilot</strong>, the primary tool explored in this book; you can write the question in plain English as a comment, and the assistant will synthesise the code. Your role as an analyst shifts:</p>
 <ol style="list-style-type: decimal">
-<li><strong>From typist to director</strong>: You set the overarching strategy.</li>
-<li><strong>From debugger to auditor</strong>: You review and validate the logic the AI proposes.</li>
-<li><strong>From memorizer to thinker</strong>: You focus on research design and statistical validity rather than syntax.</li>
+<li><strong>From typist to architect</strong>: You define the analytical strategy and the questions worth asking.</li>
+<li><strong>From debugger to auditor</strong>: You review and validate the logic the AI proposes, rather than writing it from scratch.</li>
+<li><strong>From memoriser to thinker</strong>: You focus on research design and statistical validity rather than syntax recall.</li>
 </ol>
+<p>This shift is powerful, but only if you maintain the discipline to verify what the AI produces. The chapters that follow will show you how.</p>
 </div>
 <div id="best-practices-for-the-vibe-workflow" class="section level2 unnumbered hasAnchor">
 <h2>Best Practices for the Vibe Workflow<a href="index.html#best-practices-for-the-vibe-workflow" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>To get the most out of GitHub Copilot in your data analysis workflow, it is crucial to adopt a few core practices:</p>
+<p>To get the most out of GitHub Copilot in your data analysis workflow, adopt these core practices from the outset:</p>
 <ul>
-<li><strong>Plan, Act, Review:</strong> Slice your analytical tasks into smaller, manageable steps. Do not ask for a full dashboard immediately. Ask for data import, then cleaning, then visualization.</li>
-<li><strong>Context is King:</strong> The AI needs to see your data structure. Print the <code>head()</code> or <code>str()</code> of your data frame so Copilot understands the variable names and types.</li>
-<li><strong>Human-in-the-Loop:</strong> Always verify intermediate steps. A model might confidently generate code that looks correct but performs an aggregation incorrectly.</li>
-<li><strong>Create Persistent Context:</strong> Document your data assumptions in a <code>PROJECT.md</code> file or at the top of your script to keep Copilot aligned with your goals.</li>
+<li><strong>Plan, Act, Review:</strong> Slice your analytical tasks into smaller, manageable steps. Do not ask for a full dashboard in a single prompt. Ask for data import, then cleaning, then visualisation; reviewing the output at each stage.</li>
+<li><strong>Context is King:</strong> The AI needs to see your data structure. Print the <code>head()</code> or <code>str()</code> of your data frame so Copilot understands the variable names and types before generating transformations.</li>
+<li><strong>Human-in-the-Loop:</strong> Always verify intermediate steps. A model might confidently generate code that looks correct but performs an aggregation incorrectly; for example, using <code>mean()</code> when you needed <code>median()</code>.</li>
+<li><strong>Create Persistent Context:</strong> Document your data assumptions in a <code>PROJECT.md</code> file or at the top of your script. This gives Copilot a consistent reference point and keeps it aligned with your goals across sessions.</li>
 </ul>
-<p>In the subsequent chapters, we’ll dive right into setting up your environment, writing effective prompts for data wrangling, and iterating on visualizations entirely through conversation.</p>
+<p>In the subsequent chapters, we will dive into setting up your environment, writing effective prompts for data wrangling, and iterating on visualisations entirely through conversation.</p>
 
 </div>
 </div>
