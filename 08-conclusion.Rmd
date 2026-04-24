@@ -1,6 +1,6 @@
 # Conclusion
 
-Vibe coding is fundamentally changing what it means to be a data analyst or data scientist.
+Vibe Analysis is fundamentally changing what it means to be a data analyst or data scientist.
 
 By abstracting away the syntax, GitHub Copilot allows us to operate closer to the speed of thought. However, that speed is dangerous without discipline.
 
@@ -15,4 +15,4 @@ As you adopt this workflow, remember that the AI is your fast-typing assistant. 
 
 The goal of learning R is no longer to be a walking syntax dictionary. The goal is to understand how to manipulate data conceptually so that you can effectively guide your AI to write the syntax for you.
 
-Welcome to the future of data analysis. Happy vibe coding.
+Welcome to the future of data analysis. Happy Vibe Analysis.

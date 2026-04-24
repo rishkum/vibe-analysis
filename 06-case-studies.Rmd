@@ -1,6 +1,6 @@
 # Case Studies: What Can Go Wrong?
 
-Vibe coding can act as a force multiplier, but blindly trusting AI to generate complex analytical logic exposes you to several well-documented risks. 
+Vibe coding can act as a force multiplier, but blindly trusting AI to generate complex analytical logic without the rigor of Vibe Analysis exposes you to several well-documented risks. 
 
 In this chapter, we explore realistic case studies and research demonstrating what happens when the "Review" phase of the vibe-coding workflow is skipped.
 

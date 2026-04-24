@@ -1,8 +1,8 @@
 # Troubleshooting
 
-Vibe coding is not a perfect process. You will encounter errors. Variables will be misspelled, arguments will be deprecated, and the AI will sometimes suggest functions from packages you haven't loaded.
+Vibe Analysis is not a perfect process. You will encounter errors. Variables will be misspelled, arguments will be deprecated, and the AI will sometimes suggest functions from packages you haven't loaded.
 
-Knowing how to troubleshoot AI-generated code is a fundamental skill of the vibe coding workflow.
+Knowing how to troubleshoot AI-generated code is a fundamental skill of the Vibe Analysis workflow.
 
 ## Types of Errors
 

@@ -1,6 +1,6 @@
 # Getting Started
 
-To master vibe coding in R, your environment needs to be properly set up. You need a frictionless way to communicate with your AI pair programmer so that writing a prompt feels as fluid as writing native R code.
+To master Vibe Analysis in R, your environment needs to be properly set up. You need a frictionless way to communicate with your AI pair programmer so that writing a prompt feels as fluid as writing native R code.
 
 ## Choosing Your IDE
 

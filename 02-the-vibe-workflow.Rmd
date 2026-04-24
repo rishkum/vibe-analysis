@@ -10,7 +10,7 @@ When analyzing data, standard manual coding requires translating every logical s
 
 ## The "Plan, Act, Review" Cycle
 
-Vibe coding is not magic; you are managing a very fast, sometimes overconfident junior analyst. You should adopt a "Plan, Act, Review" cycle:
+Vibe Analysis is not magic; you are managing a very fast, sometimes overconfident junior analyst. You should adopt a "Plan, Act, Review" cycle:
 
 1.  **Plan:** Break down the analysis into steps. Don't ask for a final predictive model from a raw dataset in one prompt.
 2.  **Act:** Write a clear prompt for the *first* step.

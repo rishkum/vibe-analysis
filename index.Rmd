@@ -18,9 +18,40 @@ If you spend more time trying to remember the exact arguments of `dplyr::pivot_l
 
 ## Vibe Coding vs. Vibe Analysis {-}
 
-While "vibe coding" generally refers to building software tools or applications through natural language interactions with AI, **Vibe Analysis** applies this paradigm specifically to data science and analytics. 
+To ensure clarity throughout this book, we distinguish these concepts as follows:
 
-Vibe coding might focus on creating a functioning React component or a Python backend service, prioritizing whether the code compiles and runs. Vibe Analysis, however, holds a higher standard: statistical correctness, reproducibility, and rigorous logic. A vibe-coded web app might look slightly off but still work; a vibe-analysed dataset with a silent hallucination in an aggregation step will lead to fundamentally wrong business or research conclusions.
+*   **Vibe Coding**: The general *mechanism* of writing software using natural language prompts. It prioritizes speed, compilation, and execution.
+*   **Vibe Analysis**: The rigorous *methodology* of applying the vibe coding mechanism to data science. It introduces statistical rigor, Code Reviews (the SDLC), and hypothesis testing to ensure the rapid code generation doesn't produce hallucinated insights.
+
+Vibe coding might focus on creating a functioning React component or a Python backend service, prioritizing whether the code compiles and runs. Vibe Analysis, however, holds a higher standard. A vibe-coded web app might look slightly off but still work; a vibe-analysed dataset with a silent hallucination in an aggregation step will lead to fundamentally wrong business or research conclusions.
+
+### The Contrast in Workflow {-}
+
+The following chart illustrates why extracting insights requires a different, more rigorous workflow than building standard software applications:
+
+```{r, echo=FALSE, eval=requireNamespace("DiagrammeR", quietly=TRUE)}
+DiagrammeR::mermaid('
+graph TD
+    A["Natural Language Prompt"] --> B{"What is the Goal?"}
+    
+    B -->|"Building an App"| C["Vibe Coding"]
+    C --> D["AI Generates Code"]
+    D --> E{"Does it compile/run?"}
+    E -->|"Yes"| F["Ship It!"]
+    E -->|"No"| D
+    
+    B -->|"Extracting Insights"| G["Vibe Analysis"]
+    G --> H["AI Generates Code"]
+    H --> I["SDLC & Code Review"]
+    I --> J["Statistical Validation"]
+    J --> K{"Is logic sound?"}
+    K -->|"No"| H
+    K -->|"Yes"| L["Publish Analysis"]
+
+    style C fill:#fce4ec,stroke:#f06292,stroke-width:2px
+    style G fill:#e3f2fd,stroke:#64b5f6,stroke-width:2px
+')
+```
 
 ## Why Vibe Analysis? {-}
 
