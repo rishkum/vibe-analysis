@@ -72,4 +72,4 @@ sales_data <- data.frame(
 )
 ```
 
-You've just completed your first vibe-coding task! You expressed the *intent*, and Copilot provided the *syntax*. In the next chapter, we'll dive into the detailed workflow for more complex data manipulation.
+You've just completed your first Vibe Analysis task. You expressed the *intent*, and Copilot provided the *syntax*. In the next chapter, we'll explore the structured workflow for making this process reliable across more complex data manipulation.

@@ -20,7 +20,7 @@
   <meta name="twitter:description" content="A practical guide to rigorous, AI-assisted data analysis using GitHub Copilot. Learn how to move beyond vibe coding and towards disciplined analytical workflows." />
   
 
-<meta name="author" content="Rishabh Kumar" />
+<meta name="author" content="Rishabh Kumar | The views and opinions expressed in this book are those of the author alone and do not represent the views of his employer." />
 
 
 <meta name="date" content="2026-04-24" />
@@ -178,12 +178,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.1" data-path="visualizing-with-vibes.html"><a href="visualizing-with-vibes.html#prompting-for-plots"><i class="fa fa-check"></i><b>3.1</b> Prompting for Plots</a></li>
 <li class="chapter" data-level="3.2" data-path="visualizing-with-vibes.html"><a href="visualizing-with-vibes.html#iterating-on-the-design"><i class="fa fa-check"></i><b>3.2</b> Iterating on the Design</a></li>
 <li class="chapter" data-level="3.3" data-path="visualizing-with-vibes.html"><a href="visualizing-with-vibes.html#exploratory-data-analysis-eda"><i class="fa fa-check"></i><b>3.3</b> Exploratory Data Analysis (EDA)</a></li>
+<li class="chapter" data-level="3.4" data-path="visualizing-with-vibes.html"><a href="visualizing-with-vibes.html#the-review-step-for-visualisations"><i class="fa fa-check"></i><b>3.4</b> The Review Step for Visualisations</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="modeling-and-machine-learning.html"><a href="modeling-and-machine-learning.html"><i class="fa fa-check"></i><b>4</b> Modeling and Machine Learning</a>
 <ul>
 <li class="chapter" data-level="4.1" data-path="modeling-and-machine-learning.html"><a href="modeling-and-machine-learning.html#prompting-for-tidymodels"><i class="fa fa-check"></i><b>4.1</b> Prompting for Tidymodels</a></li>
 <li class="chapter" data-level="4.2" data-path="modeling-and-machine-learning.html"><a href="modeling-and-machine-learning.html#reviewing-the-architecture"><i class="fa fa-check"></i><b>4.2</b> Reviewing the Architecture</a></li>
 <li class="chapter" data-level="4.3" data-path="modeling-and-machine-learning.html"><a href="modeling-and-machine-learning.html#evaluating-the-model"><i class="fa fa-check"></i><b>4.3</b> Evaluating the Model</a></li>
+<li class="chapter" data-level="4.4" data-path="modeling-and-machine-learning.html"><a href="modeling-and-machine-learning.html#what-can-go-wrong-in-modelling"><i class="fa fa-check"></i><b>4.4</b> What Can Go Wrong in Modelling</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="troubleshooting.html"><a href="troubleshooting.html"><i class="fa fa-check"></i><b>5</b> Troubleshooting</a>
 <ul>
@@ -249,15 +251,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="header">
 <h1 class="title">Vibe Analysis: A Practical Guide to AI-Assisted Data Science</h1>
-<p class="author"><em>Rishabh Kumar</em></p>
+<p class="author"><em>Rishabh Kumar | <em>The views and opinions expressed in this book are those of the author alone and do not represent the views of his employer.</em></em></p>
 <p class="date"><em>2026-04-24</em></p>
 </div>
 <div id="preface" class="section level1 unnumbered hasAnchor">
 <h1>Preface<a href="index.html#preface" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Welcome to <strong>Vibe Analysis</strong>.</p>
-<blockquote>
-<p><em>The views and opinions expressed in this book are those of the author alone and do not represent the views of his employer.</em></p>
-</blockquote>
 <p>This book is about a simple but consequential idea: the way we write code for data analysis is changing fundamentally, and the skills required to do it well are changing with it.</p>
 <p>“Vibe coding”; the practice of using natural language to instruct AI models to generate executable code; has captured the imagination of the software world. Tools like GitHub Copilot can translate a plain English comment into a working function in seconds. For building applications, this is a revolution. For extracting analytical insights, it is a loaded gun.</p>
 <p>The difference matters. A vibe-coded web application with a minor UI bug still works. A vibe-coded data pipeline with a silent aggregation error produces numbers that look perfectly plausible but are fundamentally wrong. Decisions get made, reports get published, and nobody realises the foundation was flawed until it is too late.</p>
@@ -273,8 +272,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="the-contrast-in-workflow" class="section level3 unnumbered hasAnchor">
 <h3>The Contrast in Workflow<a href="index.html#the-contrast-in-workflow" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The following chart illustrates why extracting insights requires a different, more rigorous workflow than building standard software applications:</p>
-<div class="DiagrammeR html-widget html-fill-item" id="htmlwidget-b663ca988942d09cca68" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-b663ca988942d09cca68">{"x":{"diagram":"\ngraph TD\n    A[\"Natural Language Prompt\"] --> B{\"What is the Goal?\"}\n    \n    B -->|\"Building an App\"| C[\"Vibe Coding\"]\n    C --> D[\"AI Generates Code\"]\n    D --> E{\"Does it compile/run?\"}\n    E -->|\"Yes\"| F[\"Ship It!\"]\n    E -->|\"No\"| D\n    \n    B -->|\"Extracting Insights\"| G[\"Vibe Analysis\"]\n    G --> H[\"AI Generates Code\"]\n    H --> I[\"SDLC & Code Review\"]\n    I --> J[\"Statistical Validation\"]\n    J --> K{\"Is logic sound?\"}\n    K -->|\"No\"| H\n    K -->|\"Yes\"| L[\"Publish Analysis\"]\n\n    style C fill:#fce4ec,stroke:#f06292\n    style G fill:#e3f2fd,stroke:#64b5f6\n"},"evals":[],"jsHooks":[]}</script>
+<div class="DiagrammeR html-widget html-fill-item" id="htmlwidget-24e46fcef8a5c8a0ddcc" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-24e46fcef8a5c8a0ddcc">{"x":{"diagram":"\ngraph TD\n    A[\"Natural Language Prompt\"] --> B{\"What is the Goal?\"}\n    \n    B -->|\"Building an App\"| C[\"Vibe Coding\"]\n    C --> D[\"AI Generates Code\"]\n    D --> E{\"Does it compile/run?\"}\n    E -->|\"Yes\"| F[\"Ship It!\"]\n    E -->|\"No\"| D\n    \n    B -->|\"Extracting Insights\"| G[\"Vibe Analysis\"]\n    G --> H[\"AI Generates Code\"]\n    H --> I[\"SDLC & Code Review\"]\n    I --> J[\"Statistical Validation\"]\n    J --> K{\"Is logic sound?\"}\n    K -->|\"No\"| H\n    K -->|\"Yes\"| L[\"Publish Analysis\"]\n\n    style C fill:#fce4ec,stroke:#f06292\n    style G fill:#e3f2fd,stroke:#64b5f6\n"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <div id="why-vibe-analysis" class="section level2 unnumbered hasAnchor">

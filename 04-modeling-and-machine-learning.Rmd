@@ -51,4 +51,14 @@ Once you have fitted a workflow, you can ask Copilot to generate the evaluation 
 # Calculate RMSE and RSQ for the predictions.
 ```
 
-By constraining Copilot to write the *plumbing* (the tidymodels syntax) while you define the *architecture* (the features, the model type, the validation strategy), you balance speed with statistical rigor.
+By constraining Copilot to write the *plumbing* (the tidymodels syntax) while you define the *architecture* (the features, the model type, the validation strategy), you balance speed with statistical rigour.
+
+## What Can Go Wrong in Modelling
+
+Machine learning is the chapter of Vibe Analysis where the gap between "code that runs" and "code that is correct" is widest.
+
+*   **Data Leakage:** The AI may inadvertently include future information in the training features (e.g., using a post-event column as a predictor). Always inspect the recipe and ask yourself whether every feature could realistically be available at prediction time.
+*   **Wrong Metric for the Problem:** Copilot will default to common metrics like RMSE for regression and accuracy for classification. If your business problem has an imbalanced target class, accuracy is misleading. Explicitly ask for precision, recall, or AUC.
+*   **Missing Cross-Validation:** A model fitted on a single 80/20 split may produce results that look strong but are not reliable. Always request cross-validation folds for any model you intend to deploy.
+
+When something goes wrong in modelling, the AI's error messages can be cryptic. The next chapter covers how to troubleshoot the most common failure patterns efficiently.

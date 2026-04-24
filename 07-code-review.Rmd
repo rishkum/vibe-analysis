@@ -8,7 +8,7 @@ Reviewing AI-generated code requires a fundamental shift in mindset. You must re
 
 When reviewing a script or a Pull Request heavily assisted by AI, separate your evaluation into two distinct gates:
 
-1.  **The Run Gate (Safety):** Before you even assess if the code is logically correct, you must evaluate its impact alias "blast radius." Does this code interact with a database? Does it write files to disk? Could it alter external states? *Do not execute the code locally until you have cleared it through the Run Gate.*
+1.  **The Run Gate (Safety):** Before you even assess if the code is logically correct, you must evaluate its impact; its "blast radius." Does this code interact with a database? Does it write files to disk? Could it alter external states? *Do not execute the code locally until you have cleared it through the Run Gate.*
 2.  **The Ship Gate (Quality):** Once deemed safe to run, review the logic, the edge cases, and whether it solves the actual business requirement. 
 
 ```{r, echo=FALSE, eval=requireNamespace("DiagrammeR", quietly=TRUE)}

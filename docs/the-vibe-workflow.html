@@ -20,7 +20,7 @@
   <meta name="twitter:description" content="A practical guide to rigorous, AI-assisted data analysis using GitHub Copilot. Learn how to move beyond vibe coding and towards disciplined analytical workflows." />
   
 
-<meta name="author" content="Rishabh Kumar" />
+<meta name="author" content="Rishabh Kumar | The views and opinions expressed in this book are those of the author alone and do not represent the views of his employer." />
 
 
 <meta name="date" content="2026-04-24" />
@@ -178,12 +178,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.1" data-path="visualizing-with-vibes.html"><a href="visualizing-with-vibes.html#prompting-for-plots"><i class="fa fa-check"></i><b>3.1</b> Prompting for Plots</a></li>
 <li class="chapter" data-level="3.2" data-path="visualizing-with-vibes.html"><a href="visualizing-with-vibes.html#iterating-on-the-design"><i class="fa fa-check"></i><b>3.2</b> Iterating on the Design</a></li>
 <li class="chapter" data-level="3.3" data-path="visualizing-with-vibes.html"><a href="visualizing-with-vibes.html#exploratory-data-analysis-eda"><i class="fa fa-check"></i><b>3.3</b> Exploratory Data Analysis (EDA)</a></li>
+<li class="chapter" data-level="3.4" data-path="visualizing-with-vibes.html"><a href="visualizing-with-vibes.html#the-review-step-for-visualisations"><i class="fa fa-check"></i><b>3.4</b> The Review Step for Visualisations</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="modeling-and-machine-learning.html"><a href="modeling-and-machine-learning.html"><i class="fa fa-check"></i><b>4</b> Modeling and Machine Learning</a>
 <ul>
 <li class="chapter" data-level="4.1" data-path="modeling-and-machine-learning.html"><a href="modeling-and-machine-learning.html#prompting-for-tidymodels"><i class="fa fa-check"></i><b>4.1</b> Prompting for Tidymodels</a></li>
 <li class="chapter" data-level="4.2" data-path="modeling-and-machine-learning.html"><a href="modeling-and-machine-learning.html#reviewing-the-architecture"><i class="fa fa-check"></i><b>4.2</b> Reviewing the Architecture</a></li>
 <li class="chapter" data-level="4.3" data-path="modeling-and-machine-learning.html"><a href="modeling-and-machine-learning.html#evaluating-the-model"><i class="fa fa-check"></i><b>4.3</b> Evaluating the Model</a></li>
+<li class="chapter" data-level="4.4" data-path="modeling-and-machine-learning.html"><a href="modeling-and-machine-learning.html#what-can-go-wrong-in-modelling"><i class="fa fa-check"></i><b>4.4</b> What Can Go Wrong in Modelling</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="troubleshooting.html"><a href="troubleshooting.html"><i class="fa fa-check"></i><b>5</b> Troubleshooting</a>
 <ul>
@@ -263,8 +265,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><strong>Act:</strong> Write a clear prompt for the <em>first</em> step.</li>
 <li><strong>Review:</strong> Examine the generated code. Does it use the libraries you want? Run the code and use <code>glimpse()</code> or <code>head()</code> to verify the result before moving to the next step.</li>
 </ol>
-<div class="DiagrammeR html-widget html-fill-item" id="htmlwidget-a804b18f335fc160307f" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-a804b18f335fc160307f">{"x":{"diagram":"\ngraph TD\n    A[\"Start Analysis\"] --> B[\"PLAN\"]\n    B --> C[\"Slice into smaller tasks\"]\n    C --> D[\"ACT\"]\n    D --> E[\"Write prompt with context\"]\n    E --> F[\"REVIEW\"]\n    F -->|\"Logic is wrong\"| D\n    F -->|\"Format is off\"| D\n    F -->|\"Success\"| G{\"Is task complete?\"}\n    G -->|\"No\"| B\n    G -->|\"Yes\"| H[\"End Analysis\"]\n    \n    style B fill:#d4edda,stroke:#28a745,stroke-width:2px\n    style D fill:#cce5ff,stroke:#007bff,stroke-width:2px\n    style F fill:#fff3cd,stroke:#ffc107,stroke-width:2px\n"},"evals":[],"jsHooks":[]}</script>
+<div class="DiagrammeR html-widget html-fill-item" id="htmlwidget-6702957fc2fb71b6c91d" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-6702957fc2fb71b6c91d">{"x":{"diagram":"\ngraph TD\n    A[\"Start Analysis\"] --> B[\"PLAN\"]\n    B --> C[\"Slice into smaller tasks\"]\n    C --> D[\"ACT\"]\n    D --> E[\"Write prompt with context\"]\n    E --> F[\"REVIEW\"]\n    F -->|\"Logic is wrong\"| D\n    F -->|\"Format is off\"| D\n    F -->|\"Success\"| G{\"Is task complete?\"}\n    G -->|\"No\"| B\n    G -->|\"Yes\"| H[\"End Analysis\"]\n    \n    style B fill:#d4edda,stroke:#28a745\n    style D fill:#cce5ff,stroke:#007bff\n    style F fill:#fff3cd,stroke:#ffc107\n"},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="prioritizing-context" class="section level2 hasAnchor" number="2.3">
 <h2><span class="header-section-number">2.3</span> Prioritizing Context<a href="the-vibe-workflow.html#prioritizing-context" class="anchor-section" aria-label="Anchor link to header"></a></h2>

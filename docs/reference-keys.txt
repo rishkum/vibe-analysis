@@ -13,10 +13,12 @@ visualizing-with-vibes
 prompting-for-plots
 iterating-on-the-design
 exploratory-data-analysis-eda
+the-review-step-for-visualisations
 modeling-and-machine-learning
 prompting-for-tidymodels
 reviewing-the-architecture
 evaluating-the-model
+what-can-go-wrong-in-modelling
 troubleshooting
 types-of-errors
 the-chat-is-your-debugger

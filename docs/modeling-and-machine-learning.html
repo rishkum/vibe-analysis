@@ -20,7 +20,7 @@
   <meta name="twitter:description" content="A practical guide to rigorous, AI-assisted data analysis using GitHub Copilot. Learn how to move beyond vibe coding and towards disciplined analytical workflows." />
   
 
-<meta name="author" content="Rishabh Kumar" />
+<meta name="author" content="Rishabh Kumar | The views and opinions expressed in this book are those of the author alone and do not represent the views of his employer." />
 
 
 <meta name="date" content="2026-04-24" />
@@ -178,12 +178,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.1" data-path="visualizing-with-vibes.html"><a href="visualizing-with-vibes.html#prompting-for-plots"><i class="fa fa-check"></i><b>3.1</b> Prompting for Plots</a></li>
 <li class="chapter" data-level="3.2" data-path="visualizing-with-vibes.html"><a href="visualizing-with-vibes.html#iterating-on-the-design"><i class="fa fa-check"></i><b>3.2</b> Iterating on the Design</a></li>
 <li class="chapter" data-level="3.3" data-path="visualizing-with-vibes.html"><a href="visualizing-with-vibes.html#exploratory-data-analysis-eda"><i class="fa fa-check"></i><b>3.3</b> Exploratory Data Analysis (EDA)</a></li>
+<li class="chapter" data-level="3.4" data-path="visualizing-with-vibes.html"><a href="visualizing-with-vibes.html#the-review-step-for-visualisations"><i class="fa fa-check"></i><b>3.4</b> The Review Step for Visualisations</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="modeling-and-machine-learning.html"><a href="modeling-and-machine-learning.html"><i class="fa fa-check"></i><b>4</b> Modeling and Machine Learning</a>
 <ul>
 <li class="chapter" data-level="4.1" data-path="modeling-and-machine-learning.html"><a href="modeling-and-machine-learning.html#prompting-for-tidymodels"><i class="fa fa-check"></i><b>4.1</b> Prompting for Tidymodels</a></li>
 <li class="chapter" data-level="4.2" data-path="modeling-and-machine-learning.html"><a href="modeling-and-machine-learning.html#reviewing-the-architecture"><i class="fa fa-check"></i><b>4.2</b> Reviewing the Architecture</a></li>
 <li class="chapter" data-level="4.3" data-path="modeling-and-machine-learning.html"><a href="modeling-and-machine-learning.html#evaluating-the-model"><i class="fa fa-check"></i><b>4.3</b> Evaluating the Model</a></li>
+<li class="chapter" data-level="4.4" data-path="modeling-and-machine-learning.html"><a href="modeling-and-machine-learning.html#what-can-go-wrong-in-modelling"><i class="fa fa-check"></i><b>4.4</b> What Can Go Wrong in Modelling</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="troubleshooting.html"><a href="troubleshooting.html"><i class="fa fa-check"></i><b>5</b> Troubleshooting</a>
 <ul>
@@ -281,7 +283,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="modeling-and-machine-learning.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Assuming &#39;rf_fit&#39; is our fitted tidymodels workflow.</span></span>
 <span id="cb16-2"><a href="modeling-and-machine-learning.html#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate predictions on the sales_test data.</span></span>
 <span id="cb16-3"><a href="modeling-and-machine-learning.html#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate RMSE and RSQ for the predictions.</span></span></code></pre></div>
-<p>By constraining Copilot to write the <em>plumbing</em> (the tidymodels syntax) while you define the <em>architecture</em> (the features, the model type, the validation strategy), you balance speed with statistical rigor.</p>
+<p>By constraining Copilot to write the <em>plumbing</em> (the tidymodels syntax) while you define the <em>architecture</em> (the features, the model type, the validation strategy), you balance speed with statistical rigour.</p>
+</div>
+<div id="what-can-go-wrong-in-modelling" class="section level2 hasAnchor" number="4.4">
+<h2><span class="header-section-number">4.4</span> What Can Go Wrong in Modelling<a href="modeling-and-machine-learning.html#what-can-go-wrong-in-modelling" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Machine learning is the chapter of Vibe Analysis where the gap between “code that runs” and “code that is correct” is widest.</p>
+<ul>
+<li><strong>Data Leakage:</strong> The AI may inadvertently include future information in the training features (e.g., using a post-event column as a predictor). Always inspect the recipe and ask yourself whether every feature could realistically be available at prediction time.</li>
+<li><strong>Wrong Metric for the Problem:</strong> Copilot will default to common metrics like RMSE for regression and accuracy for classification. If your business problem has an imbalanced target class, accuracy is misleading. Explicitly ask for precision, recall, or AUC.</li>
+<li><strong>Missing Cross-Validation:</strong> A model fitted on a single 80/20 split may produce results that look strong but are not reliable. Always request cross-validation folds for any model you intend to deploy.</li>
+</ul>
+<p>When something goes wrong in modelling, the AI’s error messages can be cryptic. The next chapter covers how to troubleshoot the most common failure patterns efficiently.</p>
 
 </div>
 </div>

@@ -30,9 +30,9 @@ graph TD
     G -->|"No"| B
     G -->|"Yes"| H["End Analysis"]
     
-    style B fill:#d4edda,stroke:#28a745,stroke-width:2px
-    style D fill:#cce5ff,stroke:#007bff,stroke-width:2px
-    style F fill:#fff3cd,stroke:#ffc107,stroke-width:2px
+    style B fill:#d4edda,stroke:#28a745
+    style D fill:#cce5ff,stroke:#007bff
+    style F fill:#fff3cd,stroke:#ffc107
 ')
 ```
 

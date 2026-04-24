@@ -20,7 +20,7 @@
   <meta name="twitter:description" content="A practical guide to rigorous, AI-assisted data analysis using GitHub Copilot. Learn how to move beyond vibe coding and towards disciplined analytical workflows." />
   
 
-<meta name="author" content="Rishabh Kumar" />
+<meta name="author" content="Rishabh Kumar | The views and opinions expressed in this book are those of the author alone and do not represent the views of his employer." />
 
 
 <meta name="date" content="2026-04-24" />
@@ -178,12 +178,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.1" data-path="visualizing-with-vibes.html"><a href="visualizing-with-vibes.html#prompting-for-plots"><i class="fa fa-check"></i><b>3.1</b> Prompting for Plots</a></li>
 <li class="chapter" data-level="3.2" data-path="visualizing-with-vibes.html"><a href="visualizing-with-vibes.html#iterating-on-the-design"><i class="fa fa-check"></i><b>3.2</b> Iterating on the Design</a></li>
 <li class="chapter" data-level="3.3" data-path="visualizing-with-vibes.html"><a href="visualizing-with-vibes.html#exploratory-data-analysis-eda"><i class="fa fa-check"></i><b>3.3</b> Exploratory Data Analysis (EDA)</a></li>
+<li class="chapter" data-level="3.4" data-path="visualizing-with-vibes.html"><a href="visualizing-with-vibes.html#the-review-step-for-visualisations"><i class="fa fa-check"></i><b>3.4</b> The Review Step for Visualisations</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="modeling-and-machine-learning.html"><a href="modeling-and-machine-learning.html"><i class="fa fa-check"></i><b>4</b> Modeling and Machine Learning</a>
 <ul>
 <li class="chapter" data-level="4.1" data-path="modeling-and-machine-learning.html"><a href="modeling-and-machine-learning.html#prompting-for-tidymodels"><i class="fa fa-check"></i><b>4.1</b> Prompting for Tidymodels</a></li>
 <li class="chapter" data-level="4.2" data-path="modeling-and-machine-learning.html"><a href="modeling-and-machine-learning.html#reviewing-the-architecture"><i class="fa fa-check"></i><b>4.2</b> Reviewing the Architecture</a></li>
 <li class="chapter" data-level="4.3" data-path="modeling-and-machine-learning.html"><a href="modeling-and-machine-learning.html#evaluating-the-model"><i class="fa fa-check"></i><b>4.3</b> Evaluating the Model</a></li>
+<li class="chapter" data-level="4.4" data-path="modeling-and-machine-learning.html"><a href="modeling-and-machine-learning.html#what-can-go-wrong-in-modelling"><i class="fa fa-check"></i><b>4.4</b> What Can Go Wrong in Modelling</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="troubleshooting.html"><a href="troubleshooting.html"><i class="fa fa-check"></i><b>5</b> Troubleshooting</a>
 <ul>
@@ -255,11 +257,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">7.1</span> The “Two-Gate” Mental Model<a href="auditing-ai-code-review-templates.html#the-two-gate-mental-model" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>When reviewing a script or a Pull Request heavily assisted by AI, separate your evaluation into two distinct gates:</p>
 <ol style="list-style-type: decimal">
-<li><strong>The Run Gate (Safety):</strong> Before you even assess if the code is logically correct, you must evaluate its impact alias “blast radius.” Does this code interact with a database? Does it write files to disk? Could it alter external states? <em>Do not execute the code locally until you have cleared it through the Run Gate.</em></li>
+<li><strong>The Run Gate (Safety):</strong> Before you even assess if the code is logically correct, you must evaluate its impact; its “blast radius.” Does this code interact with a database? Does it write files to disk? Could it alter external states? <em>Do not execute the code locally until you have cleared it through the Run Gate.</em></li>
 <li><strong>The Ship Gate (Quality):</strong> Once deemed safe to run, review the logic, the edge cases, and whether it solves the actual business requirement.</li>
 </ol>
-<div class="DiagrammeR html-widget html-fill-item" id="htmlwidget-e112bb96cd7516edc851" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-e112bb96cd7516edc851">{"x":{"diagram":"\ngraph LR\n    A[\"AI Code Submitted\"] --> B{\"Run Gate (Safety)\"}\n    B -->|\"Unsafe / DB writes\"| C[\"Reject or Sandbox\"]\n    B -->|\"Safe / Local\"| D{\"Ship Gate (Quality)\"}\n    D -->|\"Logic Flaws\"| E[\"Request Changes\"]\n    D -->|\"Passes Evidence\"| F[\"Approve & Merge\"]\n    \n    style B fill:#ffeeba,stroke:#ffc107\n    style D fill:#cce5ff,stroke:#007bff\n    style C fill:#f8d7da,stroke:#dc3545\n    style F fill:#d4edda,stroke:#28a745\n"},"evals":[],"jsHooks":[]}</script>
+<div class="DiagrammeR html-widget html-fill-item" id="htmlwidget-2106c8f16303bda815ed" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-2106c8f16303bda815ed">{"x":{"diagram":"\ngraph LR\n    A[\"AI Code Submitted\"] --> B{\"Run Gate (Safety)\"}\n    B -->|\"Unsafe / DB writes\"| C[\"Reject or Sandbox\"]\n    B -->|\"Safe / Local\"| D{\"Ship Gate (Quality)\"}\n    D -->|\"Logic Flaws\"| E[\"Request Changes\"]\n    D -->|\"Passes Evidence\"| F[\"Approve & Merge\"]\n    \n    style B fill:#ffeeba,stroke:#ffc107\n    style D fill:#cce5ff,stroke:#007bff\n    style C fill:#f8d7da,stroke:#dc3545\n    style F fill:#d4edda,stroke:#28a745\n"},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="demanding-evidence" class="section level2 hasAnchor" number="7.2">
 <h2><span class="header-section-number">7.2</span> Demanding Evidence<a href="auditing-ai-code-review-templates.html#demanding-evidence" class="anchor-section" aria-label="Anchor link to header"></a></h2>

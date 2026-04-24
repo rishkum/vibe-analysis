@@ -1,6 +1,6 @@
 ---
 title: "Vibe Analysis: A Practical Guide to AI-Assisted Data Science"
-author: "Rishabh Kumar"
+author: "Rishabh Kumar | *The views and opinions expressed in this book are those of the author alone and do not represent the views of his employer.*"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
@@ -12,7 +12,6 @@ description: "A practical guide to rigorous, AI-assisted data analysis using Git
 
 Welcome to **Vibe Analysis**.
 
-> *The views and opinions expressed in this book are those of the author alone and do not represent the views of his employer.*
 
 This book is about a simple but consequential idea: the way we write code for data analysis is changing fundamentally, and the skills required to do it well are changing with it.
 

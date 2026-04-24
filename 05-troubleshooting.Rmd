@@ -20,7 +20,7 @@ graph TD
     E --> F["Delete code & write multi-line comment"]
     F --> G["Generate in small chunks"]
     
-    style A fill:#f8d7da,stroke:#dc3545,stroke-width:2px
+    style A fill:#f8d7da,stroke:#dc3545
 ')
 ```
 
