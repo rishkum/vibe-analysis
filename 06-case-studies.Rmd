@@ -1,0 +1,62 @@
+# Case Studies: What Can Go Wrong?
+
+Vibe coding can act as a force multiplier, but blindly trusting AI to generate complex analytical logic exposes you to several well-documented risks. 
+
+In this chapter, we explore realistic case studies and research demonstrating what happens when the "Review" phase of the vibe-coding workflow is skipped.
+
+## The Illusion of Productivity
+
+A significant psychological trap of vibe coding is the "Illusion of Productivity."
+
+When you use GitHub Copilot, you *feel* extremely productive because lines of code appear on your screen instantaneously. However, a recent industry study found an interesting contradiction: while developers subjectively felt 20% faster when using AI tools, they were actually **19% slower** when executing complex tasks compared to traditional coding methods.
+
+**Why?** Because generating the code took seconds, but identifying the subtle logical flaws the AI introduced took hours. Reading and debugging unfamiliar, AI-generated code is often harder than writing it yourself.
+
+## Case Study 1: The "Happy Path" Data Join
+
+**The Context:** An analyst was tasked with combining two datasets: a primary `customer_transactions` table and a `regional_metadata` table. They vibe-coded the following prompt:
+
+```r
+# Join the transaction data with the metadata to get the region for each customer.
+```
+
+**What Copilot Generated:**
+
+```r
+combined_data <- customer_transactions %>%
+  inner_join(regional_metadata, by = "customer_id")
+```
+
+**The Failure:** The AI assumed an `inner_join` was appropriate. However, the `regional_metadata` table was incomplete. Because an `inner_join` drops unmatched rows, the analyst silently lost 15% of their transaction data. The code ran without any R errors, looking perfectly successful on the "happy path."
+
+**The Fix:** The prompt lacking context caused the error. The analyst should have specified a `left_join` and added a validation step to check for dropped rows.
+
+## Case Study 2: Hallucinated Business Logic
+
+**The Context:** A data scientist wanted to calculate the churn rate for a SaaS product. 
+
+```r
+# Calculate the monthly churn rate for the platform.
+```
+
+**What Copilot Generated:**
+
+```r
+churn_summary <- user_data %>%
+  group_by(month) %>%
+  summarize(
+    total_users = n(),
+    churned_users = sum(status == "cancelled"),
+    churn_rate = churned_users / total_users
+  )
+```
+
+**The Failure:** This code looks mathematically flawless. However, the business logic locally defined a "churned user" as someone who cancelled *and* didn't reactivate within 14 days. The AI had no way of knowing this specific domain context. It relied on its training data to generate a generic, plausible definition of churn. The reporting was fundamentally wrong.
+
+## The Velocity Gap
+
+These logic failures contribute to what security researchers call the **"Velocity Gap."**
+
+Because AI can pump out code incredibly fast, an analyst can generate 500 lines of data wrangling, feature engineering, and modeling scripts in an hour. This rapid production easily overwhelms existing peer review and QA processes. Critical vulnerabilities (such as exposed PII in logs or logically faulty data transformations) are created faster than human reviewers can detect them.
+
+To combat this, you cannot rely entirely on traditional review methods. In the next chapter, we look at how to formally audit AI-generated code.

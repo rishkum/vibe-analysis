@@ -1,0 +1,75 @@
+# Getting Started
+
+To master vibe coding in R, your environment needs to be properly set up. You need a frictionless way to communicate with your AI pair programmer so that writing a prompt feels as fluid as writing native R code.
+
+## Choosing Your IDE
+
+While standard RStudio (Posit) is the classic choice for R users, the advent of AI assistants has made Visual Studio Code (VS Code) a highly competitive alternative.
+
+1.  **RStudio:** Recent versions of RStudio include native integration with GitHub Copilot. Setup is as straightforward as checking an option in the Global Options menu. The interface is optimized specifically for R, which handles environments and plotting seamlessly.
+2.  **VS Code:** Provides deeper customization and often earlier access to the most advanced Copilot features (like Copilot Chat). The `vscode-R` extension has made VS Code a robust R IDE.
+
+For the purpose of this book, we assume you are using **GitHub Copilot** as your assistant, integrated into whichever IDE you prefer.
+
+## Activating GitHub Copilot
+
+Once you have your IDE set up, you'll need an active GitHub Copilot subscription.
+
+In **RStudio**:
+1. Go to `Tools -> Global Options -> Copilot`.
+2. Check "Enable GitHub Copilot".
+3. Sign in to your GitHub account when prompted.
+
+In **VS Code**:
+1. Install the "GitHub Copilot" extension.
+2. Install the "GitHub Copilot Chat" extension for interactive conversations.
+3. Sign in to GitHub through the bottom-left account icon.
+
+## Project-Level Copilot Instructions
+
+To write code in a consistent style across your project, you can provide general guidance to GitHub Copilot by creating an instructions file in your workspace. For instance, in VS Code or GitHub Copilot, you can specify custom instructions in a file like `.github/copilot-instructions.md`.
+
+This ensures that the AI defaults to your preferred libraries and formatting styles (such as strongly preferring `tidyverse` over base R). Here is an example of what that markdown file might contain to enforce consistent R and Python code styles:
+
+```markdown
+# General Guidance
+- Prioritize readability and maintainability.
+- Add comments explaining *why* something is done, not just *what*.
+
+# R Specific Guidelines
+- ALWAYS use `tidyverse` (e.g., `dplyr`, `tidyr`, `ggplot2`, `readr`) instead of base R functions. For example, use `read_csv()` rather than `read.csv()`.
+- Use the pipe operator `%>%` (or `|>`) to chain functions sequentially.
+- Use `snake_case` for all variable and function names.
+
+# Python Specific Guidelines
+- Use `pandas` for data manipulation, aiming for vectorized operations rather than base loops.
+- Use `snake_case` for variables and functions, and `PascalCase` for classes.
+- Provide type hints for all function arguments and return types.
+```
+
+By adding these project-level instructions, Copilot will stay consistent with your team's best practices out of the box, significantly reducing manual refactoring later.
+
+## Writing Your First Prompt
+
+With Copilot active, let's write our first vibe code. Open a new R script. Let's say you want to generate a random dataset to practice with.
+
+Instead of trying to remember the exact syntax for creating a data frame with random normal distributions, you simply write a comment describing what you want:
+
+```r
+# Create a data frame 'sales_data' with 100 rows.
+# Columns: 'date' (random days in 2023), 'region' (North, South, East, West), and 'revenue' (random normal dist, mean 500)
+```
+
+Press `Enter` and wait a second. Copilot will synthesize the code in gray text (ghost text). If it looks correct, press `Tab` to accept it!
+
+```r
+# Create a data frame 'sales_data' with 100 rows.
+# Columns: 'date' (random days in 2023), 'region' (North, South, East, West), and 'revenue' (random normal dist, mean 500)
+sales_data <- data.frame(
+  date = sample(seq(as.Date('2023/01/01'), as.Date('2023/12/31'), by="day"), 100, replace = TRUE),
+  region = sample(c("North", "South", "East", "West"), 100, replace = TRUE),
+  revenue = rnorm(100, mean = 500, sd = 100)
+)
+```
+
+You've just completed your first vibe-coding task! You expressed the *intent*, and Copilot provided the *syntax*. In the next chapter, we'll dive into the detailed workflow for more complex data manipulation.

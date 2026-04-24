@@ -1,0 +1,38 @@
+---
+title: "Vibe Coding for Data Analysis"
+author: "Rishabh"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+description: "A guide to natural language programming and vibe coding for data analysis using GitHub Copilot and R."
+---
+
+# Preface {-}
+
+Welcome to **Vibe Coding for Data Analysis**. 
+
+"Vibe coding" is a somewhat colloquial term for a profound shift in software development and data science: the practice of using natural language models to translate intent directly into executable code. It represents moving away from manual syntax reproduction and towards becoming an *architect* of analysis. 
+
+If you spend more time trying to remember the exact arguments of `dplyr::pivot_longer()` or the aesthetics of a `ggplot2` chart than thinking about the insights your data contains, this book is for you.
+
+## Why Vibe Coding? {-}
+
+In traditional data analysis, the bottleneck is often the translation of a statistical idea into programming syntax. You have a question ("How do sales compare across regions over the last three quarters?"), but you must spend time writing boilerplate code to group, summarize, and plot the data.
+
+With AI assistants—specifically **GitHub Copilot**, the focus of this book—you can write the question in plain English as a comment, and the assistant will synthesize the code. Your role changes:
+
+1.  **From typist to director**: You set the overarching strategy.
+2.  **From debugger to auditor**: You review and validate the logic the AI proposes.
+3.  **From memorizer to thinker**: You focus on research design and statistical validity rather than syntax.
+
+## Best Practices for the Vibe Workflow {-}
+
+To get the most out of GitHub Copilot in your data analysis workflow, it is crucial to adopt a few core practices:
+
+*   **Plan, Act, Review:** Slice your analytical tasks into smaller, manageable steps. Do not ask for a full dashboard immediately. Ask for data import, then cleaning, then visualization.
+*   **Context is King:** The AI needs to see your data structure. Print the `head()` or `str()` of your data frame so Copilot understands the variable names and types.
+*   **Human-in-the-Loop:** Always verify intermediate steps. A model might confidently generate code that looks correct but performs an aggregation incorrectly.
+*   **Create Persistent Context:** Document your data assumptions in a `PROJECT.md` file or at the top of your script to keep Copilot aligned with your goals.
+
+In the subsequent chapters, we'll dive right into setting up your environment, writing effective prompts for data wrangling, and iterating on visualizations entirely through conversation.

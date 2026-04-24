@@ -1,0 +1,6 @@
+book_filename: "vibe-coding-data-analysis"
+language:
+  ui:
+    chapter_name: "Chapter "
+delete_merged_file: true
+rmd_files: ["index.Rmd", "01-getting-started.Rmd", "02-the-vibe-workflow.Rmd", "03-visualizing-with-vibes.Rmd", "04-modeling-and-machine-learning.Rmd", "05-troubleshooting.Rmd", "06-case-studies.Rmd", "07-code-review.Rmd", "08-conclusion.Rmd"]

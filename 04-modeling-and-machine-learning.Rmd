@@ -1,0 +1,54 @@
+# Modeling and Machine Learning
+
+While data cleaning and visualization benefit greatly from vibe coding, machine learning requires much more caution.
+
+When prompting for statistical models, the risk of "hallucinations" (the AI confidently generating statistically invalid methods or misinterpreting data) increases significantly. The AI does not inherently understand the assumptions of linear regression or the concept of data leakage.
+
+You must be highly explicit about your research design.
+
+## Prompting for Tidymodels
+
+The `tidymodels` framework in R provides a structured, modern way to do machine learning, but its syntax can be verbose (recipes, specs, workflows). Copilot handles this verbosity well.
+
+Start by defining the split and the recipe clearly:
+
+```r
+library(tidymodels)
+
+# Create a data split for sales_data: 80% training, 20% testing.
+# Set the seed to 123 for reproducibility.
+```
+
+```r
+set.seed(123)
+sales_split <- initial_split(sales_data, prop = 0.8)
+sales_train <- training(sales_split)
+sales_test  <- testing(sales_split)
+```
+
+Now, construct the recipe. Explain the exact transformations you want:
+
+```r
+# Create a tidymodels recipe predicting 'revenue' using all other variables.
+# - Extract the month and day of the week from the 'date' column.
+# - Remove the original 'date' column.
+# - Dummy encode all nominal predictors.
+```
+
+## Reviewing the Architecture
+
+This is where the Review step of the "Plan, Act, Review" workflow is critical. Read the generated recipe. Did it dummy encode correctly? Did it handle missing values as you intended?
+
+If you blindly accept ML code from Copilot, you will likely encounter errors when you `fit()` the model or, worse, generate an invalid predictive model that looks fine on the surface.
+
+## Evaluating the Model
+
+Once you have fitted a workflow, you can ask Copilot to generate the evaluation metrics, which saves you from remembering the exact yardstick functions:
+
+```r
+# Assuming 'rf_fit' is our fitted tidymodels workflow.
+# Generate predictions on the sales_test data.
+# Calculate RMSE and RSQ for the predictions.
+```
+
+By constraining Copilot to write the *plumbing* (the tidymodels syntax) while you define the *architecture* (the features, the model type, the validation strategy), you balance speed with statistical rigor.

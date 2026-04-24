@@ -1,0 +1,87 @@
+# The Vibe Workflow
+
+## Applying the Software Development Lifecycle (SDLC)
+
+In traditional Software Development Lifecycle (SDLC), teams move through distinct phases: requirements gathering, design, implementation, testing, and deployment. To ensure **Vibe Analysis** is high-quality and rigorous, we must adopt an SDLC mindset for our data projects. 
+
+Instead of treating data analysis as an ad-hoc script, treat it as a software product. The AI writes the code, but you enforce the lifecycle: writing clear requirements (prompts), enforcing code reviews (auditing AI outputs), and rigorous testing (data validation and sanity checks). This structured approach minimizes hallucinations and ensures that the heavily automated coding process yields reliable, production-ready analytical pipelines.
+
+When analyzing data, standard manual coding requires translating every logical step into its corresponding R function (e.g., "I need `group_by()` then `summarize()`"). Vibe coding allows you to stay at the conceptual level, but only if you provide effective prompts and maintain a strong workflow.
+
+## The "Plan, Act, Review" Cycle
+
+Vibe coding is not magic; you are managing a very fast, sometimes overconfident junior analyst. You should adopt a "Plan, Act, Review" cycle:
+
+1.  **Plan:** Break down the analysis into steps. Don't ask for a final predictive model from a raw dataset in one prompt.
+2.  **Act:** Write a clear prompt for the *first* step.
+3.  **Review:** Examine the generated code. Does it use the libraries you want? Run the code and use `glimpse()` or `head()` to verify the result before moving to the next step.
+
+```{r, echo=FALSE, eval=requireNamespace("DiagrammeR", quietly=TRUE)}
+DiagrammeR::mermaid('
+graph TD
+    A["Start Analysis"] --> B["PLAN"]
+    B --> C["Slice into smaller tasks"]
+    C --> D["ACT"]
+    D --> E["Write prompt with context"]
+    E --> F["REVIEW"]
+    F -->|"Logic is wrong"| D
+    F -->|"Format is off"| D
+    F -->|"Success"| G{"Is task complete?"}
+    G -->|"No"| B
+    G -->|"Yes"| H["End Analysis"]
+    
+    style B fill:#d4edda,stroke:#28a745,stroke-width:2px
+    style D fill:#cce5ff,stroke:#007bff,stroke-width:2px
+    style F fill:#fff3cd,stroke:#ffc107,stroke-width:2px
+')
+```
+
+## Prioritizing Context
+
+GitHub Copilot is a context engine. It reads the files you have open and the code preceding your cursor. If Copilot doesn't know what columns your dataset has, its suggestions will be educated guesses (i.e., hallucinations).
+
+**Best Practice:** Show, don't tell. Let Copilot "read" your data structure by doing this at the top of your script:
+
+```r
+library(dplyr)
+
+# Assume we loaded 'sales_data' earlier.
+# str(sales_data)
+# 'data.frame':	100 obs. of  3 variables:
+# $ date   : Date, format: "2023-04-12" "2023-08-22" ...
+# $ region : chr  "North" "South" "East" "West" ...
+# $ revenue: num  480.5 512.3 640.1 498.2 ...
+```
+
+By pasting the `str()` or `glimpse()` output as a comment, Copilot now knows exactly what columns exist. 
+
+## Prompting for Data Manipulation (dplyr)
+
+When you want to wrangle data, use intent-based prompts that specify the library if you have a preference.
+
+```r
+# Using dplyr, calculate the total revenue and average revenue per region for Q1 2023.
+```
+
+Copilot will read the context (your `str` output) and generate:
+
+```r
+q1_summary <- sales_data %>%
+  filter(date >= "2023-01-01" & date <= "2023-03-31") %>%
+  group_by(region) %>%
+  summarize(
+    total_rev = sum(revenue),
+    avg_rev = mean(revenue)
+  )
+```
+
+## Adding Iterative Chaining
+
+If the result is almost what you want, but you forgot a detail, just add another comment to chain onto the pipeline:
+
+```r
+# Now arrange the previous result in descending order by total_rev
+q1_summary <- q1_summary %>% arrange(desc(total_rev))
+```
+
+By working in chunks, reviewing the intermediate states, and feeding that state back as context, you maintain total control over your data analysis while typing a fraction of the code.

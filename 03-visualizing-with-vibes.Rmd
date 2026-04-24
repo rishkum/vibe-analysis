@@ -1,0 +1,83 @@
+# Visualizing with Vibes
+
+Data visualization is arguably where vibe coding shines the brightest. 
+
+The `ggplot2` package is incredibly powerful, but its granular grammar of graphics (themes, scales, geoms, facetting) requires remembering hundreds of specific arguments. Finding the right syntax to rotate x-axis labels by 45 degrees or move the legend to the bottom often leads analysts to Google.
+
+With GitHub Copilot, you simply ask for the aesthetic.
+
+## Prompting for Plots
+
+Let's assume we want to visualize the summary data we created in the last chapter.
+
+If you just write `# Plot the data`, Copilot might give you a standard, ugly base R plot. You must be an architect and give specific design orders.
+
+```r
+library(ggplot2)
+
+# Create a bar chart showing total revenue by region using the q1_summary data frame.
+# Specifics:
+# - Reorder the bars so the highest revenue is first.
+# - Fill the bars with a steelblue color.
+# - Use a minimal theme and remove the grid lines.
+# - Add a title "Q1 2023 Revenue by Region" and remove the x-axis label.
+```
+
+Copilot will likely generate a perfectly structured `ggplot` pipeline:
+
+```r
+ggplot(q1_summary, aes(x = reorder(region, -total_rev), y = total_rev)) +
+  geom_col(fill = "steelblue") +
+  theme_minimal() +
+  theme(
+    panel.grid = element_blank(),
+    axis.title.x = element_blank()
+  ) +
+  labs(
+    title = "Q1 2023 Revenue by Region",
+    y = "Total Revenue"
+  )
+```
+
+## Iterating on the Design
+
+Often, the first plot is roughly correct, but you spot a visual flaw. Instead of digging into the `theme()` documentation, you keep vibe coding.
+
+Imagine the revenue numbers are in the tens of thousands and look messy (e.g., `45000`).
+
+```r
+# Update the previous plot to format the y-axis labels as dollars with commas (using the scales package).
+# Also, add comma-formatted data labels on top of each bar.
+```
+
+The AI updates the code:
+
+```r
+library(scales)
+
+ggplot(q1_summary, aes(x = reorder(region, -total_rev), y = total_rev)) +
+  geom_col(fill = "steelblue") +
+  geom_text(aes(label = dollar(total_rev)), vjust = -0.5) +
+  scale_y_continuous(labels = dollar) + # The AI handles the scales package syntax
+  theme_minimal() +
+  theme(
+    panel.grid = element_blank(),
+    axis.title.x = element_blank()
+  ) +
+  labs(
+    title = "Q1 2023 Revenue by Region",
+    y = "Total Revenue"
+  )
+```
+
+## Exploratory Data Analysis (EDA)
+
+You can use vibe coding to rapid-fire through different visual hypotheses during EDA.
+
+```r
+# Create a scatter plot of revenue vs date from sales_data.
+# Add a loess trend line in red.
+# Facet the plot by region.
+```
+
+By conversationalizing the visualization step, you reduce the friction between a question ("Is revenue trending up differently in the South?") and the visual answer.

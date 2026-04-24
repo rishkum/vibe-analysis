@@ -1,0 +1,18 @@
+# Conclusion
+
+Vibe coding is fundamentally changing what it means to be a data analyst or data scientist.
+
+By abstracting away the syntax, GitHub Copilot allows us to operate closer to the speed of thought. However, that speed is dangerous without discipline.
+
+## Becoming an Architect
+
+As you adopt this workflow, remember that the AI is your fast-typing assistant. Keep the following principles in mind:
+
+1.  **Never surrender the logic.** You are responsible for the statistical validity of the analysis. If you don't know what a block of code does, don't run it. Use Copilot Chat to say, "Explain this code to me line by line."
+2.  **Context is everything.** The better you describe your data and your intent, the better the AI's output will be.
+3.  **Validate continuously.** Check your row counts after joins. Check your distributions after mutations.
+4.  **Embrace the conversational workflow.** When you hit an error, don't revert to manual debugging immediately. Paste the error into the chat and let the assistant figure it out.
+
+The goal of learning R is no longer to be a walking syntax dictionary. The goal is to understand how to manipulate data conceptually so that you can effectively guide your AI to write the syntax for you.
+
+Welcome to the future of data analysis. Happy vibe coding.

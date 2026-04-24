@@ -1,0 +1,52 @@
+# Troubleshooting
+
+Vibe coding is not a perfect process. You will encounter errors. Variables will be misspelled, arguments will be deprecated, and the AI will sometimes suggest functions from packages you haven't loaded.
+
+Knowing how to troubleshoot AI-generated code is a fundamental skill of the vibe coding workflow.
+
+## Types of Errors
+
+1.  **Syntax Errors:** Missing parentheses or commas. Copilot is usually very good at avoiding these, but they happen if you edit the code manually after generation.
+2.  **Logic Errors:** The code runs perfectly, but it groups by the wrong column or joins the wrong tables. These are the most dangerous. *You must validate intermediate states.*
+3.  **Hallucinated Packages/Functions:** Copilot might suggest a function like `calculate_revenue()` thinking it represents a built-in function, when in reality it doesn't exist.
+
+```{r, echo=FALSE, eval=requireNamespace("DiagrammeR", quietly=TRUE)}
+DiagrammeR::mermaid('
+graph TD
+    A["Error Encountered"] --> B{"Type of Error?"}
+    B -->|"Syntax / Hallucinated"| C["Paste error into Copilot Chat"]
+    C --> D["Copilot fixes typo"]
+    B -->|"Logic / Silent Failure"| E["Rubber Duck Technique"]
+    E --> F["Delete code & write multi-line comment"]
+    F --> G["Generate in small chunks"]
+    
+    style A fill:#f8d7da,stroke:#dc3545,stroke-width:2px
+')
+```
+
+## The Chat is Your Debugger
+
+When you use GitHub Copilot, you are not limited to inline ghost text. If you are using RStudio's Copilot integration or VS Code with Copilot Chat, you have a conversational debugger.
+
+If an error is thrown in your console:
+
+```r
+Error in `mutate()`:
+ℹ In argument: `sales = as.numeric(revenue)`.
+Caused by error:
+! object 'revenue' not found
+```
+
+Do not spend 15 minutes staring at the code trying to find the typo. Simply copy the error message, highlight the chunk of code that caused it, and paste it into Copilot Chat:
+
+*"I'm getting this error: [paste error]. Here is my data str(): [paste str]. Fix the code."*
+
+Copilot will immediately recognize that `revenue` is misspelled in your data frame, or that you forgot to load the dataset, or that it generated the wrong column name earlier.
+
+## The "Rubber Duck" Technique
+
+Sometimes, the logic is just complex. If you are writing a custom simulation or a massive nested loop, Copilot might get confused.
+
+When the code gets messy, delete it.
+
+Go back to plain English. Write a multi-line comment essentially talking to the AI (or a rubber duck) about what you are trying to achieve, step-by-step. Let it generate the code one tiny block at a time. Forcing the AI—and yourself—to slow down and explain the logic often solves the problem.
