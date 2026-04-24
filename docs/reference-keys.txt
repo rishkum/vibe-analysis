@@ -32,9 +32,16 @@ demanding-evidence
 the-ai-code-review-template
 pull-request-review-ai-assisted-code
 practical-language-examples
-for-managers-auditing-the-auditors
+managing-ai-teams-zero-trust-auditing
+the-zero-trust-review-mindset
 how-to-check-the-work
 how-to-challenge-the-work
+a-note-for-non-technical-managers
+ask-the-stupid-domain-questions
+focus-on-the-data-journey
+request-a-one-page-summary
+implementing-defensive-controls
 using-ai-to-assess-ai
+closing-the-loop
 conclusion
 becoming-an-architect

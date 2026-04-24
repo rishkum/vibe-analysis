@@ -66,21 +66,3 @@ If an AI generates `combined <- inner_join(sales, regions, by = "id")`, the revi
 If an AI uses pandas and writes `df['price'] = df['price'].fillna(method='ffill')` for gap filling in time-series, the reviewer must catch the hallucinated metric check. Was forward-filling the correct domain treatment for pricing data, or will that skew financial aggregations artificially? The Reviewer should request alternative logic before approving.
 
 By enforcing this structure, you close the Velocity Gap. You ensure that the speed of vibe coding does not come at the expense of accuracy and reliability in your analytical output.
-
-## For Managers: Auditing the Auditors
-
-If you are managing a team of data scientists or analysts using Vibe Analysis, you must adapt your leadership style to catch AI-accelerated failures. 
-
-### How to Check the Work
-Managers shouldn't be reading every line of generated `dplyr` or `pandas` syntax. Instead:
-- **Scan for Evidence:** Reject PRs or analysis briefs that do not include boundary-testing logs. If the analyst cannot explain exactly how nulls were handled, they likely didn't write the code and didn't test it.
-- **Check the Data Scope:** AI frequently misinterprets filtering requirements. Always ask: "Did you verify that the row count matches exactly what we expect after this join?"
-
-### How to Challenge the Work
-Because generated code looks professional, managers must actively challenge the underlying domain logic. 
-- Ask "adversarial questions" during reviews: *Why did we choose an `inner_join` here instead of a `left_join`?* or *What happens to this calculation if the pricing data is missing for a week?* An analyst practicing true Vibe Analysis can answer immediately. An analyst caught in the "Illusion of Productivity" will stumble.
-
-### Using AI to Assess AI
-You can leverage LLMs yourself to audit the submitted work. 
-- Take the analyst's final code and feed it into Copilot Chat or ChatGPT with the prompt: *"Act as a hostile code reviewer. Find any implicit assumptions, missing data handlers, or logical flaws in this data pipeline."* 
-While AI struggles to write perfect business logic, it is surprisingly adept at identifying missing edge cases in existing code.
