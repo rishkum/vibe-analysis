@@ -52,6 +52,15 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<link href="libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet" />
+<script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<script src="libs/d3-3.3.8/d3.min.js"></script>
+<script src="libs/dagre-0.4.0/dagre-d3.min.js"></script>
+<link href="libs/mermaid-0.3.0/dist/mermaid.css" rel="stylesheet" />
+<script src="libs/mermaid-0.3.0/dist/mermaid.slim.min.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/chromatography-0.1/chromatography.js"></script>
+<script src="libs/DiagrammeR-binding-1.0.11/DiagrammeR.js"></script>
 
 
 <style type="text/css">
@@ -238,6 +247,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><strong>Act:</strong> Write a clear prompt for the <em>first</em> step.</li>
 <li><strong>Review:</strong> Examine the generated code. Does it use the libraries you want? Run the code and use <code>glimpse()</code> or <code>head()</code> to verify the result before moving to the next step.</li>
 </ol>
+<div class="DiagrammeR html-widget html-fill-item" id="htmlwidget-60058c86f084708968d8" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-60058c86f084708968d8">{"x":{"diagram":"\ngraph TD\n    A[\"Start Analysis\"] --> B[\"PLAN\"]\n    B --> C[\"Slice into smaller tasks\"]\n    C --> D[\"ACT\"]\n    D --> E[\"Write prompt with context\"]\n    E --> F[\"REVIEW\"]\n    F -->|\"Logic is wrong\"| D\n    F -->|\"Format is off\"| D\n    F -->|\"Success\"| G{\"Is task complete?\"}\n    G -->|\"No\"| B\n    G -->|\"Yes\"| H[\"End Analysis\"]\n    \n    style B fill:#d4edda,stroke:#28a745,stroke-width:2px\n    style D fill:#cce5ff,stroke:#007bff,stroke-width:2px\n    style F fill:#fff3cd,stroke:#ffc107,stroke-width:2px\n"},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="prioritizing-context" class="section level2 hasAnchor" number="2.3">
 <h2><span class="header-section-number">2.3</span> Prioritizing Context<a href="the-vibe-workflow.html#prioritizing-context" class="anchor-section" aria-label="Anchor link to header"></a></h2>

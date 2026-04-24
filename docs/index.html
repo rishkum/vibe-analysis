@@ -52,6 +52,15 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<link href="libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet" />
+<script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<script src="libs/d3-3.3.8/d3.min.js"></script>
+<script src="libs/dagre-0.4.0/dagre-d3.min.js"></script>
+<link href="libs/mermaid-0.3.0/dist/mermaid.css" rel="stylesheet" />
+<script src="libs/mermaid-0.3.0/dist/mermaid.slim.min.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/chromatography-0.1/chromatography.js"></script>
+<script src="libs/DiagrammeR-binding-1.0.11/DiagrammeR.js"></script>
 
 
 <style type="text/css">
@@ -243,6 +252,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="the-contrast-in-workflow" class="section level3 unnumbered hasAnchor">
 <h3>The Contrast in Workflow<a href="index.html#the-contrast-in-workflow" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The following chart illustrates why extracting insights requires a different, more rigorous workflow than building standard software applications:</p>
+<div class="DiagrammeR html-widget html-fill-item" id="htmlwidget-3cac44b761d8dd028001" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-3cac44b761d8dd028001">{"x":{"diagram":"\ngraph TD\n    A[\"Natural Language Prompt\"] --> B{\"What is the Goal?\"}\n    \n    B -->|\"Building an App\"| C[\"Vibe Coding\"]\n    C --> D[\"AI Generates Code\"]\n    D --> E{\"Does it compile/run?\"}\n    E -->|\"Yes\"| F[\"Ship It!\"]\n    E -->|\"No\"| D\n    \n    B -->|\"Extracting Insights\"| G[\"Vibe Analysis\"]\n    G --> H[\"AI Generates Code\"]\n    H --> I[\"SDLC & Code Review\"]\n    I --> J[\"Statistical Validation\"]\n    J --> K{\"Is logic sound?\"}\n    K -->|\"No\"| H\n    K -->|\"Yes\"| L[\"Publish Analysis\"]\n\n    style C fill:#fce4ec,stroke:#f06292,stroke-width:2px\n    style G fill:#e3f2fd,stroke:#64b5f6,stroke-width:2px\n"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <div id="why-vibe-analysis" class="section level2 unnumbered hasAnchor">

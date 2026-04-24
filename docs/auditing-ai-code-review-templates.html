@@ -52,6 +52,15 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<link href="libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet" />
+<script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<script src="libs/d3-3.3.8/d3.min.js"></script>
+<script src="libs/dagre-0.4.0/dagre-d3.min.js"></script>
+<link href="libs/mermaid-0.3.0/dist/mermaid.css" rel="stylesheet" />
+<script src="libs/mermaid-0.3.0/dist/mermaid.slim.min.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/chromatography-0.1/chromatography.js"></script>
+<script src="libs/DiagrammeR-binding-1.0.11/DiagrammeR.js"></script>
 
 
 <style type="text/css">
@@ -233,6 +242,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><strong>The Run Gate (Safety):</strong> Before you even assess if the code is logically correct, you must evaluate its impact alias “blast radius.” Does this code interact with a database? Does it write files to disk? Could it alter external states? <em>Do not execute the code locally until you have cleared it through the Run Gate.</em></li>
 <li><strong>The Ship Gate (Quality):</strong> Once deemed safe to run, review the logic, the edge cases, and whether it solves the actual business requirement.</li>
 </ol>
+<div class="DiagrammeR html-widget html-fill-item" id="htmlwidget-bd8b77701cc73c868c4e" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-bd8b77701cc73c868c4e">{"x":{"diagram":"\nflowchart LR\n    A[\"AI Code Submitted\"] --> B{\"Run Gate (Safety)\"}\n    B -->|\"Unsafe / Has DB writes\"| C[\"Reject or Sandbox\"]\n    B -->|\"Safe / Local processing\"| D{\"Ship Gate (Quality)\"}\n    D -->|\"Logic Flaws / Missed Edge Cases\"| E[\"Request Changes\"]\n    D -->|\"Passes Evidence & Tests\"| F[\"Approve & Merge\"]\n    \n    style B fill:#ffeeba,stroke:#ffc107,stroke-width:2px\n    style D fill:#cce5ff,stroke:#007bff,stroke-width:2px\n    style C fill:#f8d7da,stroke:#dc3545,stroke-width:2px\n    style F fill:#d4edda,stroke:#28a745,stroke-width:2px\n"},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="demanding-evidence" class="section level2 hasAnchor" number="7.2">
 <h2><span class="header-section-number">7.2</span> Demanding Evidence<a href="auditing-ai-code-review-templates.html#demanding-evidence" class="anchor-section" aria-label="Anchor link to header"></a></h2>

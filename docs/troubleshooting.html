@@ -52,6 +52,15 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<link href="libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet" />
+<script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<script src="libs/d3-3.3.8/d3.min.js"></script>
+<script src="libs/dagre-0.4.0/dagre-d3.min.js"></script>
+<link href="libs/mermaid-0.3.0/dist/mermaid.css" rel="stylesheet" />
+<script src="libs/mermaid-0.3.0/dist/mermaid.slim.min.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/chromatography-0.1/chromatography.js"></script>
+<script src="libs/DiagrammeR-binding-1.0.11/DiagrammeR.js"></script>
 
 
 <style type="text/css">
@@ -233,6 +242,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><strong>Logic Errors:</strong> The code runs perfectly, but it groups by the wrong column or joins the wrong tables. These are the most dangerous. <em>You must validate intermediate states.</em></li>
 <li><strong>Hallucinated Packages/Functions:</strong> Copilot might suggest a function like <code>calculate_revenue()</code> thinking it represents a built-in function, when in reality it doesn’t exist.</li>
 </ol>
+<div class="DiagrammeR html-widget html-fill-item" id="htmlwidget-629fb5eae1f03900a340" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-629fb5eae1f03900a340">{"x":{"diagram":"\ngraph TD\n    A[\"Error Encountered\"] --> B{\"Type of Error?\"}\n    B -->|\"Syntax / Hallucinated\"| C[\"Paste error into Copilot Chat\"]\n    C --> D[\"Copilot fixes typo\"]\n    B -->|\"Logic / Silent Failure\"| E[\"Rubber Duck Technique\"]\n    E --> F[\"Delete code & write multi-line comment\"]\n    F --> G[\"Generate in small chunks\"]\n    \n    style A fill:#f8d7da,stroke:#dc3545,stroke-width:2px\n"},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="the-chat-is-your-debugger" class="section level2 hasAnchor" number="5.2">
 <h2><span class="header-section-number">5.2</span> The Chat is Your Debugger<a href="troubleshooting.html#the-chat-is-your-debugger" class="anchor-section" aria-label="Anchor link to header"></a></h2>
