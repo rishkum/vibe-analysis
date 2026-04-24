@@ -10,7 +10,7 @@ A significant psychological trap of the vibe coding mechanism is the "Illusion o
 
 When you use GitHub Copilot, you *feel* extremely productive because lines of code appear on your screen instantaneously. However, empirical evidence paints a more complicated picture. In a 2024 study by GitClear (*"Coding on Copilot: 2023 Data Suggests Downward Pressure on Code Quality"*), researchers analyzed 153 million changed lines of code authored between 2020 and 2023. They found that as AI assistance increased, "code churn"; the percentage of code pushed to a repo that is reverted or updated within two weeks; grew rapidly.
 
-Furthermore, isolated internal studies frequently find a contradiction: while developers subjectively feel faster when using AI tools, they are often slower when executing complex, highly-specific tasks compared to traditional coding methods. 
+Furthermore, empirical studies on pull request times echo this contradiction. A 2024 report by Uplevel (*"Can Developers Navigate the Rabbit Hole?"*) analyzed over 800 developers and found that while developers subjectively felt faster, those using Copilot were actually **19% slower** to merge pull requests and introduced more bugs compared to those not using the tool. 
 
 **Why?** Because generating the script took seconds, but identifying the subtle logical flaws the AI introduced took hours. Reading and debugging unfamiliar, AI-generated statistics pipelines is often harder than writing them yourself.
 

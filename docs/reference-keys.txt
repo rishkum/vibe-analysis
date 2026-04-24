@@ -32,5 +32,9 @@ demanding-evidence
 the-ai-code-review-template
 pull-request-review-ai-assisted-code
 practical-language-examples
+for-managers-auditing-the-auditors
+how-to-check-the-work
+how-to-challenge-the-work
+using-ai-to-assess-ai
 conclusion
 becoming-an-architect

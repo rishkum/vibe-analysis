@@ -207,6 +207,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.3.1" data-path="auditing-ai-code-review-templates.html"><a href="auditing-ai-code-review-templates.html#pull-request-review-ai-assisted-code"><i class="fa fa-check"></i><b>7.3.1</b> Pull Request Review: AI-Assisted Code</a></li>
 <li class="chapter" data-level="7.3.2" data-path="auditing-ai-code-review-templates.html"><a href="auditing-ai-code-review-templates.html#practical-language-examples"><i class="fa fa-check"></i><b>7.3.2</b> Practical Language Examples</a></li>
 </ul></li>
+<li class="chapter" data-level="7.4" data-path="auditing-ai-code-review-templates.html"><a href="auditing-ai-code-review-templates.html#for-managers-auditing-the-auditors"><i class="fa fa-check"></i><b>7.4</b> For Managers: Auditing the Auditors</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="auditing-ai-code-review-templates.html"><a href="auditing-ai-code-review-templates.html#how-to-check-the-work"><i class="fa fa-check"></i><b>7.4.1</b> How to Check the Work</a></li>
+<li class="chapter" data-level="7.4.2" data-path="auditing-ai-code-review-templates.html"><a href="auditing-ai-code-review-templates.html#how-to-challenge-the-work"><i class="fa fa-check"></i><b>7.4.2</b> How to Challenge the Work</a></li>
+<li class="chapter" data-level="7.4.3" data-path="auditing-ai-code-review-templates.html"><a href="auditing-ai-code-review-templates.html#using-ai-to-assess-ai"><i class="fa fa-check"></i><b>7.4.3</b> Using AI to Assess AI</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i><b>8</b> Conclusion</a>
 <ul>
@@ -248,8 +254,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><strong>Act:</strong> Write a clear prompt for the <em>first</em> step.</li>
 <li><strong>Review:</strong> Examine the generated code. Does it use the libraries you want? Run the code and use <code>glimpse()</code> or <code>head()</code> to verify the result before moving to the next step.</li>
 </ol>
-<div class="DiagrammeR html-widget html-fill-item" id="htmlwidget-96aa940aa27a939919f2" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-96aa940aa27a939919f2">{"x":{"diagram":"\ngraph TD\n    A[\"Start Analysis\"] --> B[\"PLAN\"]\n    B --> C[\"Slice into smaller tasks\"]\n    C --> D[\"ACT\"]\n    D --> E[\"Write prompt with context\"]\n    E --> F[\"REVIEW\"]\n    F -->|\"Logic is wrong\"| D\n    F -->|\"Format is off\"| D\n    F -->|\"Success\"| G{\"Is task complete?\"}\n    G -->|\"No\"| B\n    G -->|\"Yes\"| H[\"End Analysis\"]\n    \n    style B fill:#d4edda,stroke:#28a745,stroke-width:2px\n    style D fill:#cce5ff,stroke:#007bff,stroke-width:2px\n    style F fill:#fff3cd,stroke:#ffc107,stroke-width:2px\n"},"evals":[],"jsHooks":[]}</script>
+<div class="DiagrammeR html-widget html-fill-item" id="htmlwidget-16b55f2712703e2cf1f5" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-16b55f2712703e2cf1f5">{"x":{"diagram":"\ngraph TD\n    A[\"Start Analysis\"] --> B[\"PLAN\"]\n    B --> C[\"Slice into smaller tasks\"]\n    C --> D[\"ACT\"]\n    D --> E[\"Write prompt with context\"]\n    E --> F[\"REVIEW\"]\n    F -->|\"Logic is wrong\"| D\n    F -->|\"Format is off\"| D\n    F -->|\"Success\"| G{\"Is task complete?\"}\n    G -->|\"No\"| B\n    G -->|\"Yes\"| H[\"End Analysis\"]\n    \n    style B fill:#d4edda,stroke:#28a745,stroke-width:2px\n    style D fill:#cce5ff,stroke:#007bff,stroke-width:2px\n    style F fill:#fff3cd,stroke:#ffc107,stroke-width:2px\n"},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="prioritizing-context" class="section level2 hasAnchor" number="2.3">
 <h2><span class="header-section-number">2.3</span> Prioritizing Context<a href="the-vibe-workflow.html#prioritizing-context" class="anchor-section" aria-label="Anchor link to header"></a></h2>

@@ -207,6 +207,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.3.1" data-path="auditing-ai-code-review-templates.html"><a href="auditing-ai-code-review-templates.html#pull-request-review-ai-assisted-code"><i class="fa fa-check"></i><b>7.3.1</b> Pull Request Review: AI-Assisted Code</a></li>
 <li class="chapter" data-level="7.3.2" data-path="auditing-ai-code-review-templates.html"><a href="auditing-ai-code-review-templates.html#practical-language-examples"><i class="fa fa-check"></i><b>7.3.2</b> Practical Language Examples</a></li>
 </ul></li>
+<li class="chapter" data-level="7.4" data-path="auditing-ai-code-review-templates.html"><a href="auditing-ai-code-review-templates.html#for-managers-auditing-the-auditors"><i class="fa fa-check"></i><b>7.4</b> For Managers: Auditing the Auditors</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="auditing-ai-code-review-templates.html"><a href="auditing-ai-code-review-templates.html#how-to-check-the-work"><i class="fa fa-check"></i><b>7.4.1</b> How to Check the Work</a></li>
+<li class="chapter" data-level="7.4.2" data-path="auditing-ai-code-review-templates.html"><a href="auditing-ai-code-review-templates.html#how-to-challenge-the-work"><i class="fa fa-check"></i><b>7.4.2</b> How to Challenge the Work</a></li>
+<li class="chapter" data-level="7.4.3" data-path="auditing-ai-code-review-templates.html"><a href="auditing-ai-code-review-templates.html#using-ai-to-assess-ai"><i class="fa fa-check"></i><b>7.4.3</b> Using AI to Assess AI</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i><b>8</b> Conclusion</a>
 <ul>
@@ -243,8 +249,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><strong>The Run Gate (Safety):</strong> Before you even assess if the code is logically correct, you must evaluate its impact alias “blast radius.” Does this code interact with a database? Does it write files to disk? Could it alter external states? <em>Do not execute the code locally until you have cleared it through the Run Gate.</em></li>
 <li><strong>The Ship Gate (Quality):</strong> Once deemed safe to run, review the logic, the edge cases, and whether it solves the actual business requirement.</li>
 </ol>
-<div class="DiagrammeR html-widget html-fill-item" id="htmlwidget-011865c36c1024d5a481" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-011865c36c1024d5a481">{"x":{"diagram":"\ngraph LR\n    A[\"AI Code Submitted\"] --> B{\"Run Gate (Safety)\"}\n    B -->|\"Unsafe / DB writes\"| C[\"Reject or Sandbox\"]\n    B -->|\"Safe / Local\"| D{\"Ship Gate (Quality)\"}\n    D -->|\"Logic Flaws\"| E[\"Request Changes\"]\n    D -->|\"Passes Evidence\"| F[\"Approve & Merge\"]\n    \n    style B fill:#ffeeba,stroke:#ffc107\n    style D fill:#cce5ff,stroke:#007bff\n    style C fill:#f8d7da,stroke:#dc3545\n    style F fill:#d4edda,stroke:#28a745\n"},"evals":[],"jsHooks":[]}</script>
+<div class="DiagrammeR html-widget html-fill-item" id="htmlwidget-4f0a6d0ae96f3d23f35d" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-4f0a6d0ae96f3d23f35d">{"x":{"diagram":"\ngraph LR\n    A[\"AI Code Submitted\"] --> B{\"Run Gate (Safety)\"}\n    B -->|\"Unsafe / DB writes\"| C[\"Reject or Sandbox\"]\n    B -->|\"Safe / Local\"| D{\"Ship Gate (Quality)\"}\n    D -->|\"Logic Flaws\"| E[\"Request Changes\"]\n    D -->|\"Passes Evidence\"| F[\"Approve & Merge\"]\n    \n    style B fill:#ffeeba,stroke:#ffc107\n    style D fill:#cce5ff,stroke:#007bff\n    style C fill:#f8d7da,stroke:#dc3545\n    style F fill:#d4edda,stroke:#28a745\n"},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="demanding-evidence" class="section level2 hasAnchor" number="7.2">
 <h2><span class="header-section-number">7.2</span> Demanding Evidence<a href="auditing-ai-code-review-templates.html#demanding-evidence" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -277,6 +283,27 @@ If an AI generates <code>combined &lt;- inner_join(sales, regions, by = "id")</c
 <p><strong>Python Example:</strong>
 If an AI uses pandas and writes <code>df['price'] = df['price'].fillna(method='ffill')</code> for gap filling in time-series, the reviewer must catch the hallucinated metric check. Was forward-filling the correct domain treatment for pricing data, or will that skew financial aggregations artificially? The Reviewer should request alternative logic before approving.</p>
 <p>By enforcing this structure, you close the Velocity Gap. You ensure that the speed of vibe coding does not come at the expense of accuracy and reliability in your analytical output.</p>
+</div>
+</div>
+<div id="for-managers-auditing-the-auditors" class="section level2 hasAnchor" number="7.4">
+<h2><span class="header-section-number">7.4</span> For Managers: Auditing the Auditors<a href="auditing-ai-code-review-templates.html#for-managers-auditing-the-auditors" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>If you are managing a team of data scientists or analysts using Vibe Analysis, you must adapt your leadership style to catch AI-accelerated failures.</p>
+<div id="how-to-check-the-work" class="section level3 hasAnchor" number="7.4.1">
+<h3><span class="header-section-number">7.4.1</span> How to Check the Work<a href="auditing-ai-code-review-templates.html#how-to-check-the-work" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Managers shouldn’t be reading every line of generated <code>dplyr</code> or <code>pandas</code> syntax. Instead:
+- <strong>Scan for Evidence:</strong> Reject PRs or analysis briefs that do not include boundary-testing logs. If the analyst cannot explain exactly how nulls were handled, they likely didn’t write the code and didn’t test it.
+- <strong>Check the Data Scope:</strong> AI frequently misinterprets filtering requirements. Always ask: “Did you verify that the row count matches exactly what we expect after this join?”</p>
+</div>
+<div id="how-to-challenge-the-work" class="section level3 hasAnchor" number="7.4.2">
+<h3><span class="header-section-number">7.4.2</span> How to Challenge the Work<a href="auditing-ai-code-review-templates.html#how-to-challenge-the-work" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Because generated code looks professional, managers must actively challenge the underlying domain logic.
+- Ask “adversarial questions” during reviews: <em>Why did we choose an <code>inner_join</code> here instead of a <code>left_join</code>?</em> or <em>What happens to this calculation if the pricing data is missing for a week?</em> An analyst practicing true Vibe Analysis can answer immediately. An analyst caught in the “Illusion of Productivity” will stumble.</p>
+</div>
+<div id="using-ai-to-assess-ai" class="section level3 hasAnchor" number="7.4.3">
+<h3><span class="header-section-number">7.4.3</span> Using AI to Assess AI<a href="auditing-ai-code-review-templates.html#using-ai-to-assess-ai" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>You can leverage LLMs yourself to audit the submitted work.
+- Take the analyst’s final code and feed it into Copilot Chat or ChatGPT with the prompt: <em>“Act as a hostile code reviewer. Find any implicit assumptions, missing data handlers, or logical flaws in this data pipeline.”</em>
+While AI struggles to write perfect business logic, it is surprisingly adept at identifying missing edge cases in existing code.</p>
 
 </div>
 </div>
