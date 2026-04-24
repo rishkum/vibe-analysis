@@ -268,8 +268,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><strong>Logic Errors:</strong> The code runs perfectly, but it groups by the wrong column or joins the wrong tables. These are the most dangerous. <em>You must validate intermediate states.</em></li>
 <li><strong>Hallucinated Packages/Functions:</strong> Copilot might suggest a function like <code>calculate_revenue()</code> thinking it represents a built-in function, when in reality it doesn’t exist.</li>
 </ol>
-<div class="DiagrammeR html-widget html-fill-item" id="htmlwidget-d942de4b3f559d7bbc55" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-d942de4b3f559d7bbc55">{"x":{"diagram":"\ngraph TD\n    A[\"Error Encountered\"] --> B{\"Type of Error?\"}\n    B -->|\"Syntax / Hallucinated\"| C[\"Paste error into Copilot Chat\"]\n    C --> D[\"Copilot fixes typo\"]\n    B -->|\"Logic / Silent Failure\"| E[\"Rubber Duck Technique\"]\n    E --> F[\"Delete code & write multi-line comment\"]\n    F --> G[\"Generate in small chunks\"]\n    \n    style A fill:#f8d7da,stroke:#dc3545\n"},"evals":[],"jsHooks":[]}</script>
+<div class="DiagrammeR html-widget html-fill-item" id="htmlwidget-a380025e925d86bc0d97" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-a380025e925d86bc0d97">{"x":{"diagram":"\ngraph TD\n    A[\"Error Encountered\"] --> B{\"Type of Error?\"}\n    B -->|\"Syntax / Hallucinated\"| C[\"Paste error into Copilot Chat\"]\n    C --> D[\"Copilot fixes typo\"]\n    B -->|\"Logic / Silent Failure\"| E[\"Rubber Duck Technique\"]\n    E --> F[\"Delete code & write multi-line comment\"]\n    F --> G[\"Generate in small chunks\"]\n    \n    style A fill:#f8d7da,stroke:#dc3545\n"},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="the-chat-is-your-debugger" class="section level2 hasAnchor" number="5.2">
 <h2><span class="header-section-number">5.2</span> The Chat is Your Debugger<a href="troubleshooting.html#the-chat-is-your-debugger" class="anchor-section" aria-label="Anchor link to header"></a></h2>
