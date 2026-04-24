@@ -34,6 +34,12 @@ demanding-evidence
 the-ai-code-review-template
 pull-request-review-ai-assisted-code
 practical-language-examples
+prompts-for-code-review-and-code-improvement
+category-1-safety-and-impact-prompts
+category-2-logic-and-data-integrity-prompts
+category-3-domain-logic-prompts
+category-4-improvement-and-refactoring-prompts
+category-5-self-explanation-prompts
 managing-ai-teams-zero-trust-auditing
 the-zero-trust-review-mindset
 how-to-check-the-work

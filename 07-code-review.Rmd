@@ -66,3 +66,76 @@ If an AI generates `combined <- inner_join(sales, regions, by = "id")`, the revi
 If an AI uses pandas and writes `df['price'] = df['price'].fillna(method='ffill')` for gap filling in time-series, the reviewer must catch the hallucinated metric check. Was forward-filling the correct domain treatment for pricing data, or will that skew financial aggregations artificially? The Reviewer should request alternative logic before approving.
 
 By enforcing this structure, you close the Velocity Gap. You ensure that the speed of vibe coding does not come at the expense of accuracy and reliability in your analytical output.
+
+## Prompts for Code Review and Code Improvement
+
+The following prompts are designed to be pasted directly into **GitHub Copilot Chat**, **ChatGPT**, or any LLM chat interface. Copy the relevant prompt, paste your code beneath it, and send. Think of these as structured checklists written in natural language — the AI will challenge its own output far more rigorously than it originally produced it.
+
+### Category 1: Safety and Impact Prompts
+
+Use these before running any unfamiliar AI-generated script.
+
+> **Blast Radius Check:**
+> *"Review the following code and list every operation that could have a side effect outside this script. Flag any database writes, file system changes, API calls, or operations that modify state. Rate the overall risk as Low, Medium, or High."*
+
+> **Dependency Audit:**
+> *"List every package or library imported or used in the following code. For each one, state what it does and whether it is a well-maintained, widely-used package or an obscure one that should be vetted."*
+
+> **PII and Privacy Scan:**
+> *"Review this code for any place where sensitive personal information (names, emails, IDs, financial data) could be logged, printed, or written to a file. Flag each instance and suggest how to remove or anonymise it."*
+
+### Category 2: Logic and Data Integrity Prompts
+
+Use these to catch the silent failures that look correct on the surface.
+
+> **Join Type Interrogation:**
+> *"This code contains one or more join operations. For each join, explain which rows would be dropped if the keys do not match. Tell me whether a left join, right join, inner join, or full join is most appropriate given the context, and why."*
+
+> **Null and Edge Case Stress Test:**
+> *"Identify every place in this code where a missing value (NA in R, None/NaN in Python) could cause incorrect output or a silent failure. For each, suggest a defensive fix."*
+
+> **Aggregation Logic Audit:**
+> *"Review all `summarise()`, `groupby()`, `aggregate()`, or equivalent operations. For each one, ask: Is this aggregation function (sum, mean, count) the right choice? Could duplicate rows distort the result? Could the grouping variable contain unexpected categories?"*
+
+> **Data Scope Verification:**
+> *"After each filter, join, or subset operation in this code, estimate how many rows should remain. Flag any step where row count could silently drop by more than 5% without an explicit validation check."*
+
+### Category 3: Domain Logic Prompts
+
+Use these to catch hallucinated business logic; the AI's most common analytical failure.
+
+> **Business Rule Check:**
+> *"This code calculates [metric name, e.g. monthly churn rate]. List every assumption this code makes about how that metric is defined. For each assumption, flag it as either 'standard industry definition' or 'requires confirmation with the business'."*
+
+> **Time Period Validation:**
+> *"Review all date filtering, windowing, or time-based aggregations. For each, confirm whether the date boundaries are inclusive or exclusive, and whether the fiscal calendar or the calendar year is being used."*
+
+> **Metric Reproducibility Check:**
+> *"If I ran this code today and again in three months with the same input data, would I get identical results? List every potential source of non-determinism (random seeds, `Sys.time()`, current date dependencies, API calls)."*
+
+### Category 4: Improvement and Refactoring Prompts
+
+Use these to actively improve code quality after a first-pass review.
+
+> **Code Simplification:**
+> *"Review the following code and identify any unnecessarily complex logic that could be simplified. Suggest a refactored version that is easier to read and maintains identical behaviour."*
+
+> **Performance Review:**
+> *"Identify any operations in this code that are computationally expensive and could be vectorised, parallelised, or replaced with a more efficient equivalent. Specifically look for row-wise loops that could be replaced with `dplyr` verbs in R or vectorised pandas operations in Python."*
+
+> **Test Generation:**
+> *"Write unit tests for the following function. The tests should cover: (1) the normal happy path, (2) an input with all missing values, (3) an empty data frame or zero-row input, and (4) an input with duplicate keys."*
+
+> **Hostile Red-Team Review:**
+> *"Act as a hostile senior data engineer reviewing this code before a production deployment. Find every possible way this code could produce incorrect output, crash, or expose data. Be thorough and adversarial."*
+
+### Category 5: Self-Explanation Prompts
+
+Use these when you receive AI-generated code you do not fully understand before running it.
+
+> **Line-by-Line Explanation:**
+> *"Explain this code to me line by line in plain English. For each line, state what it does, why it is there, and what would happen if it were removed."*
+
+> **Assumption Surfacing:**
+> *"List every assumption this code makes about the input data: its structure, column names, data types, and value ranges. For each assumption, tell me what error or wrong output would occur if that assumption were violated."*
+

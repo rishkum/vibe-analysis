@@ -209,6 +209,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.3.1" data-path="auditing-ai-code-review-templates.html"><a href="auditing-ai-code-review-templates.html#pull-request-review-ai-assisted-code"><i class="fa fa-check"></i><b>7.3.1</b> Pull Request Review: AI-Assisted Code</a></li>
 <li class="chapter" data-level="7.3.2" data-path="auditing-ai-code-review-templates.html"><a href="auditing-ai-code-review-templates.html#practical-language-examples"><i class="fa fa-check"></i><b>7.3.2</b> Practical Language Examples</a></li>
 </ul></li>
+<li class="chapter" data-level="7.4" data-path="auditing-ai-code-review-templates.html"><a href="auditing-ai-code-review-templates.html#prompts-for-code-review-and-code-improvement"><i class="fa fa-check"></i><b>7.4</b> Prompts for Code Review and Code Improvement</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="auditing-ai-code-review-templates.html"><a href="auditing-ai-code-review-templates.html#category-1-safety-and-impact-prompts"><i class="fa fa-check"></i><b>7.4.1</b> Category 1: Safety and Impact Prompts</a></li>
+<li class="chapter" data-level="7.4.2" data-path="auditing-ai-code-review-templates.html"><a href="auditing-ai-code-review-templates.html#category-2-logic-and-data-integrity-prompts"><i class="fa fa-check"></i><b>7.4.2</b> Category 2: Logic and Data Integrity Prompts</a></li>
+<li class="chapter" data-level="7.4.3" data-path="auditing-ai-code-review-templates.html"><a href="auditing-ai-code-review-templates.html#category-3-domain-logic-prompts"><i class="fa fa-check"></i><b>7.4.3</b> Category 3: Domain Logic Prompts</a></li>
+<li class="chapter" data-level="7.4.4" data-path="auditing-ai-code-review-templates.html"><a href="auditing-ai-code-review-templates.html#category-4-improvement-and-refactoring-prompts"><i class="fa fa-check"></i><b>7.4.4</b> Category 4: Improvement and Refactoring Prompts</a></li>
+<li class="chapter" data-level="7.4.5" data-path="auditing-ai-code-review-templates.html"><a href="auditing-ai-code-review-templates.html#category-5-self-explanation-prompts"><i class="fa fa-check"></i><b>7.4.5</b> Category 5: Self-Explanation Prompts</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="managing-ai-teams-zero-trust-auditing.html"><a href="managing-ai-teams-zero-trust-auditing.html"><i class="fa fa-check"></i><b>8</b> Managing AI Teams: Zero-Trust Auditing</a>
 <ul>
@@ -265,8 +273,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><strong>Act:</strong> Write a clear prompt for the <em>first</em> step.</li>
 <li><strong>Review:</strong> Examine the generated code. Does it use the libraries you want? Run the code and use <code>glimpse()</code> or <code>head()</code> to verify the result before moving to the next step.</li>
 </ol>
-<div class="DiagrammeR html-widget html-fill-item" id="htmlwidget-6702957fc2fb71b6c91d" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-6702957fc2fb71b6c91d">{"x":{"diagram":"\ngraph TD\n    A[\"Start Analysis\"] --> B[\"PLAN\"]\n    B --> C[\"Slice into smaller tasks\"]\n    C --> D[\"ACT\"]\n    D --> E[\"Write prompt with context\"]\n    E --> F[\"REVIEW\"]\n    F -->|\"Logic is wrong\"| D\n    F -->|\"Format is off\"| D\n    F -->|\"Success\"| G{\"Is task complete?\"}\n    G -->|\"No\"| B\n    G -->|\"Yes\"| H[\"End Analysis\"]\n    \n    style B fill:#d4edda,stroke:#28a745\n    style D fill:#cce5ff,stroke:#007bff\n    style F fill:#fff3cd,stroke:#ffc107\n"},"evals":[],"jsHooks":[]}</script>
+<div class="DiagrammeR html-widget html-fill-item" id="htmlwidget-bb5aaa88064391c7b915" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-bb5aaa88064391c7b915">{"x":{"diagram":"\ngraph TD\n    A[\"Start Analysis\"] --> B[\"PLAN\"]\n    B --> C[\"Slice into smaller tasks\"]\n    C --> D[\"ACT\"]\n    D --> E[\"Write prompt with context\"]\n    E --> F[\"REVIEW\"]\n    F -->|\"Logic is wrong\"| D\n    F -->|\"Format is off\"| D\n    F -->|\"Success\"| G{\"Is task complete?\"}\n    G -->|\"No\"| B\n    G -->|\"Yes\"| H[\"End Analysis\"]\n    \n    style B fill:#d4edda,stroke:#28a745\n    style D fill:#cce5ff,stroke:#007bff\n    style F fill:#fff3cd,stroke:#ffc107\n"},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="prioritizing-context" class="section level2 hasAnchor" number="2.3">
 <h2><span class="header-section-number">2.3</span> Prioritizing Context<a href="the-vibe-workflow.html#prioritizing-context" class="anchor-section" aria-label="Anchor link to header"></a></h2>

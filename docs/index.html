@@ -209,6 +209,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.3.1" data-path="auditing-ai-code-review-templates.html"><a href="auditing-ai-code-review-templates.html#pull-request-review-ai-assisted-code"><i class="fa fa-check"></i><b>7.3.1</b> Pull Request Review: AI-Assisted Code</a></li>
 <li class="chapter" data-level="7.3.2" data-path="auditing-ai-code-review-templates.html"><a href="auditing-ai-code-review-templates.html#practical-language-examples"><i class="fa fa-check"></i><b>7.3.2</b> Practical Language Examples</a></li>
 </ul></li>
+<li class="chapter" data-level="7.4" data-path="auditing-ai-code-review-templates.html"><a href="auditing-ai-code-review-templates.html#prompts-for-code-review-and-code-improvement"><i class="fa fa-check"></i><b>7.4</b> Prompts for Code Review and Code Improvement</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="auditing-ai-code-review-templates.html"><a href="auditing-ai-code-review-templates.html#category-1-safety-and-impact-prompts"><i class="fa fa-check"></i><b>7.4.1</b> Category 1: Safety and Impact Prompts</a></li>
+<li class="chapter" data-level="7.4.2" data-path="auditing-ai-code-review-templates.html"><a href="auditing-ai-code-review-templates.html#category-2-logic-and-data-integrity-prompts"><i class="fa fa-check"></i><b>7.4.2</b> Category 2: Logic and Data Integrity Prompts</a></li>
+<li class="chapter" data-level="7.4.3" data-path="auditing-ai-code-review-templates.html"><a href="auditing-ai-code-review-templates.html#category-3-domain-logic-prompts"><i class="fa fa-check"></i><b>7.4.3</b> Category 3: Domain Logic Prompts</a></li>
+<li class="chapter" data-level="7.4.4" data-path="auditing-ai-code-review-templates.html"><a href="auditing-ai-code-review-templates.html#category-4-improvement-and-refactoring-prompts"><i class="fa fa-check"></i><b>7.4.4</b> Category 4: Improvement and Refactoring Prompts</a></li>
+<li class="chapter" data-level="7.4.5" data-path="auditing-ai-code-review-templates.html"><a href="auditing-ai-code-review-templates.html#category-5-self-explanation-prompts"><i class="fa fa-check"></i><b>7.4.5</b> Category 5: Self-Explanation Prompts</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="managing-ai-teams-zero-trust-auditing.html"><a href="managing-ai-teams-zero-trust-auditing.html"><i class="fa fa-check"></i><b>8</b> Managing AI Teams: Zero-Trust Auditing</a>
 <ul>
@@ -272,8 +280,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="the-contrast-in-workflow" class="section level3 unnumbered hasAnchor">
 <h3>The Contrast in Workflow<a href="index.html#the-contrast-in-workflow" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The following chart illustrates why extracting insights requires a different, more rigorous workflow than building standard software applications:</p>
-<div class="DiagrammeR html-widget html-fill-item" id="htmlwidget-24e46fcef8a5c8a0ddcc" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-24e46fcef8a5c8a0ddcc">{"x":{"diagram":"\ngraph TD\n    A[\"Natural Language Prompt\"] --> B{\"What is the Goal?\"}\n    \n    B -->|\"Building an App\"| C[\"Vibe Coding\"]\n    C --> D[\"AI Generates Code\"]\n    D --> E{\"Does it compile/run?\"}\n    E -->|\"Yes\"| F[\"Ship It!\"]\n    E -->|\"No\"| D\n    \n    B -->|\"Extracting Insights\"| G[\"Vibe Analysis\"]\n    G --> H[\"AI Generates Code\"]\n    H --> I[\"SDLC & Code Review\"]\n    I --> J[\"Statistical Validation\"]\n    J --> K{\"Is logic sound?\"}\n    K -->|\"No\"| H\n    K -->|\"Yes\"| L[\"Publish Analysis\"]\n\n    style C fill:#fce4ec,stroke:#f06292\n    style G fill:#e3f2fd,stroke:#64b5f6\n"},"evals":[],"jsHooks":[]}</script>
+<div class="DiagrammeR html-widget html-fill-item" id="htmlwidget-fb60b479d617c6fe2abe" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-fb60b479d617c6fe2abe">{"x":{"diagram":"\ngraph TD\n    A[\"Natural Language Prompt\"] --> B{\"What is the Goal?\"}\n    \n    B -->|\"Building an App\"| C[\"Vibe Coding\"]\n    C --> D[\"AI Generates Code\"]\n    D --> E{\"Does it compile/run?\"}\n    E -->|\"Yes\"| F[\"Ship It!\"]\n    E -->|\"No\"| D\n    \n    B -->|\"Extracting Insights\"| G[\"Vibe Analysis\"]\n    G --> H[\"AI Generates Code\"]\n    H --> I[\"SDLC & Code Review\"]\n    I --> J[\"Statistical Validation\"]\n    J --> K{\"Is logic sound?\"}\n    K -->|\"No\"| H\n    K -->|\"Yes\"| L[\"Publish Analysis\"]\n\n    style C fill:#fce4ec,stroke:#f06292\n    style G fill:#e3f2fd,stroke:#64b5f6\n"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <div id="why-vibe-analysis" class="section level2 unnumbered hasAnchor">

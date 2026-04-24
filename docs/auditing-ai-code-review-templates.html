@@ -209,6 +209,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.3.1" data-path="auditing-ai-code-review-templates.html"><a href="auditing-ai-code-review-templates.html#pull-request-review-ai-assisted-code"><i class="fa fa-check"></i><b>7.3.1</b> Pull Request Review: AI-Assisted Code</a></li>
 <li class="chapter" data-level="7.3.2" data-path="auditing-ai-code-review-templates.html"><a href="auditing-ai-code-review-templates.html#practical-language-examples"><i class="fa fa-check"></i><b>7.3.2</b> Practical Language Examples</a></li>
 </ul></li>
+<li class="chapter" data-level="7.4" data-path="auditing-ai-code-review-templates.html"><a href="auditing-ai-code-review-templates.html#prompts-for-code-review-and-code-improvement"><i class="fa fa-check"></i><b>7.4</b> Prompts for Code Review and Code Improvement</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="auditing-ai-code-review-templates.html"><a href="auditing-ai-code-review-templates.html#category-1-safety-and-impact-prompts"><i class="fa fa-check"></i><b>7.4.1</b> Category 1: Safety and Impact Prompts</a></li>
+<li class="chapter" data-level="7.4.2" data-path="auditing-ai-code-review-templates.html"><a href="auditing-ai-code-review-templates.html#category-2-logic-and-data-integrity-prompts"><i class="fa fa-check"></i><b>7.4.2</b> Category 2: Logic and Data Integrity Prompts</a></li>
+<li class="chapter" data-level="7.4.3" data-path="auditing-ai-code-review-templates.html"><a href="auditing-ai-code-review-templates.html#category-3-domain-logic-prompts"><i class="fa fa-check"></i><b>7.4.3</b> Category 3: Domain Logic Prompts</a></li>
+<li class="chapter" data-level="7.4.4" data-path="auditing-ai-code-review-templates.html"><a href="auditing-ai-code-review-templates.html#category-4-improvement-and-refactoring-prompts"><i class="fa fa-check"></i><b>7.4.4</b> Category 4: Improvement and Refactoring Prompts</a></li>
+<li class="chapter" data-level="7.4.5" data-path="auditing-ai-code-review-templates.html"><a href="auditing-ai-code-review-templates.html#category-5-self-explanation-prompts"><i class="fa fa-check"></i><b>7.4.5</b> Category 5: Self-Explanation Prompts</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="managing-ai-teams-zero-trust-auditing.html"><a href="managing-ai-teams-zero-trust-auditing.html"><i class="fa fa-check"></i><b>8</b> Managing AI Teams: Zero-Trust Auditing</a>
 <ul>
@@ -260,8 +268,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><strong>The Run Gate (Safety):</strong> Before you even assess if the code is logically correct, you must evaluate its impact; its “blast radius.” Does this code interact with a database? Does it write files to disk? Could it alter external states? <em>Do not execute the code locally until you have cleared it through the Run Gate.</em></li>
 <li><strong>The Ship Gate (Quality):</strong> Once deemed safe to run, review the logic, the edge cases, and whether it solves the actual business requirement.</li>
 </ol>
-<div class="DiagrammeR html-widget html-fill-item" id="htmlwidget-2106c8f16303bda815ed" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-2106c8f16303bda815ed">{"x":{"diagram":"\ngraph LR\n    A[\"AI Code Submitted\"] --> B{\"Run Gate (Safety)\"}\n    B -->|\"Unsafe / DB writes\"| C[\"Reject or Sandbox\"]\n    B -->|\"Safe / Local\"| D{\"Ship Gate (Quality)\"}\n    D -->|\"Logic Flaws\"| E[\"Request Changes\"]\n    D -->|\"Passes Evidence\"| F[\"Approve & Merge\"]\n    \n    style B fill:#ffeeba,stroke:#ffc107\n    style D fill:#cce5ff,stroke:#007bff\n    style C fill:#f8d7da,stroke:#dc3545\n    style F fill:#d4edda,stroke:#28a745\n"},"evals":[],"jsHooks":[]}</script>
+<div class="DiagrammeR html-widget html-fill-item" id="htmlwidget-1e8b3b9b772796cd4d2e" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-1e8b3b9b772796cd4d2e">{"x":{"diagram":"\ngraph LR\n    A[\"AI Code Submitted\"] --> B{\"Run Gate (Safety)\"}\n    B -->|\"Unsafe / DB writes\"| C[\"Reject or Sandbox\"]\n    B -->|\"Safe / Local\"| D{\"Ship Gate (Quality)\"}\n    D -->|\"Logic Flaws\"| E[\"Request Changes\"]\n    D -->|\"Passes Evidence\"| F[\"Approve & Merge\"]\n    \n    style B fill:#ffeeba,stroke:#ffc107\n    style D fill:#cce5ff,stroke:#007bff\n    style C fill:#f8d7da,stroke:#dc3545\n    style F fill:#d4edda,stroke:#28a745\n"},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="demanding-evidence" class="section level2 hasAnchor" number="7.2">
 <h2><span class="header-section-number">7.2</span> Demanding Evidence<a href="auditing-ai-code-review-templates.html#demanding-evidence" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -294,6 +302,94 @@ If an AI generates <code>combined &lt;- inner_join(sales, regions, by = "id")</c
 <p><strong>Python Example:</strong>
 If an AI uses pandas and writes <code>df['price'] = df['price'].fillna(method='ffill')</code> for gap filling in time-series, the reviewer must catch the hallucinated metric check. Was forward-filling the correct domain treatment for pricing data, or will that skew financial aggregations artificially? The Reviewer should request alternative logic before approving.</p>
 <p>By enforcing this structure, you close the Velocity Gap. You ensure that the speed of vibe coding does not come at the expense of accuracy and reliability in your analytical output.</p>
+</div>
+</div>
+<div id="prompts-for-code-review-and-code-improvement" class="section level2 hasAnchor" number="7.4">
+<h2><span class="header-section-number">7.4</span> Prompts for Code Review and Code Improvement<a href="auditing-ai-code-review-templates.html#prompts-for-code-review-and-code-improvement" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The following prompts are designed to be pasted directly into <strong>GitHub Copilot Chat</strong>, <strong>ChatGPT</strong>, or any LLM chat interface. Copy the relevant prompt, paste your code beneath it, and send. Think of these as structured checklists written in natural language — the AI will challenge its own output far more rigorously than it originally produced it.</p>
+<div id="category-1-safety-and-impact-prompts" class="section level3 hasAnchor" number="7.4.1">
+<h3><span class="header-section-number">7.4.1</span> Category 1: Safety and Impact Prompts<a href="auditing-ai-code-review-templates.html#category-1-safety-and-impact-prompts" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Use these before running any unfamiliar AI-generated script.</p>
+<blockquote>
+<p><strong>Blast Radius Check:</strong>
+<em>“Review the following code and list every operation that could have a side effect outside this script. Flag any database writes, file system changes, API calls, or operations that modify state. Rate the overall risk as Low, Medium, or High.”</em></p>
+</blockquote>
+<blockquote>
+<p><strong>Dependency Audit:</strong>
+<em>“List every package or library imported or used in the following code. For each one, state what it does and whether it is a well-maintained, widely-used package or an obscure one that should be vetted.”</em></p>
+</blockquote>
+<blockquote>
+<p><strong>PII and Privacy Scan:</strong>
+<em>“Review this code for any place where sensitive personal information (names, emails, IDs, financial data) could be logged, printed, or written to a file. Flag each instance and suggest how to remove or anonymise it.”</em></p>
+</blockquote>
+</div>
+<div id="category-2-logic-and-data-integrity-prompts" class="section level3 hasAnchor" number="7.4.2">
+<h3><span class="header-section-number">7.4.2</span> Category 2: Logic and Data Integrity Prompts<a href="auditing-ai-code-review-templates.html#category-2-logic-and-data-integrity-prompts" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Use these to catch the silent failures that look correct on the surface.</p>
+<blockquote>
+<p><strong>Join Type Interrogation:</strong>
+<em>“This code contains one or more join operations. For each join, explain which rows would be dropped if the keys do not match. Tell me whether a left join, right join, inner join, or full join is most appropriate given the context, and why.”</em></p>
+</blockquote>
+<blockquote>
+<p><strong>Null and Edge Case Stress Test:</strong>
+<em>“Identify every place in this code where a missing value (NA in R, None/NaN in Python) could cause incorrect output or a silent failure. For each, suggest a defensive fix.”</em></p>
+</blockquote>
+<blockquote>
+<p><strong>Aggregation Logic Audit:</strong>
+<em>“Review all <code>summarise()</code>, <code>groupby()</code>, <code>aggregate()</code>, or equivalent operations. For each one, ask: Is this aggregation function (sum, mean, count) the right choice? Could duplicate rows distort the result? Could the grouping variable contain unexpected categories?”</em></p>
+</blockquote>
+<blockquote>
+<p><strong>Data Scope Verification:</strong>
+<em>“After each filter, join, or subset operation in this code, estimate how many rows should remain. Flag any step where row count could silently drop by more than 5% without an explicit validation check.”</em></p>
+</blockquote>
+</div>
+<div id="category-3-domain-logic-prompts" class="section level3 hasAnchor" number="7.4.3">
+<h3><span class="header-section-number">7.4.3</span> Category 3: Domain Logic Prompts<a href="auditing-ai-code-review-templates.html#category-3-domain-logic-prompts" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Use these to catch hallucinated business logic; the AI’s most common analytical failure.</p>
+<blockquote>
+<p><strong>Business Rule Check:</strong>
+<em>“This code calculates [metric name, e.g. monthly churn rate]. List every assumption this code makes about how that metric is defined. For each assumption, flag it as either ‘standard industry definition’ or ‘requires confirmation with the business’.”</em></p>
+</blockquote>
+<blockquote>
+<p><strong>Time Period Validation:</strong>
+<em>“Review all date filtering, windowing, or time-based aggregations. For each, confirm whether the date boundaries are inclusive or exclusive, and whether the fiscal calendar or the calendar year is being used.”</em></p>
+</blockquote>
+<blockquote>
+<p><strong>Metric Reproducibility Check:</strong>
+<em>“If I ran this code today and again in three months with the same input data, would I get identical results? List every potential source of non-determinism (random seeds, <code>Sys.time()</code>, current date dependencies, API calls).”</em></p>
+</blockquote>
+</div>
+<div id="category-4-improvement-and-refactoring-prompts" class="section level3 hasAnchor" number="7.4.4">
+<h3><span class="header-section-number">7.4.4</span> Category 4: Improvement and Refactoring Prompts<a href="auditing-ai-code-review-templates.html#category-4-improvement-and-refactoring-prompts" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Use these to actively improve code quality after a first-pass review.</p>
+<blockquote>
+<p><strong>Code Simplification:</strong>
+<em>“Review the following code and identify any unnecessarily complex logic that could be simplified. Suggest a refactored version that is easier to read and maintains identical behaviour.”</em></p>
+</blockquote>
+<blockquote>
+<p><strong>Performance Review:</strong>
+<em>“Identify any operations in this code that are computationally expensive and could be vectorised, parallelised, or replaced with a more efficient equivalent. Specifically look for row-wise loops that could be replaced with <code>dplyr</code> verbs in R or vectorised pandas operations in Python.”</em></p>
+</blockquote>
+<blockquote>
+<p><strong>Test Generation:</strong>
+<em>“Write unit tests for the following function. The tests should cover: (1) the normal happy path, (2) an input with all missing values, (3) an empty data frame or zero-row input, and (4) an input with duplicate keys.”</em></p>
+</blockquote>
+<blockquote>
+<p><strong>Hostile Red-Team Review:</strong>
+<em>“Act as a hostile senior data engineer reviewing this code before a production deployment. Find every possible way this code could produce incorrect output, crash, or expose data. Be thorough and adversarial.”</em></p>
+</blockquote>
+</div>
+<div id="category-5-self-explanation-prompts" class="section level3 hasAnchor" number="7.4.5">
+<h3><span class="header-section-number">7.4.5</span> Category 5: Self-Explanation Prompts<a href="auditing-ai-code-review-templates.html#category-5-self-explanation-prompts" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Use these when you receive AI-generated code you do not fully understand before running it.</p>
+<blockquote>
+<p><strong>Line-by-Line Explanation:</strong>
+<em>“Explain this code to me line by line in plain English. For each line, state what it does, why it is there, and what would happen if it were removed.”</em></p>
+</blockquote>
+<blockquote>
+<p><strong>Assumption Surfacing:</strong>
+<em>“List every assumption this code makes about the input data: its structure, column names, data types, and value ranges. For each assumption, tell me what error or wrong output would occur if that assumption were violated.”</em></p>
+</blockquote>
 
 </div>
 </div>
