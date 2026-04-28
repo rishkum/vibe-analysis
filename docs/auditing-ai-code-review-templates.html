@@ -4,26 +4,26 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 7 Auditing AI: Code Review Templates | Vibe Analysis: A Practical Guide to AI-Assisted Data Science</title>
-  <meta name="description" content="A practical guide to rigorous, AI-assisted data analysis using GitHub Copilot. Learn how to move beyond vibe coding and towards disciplined analytical workflows." />
+  <title>Chapter 7 Auditing AI: Code Review Templates | A Practical Guide to AI-Assisted Data Analysis</title>
+  <meta name="description" content="A practical guide to AI-assisted data analysis using GitHub Copilot. Learn how to generate code with AI, validate your results rigorously, and make better analytical decisions faster." />
   <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 7 Auditing AI: Code Review Templates | Vibe Analysis: A Practical Guide to AI-Assisted Data Science" />
+  <meta property="og:title" content="Chapter 7 Auditing AI: Code Review Templates | A Practical Guide to AI-Assisted Data Analysis" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:description" content="A practical guide to rigorous, AI-assisted data analysis using GitHub Copilot. Learn how to move beyond vibe coding and towards disciplined analytical workflows." />
+  <meta property="og:description" content="A practical guide to AI-assisted data analysis using GitHub Copilot. Learn how to generate code with AI, validate your results rigorously, and make better analytical decisions faster." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 7 Auditing AI: Code Review Templates | Vibe Analysis: A Practical Guide to AI-Assisted Data Science" />
+  <meta name="twitter:title" content="Chapter 7 Auditing AI: Code Review Templates | A Practical Guide to AI-Assisted Data Analysis" />
   
-  <meta name="twitter:description" content="A practical guide to rigorous, AI-assisted data analysis using GitHub Copilot. Learn how to move beyond vibe coding and towards disciplined analytical workflows." />
+  <meta name="twitter:description" content="A practical guide to AI-assisted data analysis using GitHub Copilot. Learn how to generate code with AI, validate your results rigorously, and make better analytical decisions faster." />
   
 
 <meta name="author" content="Rishabh Kumar | The views and opinions expressed in this book are those of the author alone and do not represent the views of his employer." />
 
 
-<meta name="date" content="2026-04-24" />
+<meta name="date" content="2026-04-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -151,12 +151,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
 <ul>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#vibe-coding-vs.-vibe-analysis"><i class="fa fa-check"></i>Vibe Coding vs. Vibe Analysis</a>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#understanding-the-terminology-vibe-coding-vs.-vibe-analysis"><i class="fa fa-check"></i>Understanding the Terminology: Vibe Coding vs. Vibe Analysis</a>
 <ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#the-contrast-in-workflow"><i class="fa fa-check"></i>The Contrast in Workflow</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#why-vibe-analysis"><i class="fa fa-check"></i>Why Vibe Analysis?</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#best-practices-for-the-vibe-workflow"><i class="fa fa-check"></i>Best Practices for the Vibe Workflow</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#why-does-this-approach-matter"><i class="fa fa-check"></i>Why Does This Approach Matter?</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#core-principles-of-this-approach"><i class="fa fa-check"></i>Core Principles of This Approach</a></li>
 </ul></li>
 <li class="chapter" data-level="1" data-path="getting-started.html"><a href="getting-started.html"><i class="fa fa-check"></i><b>1</b> Getting Started</a>
 <ul>
@@ -249,7 +249,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Vibe Analysis: A Practical Guide to AI-Assisted Data Science</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">A Practical Guide to AI-Assisted Data Analysis</a>
           </h1>
         </div>
 
@@ -268,8 +268,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><strong>The Run Gate (Safety):</strong> Before you even assess if the code is logically correct, you must evaluate its impact; its “blast radius.” Does this code interact with a database? Does it write files to disk? Could it alter external states? <em>Do not execute the code locally until you have cleared it through the Run Gate.</em></li>
 <li><strong>The Ship Gate (Quality):</strong> Once deemed safe to run, review the logic, the edge cases, and whether it solves the actual business requirement.</li>
 </ol>
-<div class="DiagrammeR html-widget html-fill-item" id="htmlwidget-35cdf24ac538ff08a501" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-35cdf24ac538ff08a501">{"x":{"diagram":"\ngraph LR\n    A[\"AI Code Submitted\"] --> B{\"Run Gate (Safety)\"}\n    B -->|\"Unsafe / DB writes\"| C[\"Reject or Sandbox\"]\n    B -->|\"Safe / Local\"| D{\"Ship Gate (Quality)\"}\n    D -->|\"Logic Flaws\"| E[\"Request Changes\"]\n    D -->|\"Passes Evidence\"| F[\"Approve & Merge\"]\n    \n    style B fill:#ffeeba,stroke:#ffc107\n    style D fill:#cce5ff,stroke:#007bff\n    style C fill:#f8d7da,stroke:#dc3545\n    style F fill:#d4edda,stroke:#28a745\n"},"evals":[],"jsHooks":[]}</script>
+<div class="DiagrammeR html-widget html-fill-item" id="htmlwidget-f096599e32ef14ca53f3" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-f096599e32ef14ca53f3">{"x":{"diagram":"\ngraph LR\n    A[\"AI Code Submitted\"] --> B{\"Run Gate (Safety)\"}\n    B -->|\"Unsafe / DB writes\"| C[\"Reject or Sandbox\"]\n    B -->|\"Safe / Local\"| D{\"Ship Gate (Quality)\"}\n    D -->|\"Logic Flaws\"| E[\"Request Changes\"]\n    D -->|\"Passes Evidence\"| F[\"Approve & Merge\"]\n    \n    style B fill:#ffeeba,stroke:#ffc107\n    style D fill:#cce5ff,stroke:#007bff\n    style C fill:#f8d7da,stroke:#dc3545\n    style F fill:#d4edda,stroke:#28a745\n"},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="demanding-evidence" class="section level2 hasAnchor" number="7.2">
 <h2><span class="header-section-number">7.2</span> Demanding Evidence<a href="auditing-ai-code-review-templates.html#demanding-evidence" class="anchor-section" aria-label="Anchor link to header"></a></h2>
