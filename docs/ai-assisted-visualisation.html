@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 2 The Vibe Workflow | A Practical Guide to AI-Assisted Data Analysis</title>
+  <title>Chapter 3 AI-Assisted Visualisation | A Practical Guide to AI-Assisted Data Analysis</title>
   <meta name="description" content="A practical guide to AI-assisted data analysis using GitHub Copilot. Learn how to generate code with AI, validate your results rigorously, and make better analytical decisions faster." />
   <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 2 The Vibe Workflow | A Practical Guide to AI-Assisted Data Analysis" />
+  <meta property="og:title" content="Chapter 3 AI-Assisted Visualisation | A Practical Guide to AI-Assisted Data Analysis" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="A practical guide to AI-assisted data analysis using GitHub Copilot. Learn how to generate code with AI, validate your results rigorously, and make better analytical decisions faster." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 2 The Vibe Workflow | A Practical Guide to AI-Assisted Data Analysis" />
+  <meta name="twitter:title" content="Chapter 3 AI-Assisted Visualisation | A Practical Guide to AI-Assisted Data Analysis" />
   
   <meta name="twitter:description" content="A practical guide to AI-assisted data analysis using GitHub Copilot. Learn how to generate code with AI, validate your results rigorously, and make better analytical decisions faster." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="getting-started.html"/>
-<link rel="next" href="ai-assisted-visualisation.html"/>
+<link rel="prev" href="the-vibe-workflow.html"/>
+<link rel="next" href="modeling-and-machine-learning.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -257,58 +257,76 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="the-vibe-workflow" class="section level1 hasAnchor" number="2">
-<h1><span class="header-section-number">Chapter 2</span> The Vibe Workflow<a href="the-vibe-workflow.html#the-vibe-workflow" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="applying-the-software-development-lifecycle-sdlc" class="section level2 hasAnchor" number="2.1">
-<h2><span class="header-section-number">2.1</span> Applying the Software Development Lifecycle (SDLC)<a href="the-vibe-workflow.html#applying-the-software-development-lifecycle-sdlc" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>In traditional Software Development Lifecycle (SDLC), teams move through distinct phases: requirements gathering, design, implementation, testing, and deployment. To ensure <strong>AI-Augmented Analysis</strong> is high-quality and rigorous, we must adopt an SDLC mindset for our data projects.</p>
-<p>Instead of treating data analysis as an ad-hoc script, treat it as a software product. The AI writes the code, but you enforce the lifecycle: writing clear requirements (prompts), enforcing code reviews (auditing AI outputs), and rigorous testing (data validation and sanity checks). This structured approach minimises hallucinations and ensures that the heavily automated coding process yields reliable, production-ready analytical pipelines.</p>
-<p>When analysing data, standard manual coding requires translating every logical step into its corresponding R function (e.g., “I need <code>group_by()</code> then <code>summarize()</code>”). AI-assisted prompting allows you to stay at the conceptual level, but only if you provide effective prompts and maintain a strong workflow.</p>
+<div id="ai-assisted-visualisation" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">Chapter 3</span> AI-Assisted Visualisation<a href="ai-assisted-visualisation.html#ai-assisted-visualisation" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Data visualisation is arguably where AI-assisted analysis shines the brightest.</p>
+<p>The <code>ggplot2</code> package is incredibly powerful, but its granular grammar of graphics (themes, scales, geoms, facetting) requires remembering hundreds of specific arguments. Finding the right syntax to rotate x-axis labels by 45 degrees or move the legend to the bottom often leads analysts to Google.</p>
+<p>With GitHub Copilot, you simply ask for the aesthetic.</p>
+<div id="prompting-for-plots" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> Prompting for Plots<a href="ai-assisted-visualisation.html#prompting-for-plots" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Let’s assume we want to visualize the summary data we created in the last chapter.</p>
+<p>If you just write <code># Plot the data</code>, Copilot might give you a standard, ugly base R plot. You must be an architect and give specific design orders.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="ai-assisted-visualisation.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb8-2"><a href="ai-assisted-visualisation.html#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="ai-assisted-visualisation.html#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a bar chart showing total revenue by region using the q1_summary data frame.</span></span>
+<span id="cb8-4"><a href="ai-assisted-visualisation.html#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Specifics:</span></span>
+<span id="cb8-5"><a href="ai-assisted-visualisation.html#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co"># - Reorder the bars so the highest revenue is first.</span></span>
+<span id="cb8-6"><a href="ai-assisted-visualisation.html#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co"># - Fill the bars with a steelblue color.</span></span>
+<span id="cb8-7"><a href="ai-assisted-visualisation.html#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co"># - Use a minimal theme and remove the grid lines.</span></span>
+<span id="cb8-8"><a href="ai-assisted-visualisation.html#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="co"># - Add a title &quot;Q1 2023 Revenue by Region&quot; and remove the x-axis label.</span></span></code></pre></div>
+<p>Copilot will likely generate a perfectly structured <code>ggplot</code> pipeline:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="ai-assisted-visualisation.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(q1_summary, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(region, <span class="sc">-</span>total_rev), <span class="at">y =</span> total_rev)) <span class="sc">+</span></span>
+<span id="cb9-2"><a href="ai-assisted-visualisation.html#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">&quot;steelblue&quot;</span>) <span class="sc">+</span></span>
+<span id="cb9-3"><a href="ai-assisted-visualisation.html#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb9-4"><a href="ai-assisted-visualisation.html#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb9-5"><a href="ai-assisted-visualisation.html#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb9-6"><a href="ai-assisted-visualisation.html#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title.x =</span> <span class="fu">element_blank</span>()</span>
+<span id="cb9-7"><a href="ai-assisted-visualisation.html#cb9-7" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb9-8"><a href="ai-assisted-visualisation.html#cb9-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb9-9"><a href="ai-assisted-visualisation.html#cb9-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Q1 2023 Revenue by Region&quot;</span>,</span>
+<span id="cb9-10"><a href="ai-assisted-visualisation.html#cb9-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Total Revenue&quot;</span></span>
+<span id="cb9-11"><a href="ai-assisted-visualisation.html#cb9-11" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
 </div>
-<div id="the-plan-act-review-cycle" class="section level2 hasAnchor" number="2.2">
-<h2><span class="header-section-number">2.2</span> The “Plan, Act, Review” Cycle<a href="the-vibe-workflow.html#the-plan-act-review-cycle" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>AI-Augmented Analysis is not magic; you are managing a very fast, sometimes overconfident junior analyst. You should adopt a “Plan, Act, Review” cycle:</p>
-<ol style="list-style-type: decimal">
-<li><strong>Plan:</strong> Break down the analysis into steps. Don’t ask for a final predictive model from a raw dataset in one prompt.</li>
-<li><strong>Act:</strong> Write a clear prompt for the <em>first</em> step.</li>
-<li><strong>Review:</strong> Examine the generated code. Does it use the libraries you want? Run the code and use <code>glimpse()</code> or <code>head()</code> to verify the result before moving to the next step.</li>
-</ol>
-<div class="DiagrammeR html-widget html-fill-item" id="htmlwidget-e6faf7ea3fd5de27b3cb" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-e6faf7ea3fd5de27b3cb">{"x":{"diagram":"\ngraph TD\n    A[\"Start Analysis\"] --> B[\"PLAN\"]\n    B --> C[\"Slice into smaller tasks\"]\n    C --> D[\"ACT\"]\n    D --> E[\"Write prompt with context\"]\n    E --> F[\"REVIEW\"]\n    F -->|\"Logic is wrong\"| D\n    F -->|\"Format is off\"| D\n    F -->|\"Success\"| G{\"Is task complete?\"}\n    G -->|\"No\"| B\n    G -->|\"Yes\"| H[\"End Analysis\"]\n    \n    style B fill:#d4edda,stroke:#28a745\n    style D fill:#cce5ff,stroke:#007bff\n    style F fill:#fff3cd,stroke:#ffc107\n"},"evals":[],"jsHooks":[]}</script>
+<div id="iterating-on-the-design" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> Iterating on the Design<a href="ai-assisted-visualisation.html#iterating-on-the-design" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Often, the first plot is roughly correct, but you spot a visual flaw. Instead of digging into the <code>theme()</code> documentation, you simply add another prompt.</p>
+<p>Imagine the revenue numbers are in the tens of thousands and look messy (e.g., <code>45000</code>).</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="ai-assisted-visualisation.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Update the previous plot to format the y-axis labels as dollars with commas (using the scales package).</span></span>
+<span id="cb10-2"><a href="ai-assisted-visualisation.html#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Also, add comma-formatted data labels on top of each bar.</span></span></code></pre></div>
+<p>The AI updates the code:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="ai-assisted-visualisation.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(scales)</span>
+<span id="cb11-2"><a href="ai-assisted-visualisation.html#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="ai-assisted-visualisation.html#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(q1_summary, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(region, <span class="sc">-</span>total_rev), <span class="at">y =</span> total_rev)) <span class="sc">+</span></span>
+<span id="cb11-4"><a href="ai-assisted-visualisation.html#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">&quot;steelblue&quot;</span>) <span class="sc">+</span></span>
+<span id="cb11-5"><a href="ai-assisted-visualisation.html#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">dollar</span>(total_rev)), <span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb11-6"><a href="ai-assisted-visualisation.html#cb11-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> dollar) <span class="sc">+</span> <span class="co"># The AI handles the scales package syntax</span></span>
+<span id="cb11-7"><a href="ai-assisted-visualisation.html#cb11-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb11-8"><a href="ai-assisted-visualisation.html#cb11-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb11-9"><a href="ai-assisted-visualisation.html#cb11-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb11-10"><a href="ai-assisted-visualisation.html#cb11-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title.x =</span> <span class="fu">element_blank</span>()</span>
+<span id="cb11-11"><a href="ai-assisted-visualisation.html#cb11-11" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb11-12"><a href="ai-assisted-visualisation.html#cb11-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb11-13"><a href="ai-assisted-visualisation.html#cb11-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Q1 2023 Revenue by Region&quot;</span>,</span>
+<span id="cb11-14"><a href="ai-assisted-visualisation.html#cb11-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Total Revenue&quot;</span></span>
+<span id="cb11-15"><a href="ai-assisted-visualisation.html#cb11-15" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
 </div>
-<div id="prioritizing-context" class="section level2 hasAnchor" number="2.3">
-<h2><span class="header-section-number">2.3</span> Prioritizing Context<a href="the-vibe-workflow.html#prioritizing-context" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>GitHub Copilot is a context engine. It reads the files you have open and the code preceding your cursor. If Copilot doesn’t know what columns your dataset has, its suggestions will be educated guesses (i.e., hallucinations).</p>
-<p><strong>Best Practice:</strong> Show, don’t tell. Let Copilot “read” your data structure by doing this at the top of your script:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="the-vibe-workflow.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb4-2"><a href="the-vibe-workflow.html#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="the-vibe-workflow.html#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Assume we loaded &#39;sales_data&#39; earlier.</span></span>
-<span id="cb4-4"><a href="the-vibe-workflow.html#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># str(sales_data)</span></span>
-<span id="cb4-5"><a href="the-vibe-workflow.html#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># &#39;data.frame&#39;: 100 obs. of  3 variables:</span></span>
-<span id="cb4-6"><a href="the-vibe-workflow.html#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co"># $ date   : Date, format: &quot;2023-04-12&quot; &quot;2023-08-22&quot; ...</span></span>
-<span id="cb4-7"><a href="the-vibe-workflow.html#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co"># $ region : chr  &quot;North&quot; &quot;South&quot; &quot;East&quot; &quot;West&quot; ...</span></span>
-<span id="cb4-8"><a href="the-vibe-workflow.html#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co"># $ revenue: num  480.5 512.3 640.1 498.2 ...</span></span></code></pre></div>
-<p>By pasting the <code>str()</code> or <code>glimpse()</code> output as a comment, Copilot now knows exactly what columns exist.</p>
+<div id="exploratory-data-analysis-eda" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> Exploratory Data Analysis (EDA)<a href="ai-assisted-visualisation.html#exploratory-data-analysis-eda" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>You can use AI-assisted prompting to rapid-fire through different visual hypotheses during EDA.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="ai-assisted-visualisation.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a scatter plot of revenue vs date from sales_data.</span></span>
+<span id="cb12-2"><a href="ai-assisted-visualisation.html#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Add a loess trend line in red.</span></span>
+<span id="cb12-3"><a href="ai-assisted-visualisation.html#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Facet the plot by region.</span></span></code></pre></div>
+<p>By conversationalising the visualisation step, you reduce the friction between a question (“Is revenue trending up differently in the South?”) and the visual answer.</p>
 </div>
-<div id="prompting-for-data-manipulation-dplyr" class="section level2 hasAnchor" number="2.4">
-<h2><span class="header-section-number">2.4</span> Prompting for Data Manipulation (dplyr)<a href="the-vibe-workflow.html#prompting-for-data-manipulation-dplyr" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>When you want to wrangle data, use intent-based prompts that specify the library if you have a preference.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="the-vibe-workflow.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Using dplyr, calculate the total revenue and average revenue per region for Q1 2023.</span></span></code></pre></div>
-<p>Copilot will read the context (your <code>str</code> output) and generate:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="the-vibe-workflow.html#cb6-1" aria-hidden="true" tabindex="-1"></a>q1_summary <span class="ot">&lt;-</span> sales_data <span class="sc">%&gt;%</span></span>
-<span id="cb6-2"><a href="the-vibe-workflow.html#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(date <span class="sc">&gt;=</span> <span class="st">&quot;2023-01-01&quot;</span> <span class="sc">&amp;</span> date <span class="sc">&lt;=</span> <span class="st">&quot;2023-03-31&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb6-3"><a href="the-vibe-workflow.html#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(region) <span class="sc">%&gt;%</span></span>
-<span id="cb6-4"><a href="the-vibe-workflow.html#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
-<span id="cb6-5"><a href="the-vibe-workflow.html#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">total_rev =</span> <span class="fu">sum</span>(revenue),</span>
-<span id="cb6-6"><a href="the-vibe-workflow.html#cb6-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">avg_rev =</span> <span class="fu">mean</span>(revenue)</span>
-<span id="cb6-7"><a href="the-vibe-workflow.html#cb6-7" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
-</div>
-<div id="adding-iterative-chaining" class="section level2 hasAnchor" number="2.5">
-<h2><span class="header-section-number">2.5</span> Adding Iterative Chaining<a href="the-vibe-workflow.html#adding-iterative-chaining" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>If the result is almost what you want, but you forgot a detail, just add another comment to chain onto the pipeline:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="the-vibe-workflow.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Now arrange the previous result in descending order by total_rev</span></span>
-<span id="cb7-2"><a href="the-vibe-workflow.html#cb7-2" aria-hidden="true" tabindex="-1"></a>q1_summary <span class="ot">&lt;-</span> q1_summary <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(<span class="fu">desc</span>(total_rev))</span></code></pre></div>
-<p>By working in chunks, reviewing the intermediate states, and feeding that state back as context, you maintain total control over your data analysis while typing a fraction of the code.</p>
+<div id="the-review-step-for-visualisations" class="section level2 hasAnchor" number="3.4">
+<h2><span class="header-section-number">3.4</span> The Review Step for Visualisations<a href="ai-assisted-visualisation.html#the-review-step-for-visualisations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Visualisations generated by Copilot are usually aesthetically correct, but visually appealing does not mean analytically correct. Before including any chart in a report, always perform a basic sanity check:</p>
+<ul>
+<li>Does the axis range make sense? A y-axis that starts at zero versus a truncated axis tells very different stories.</li>
+<li>Are the colours or groupings reflecting the right variable? AI can silently swap grouping aesthetics.</li>
+<li>Does the trend line (if any) use the right method? A <code>loess</code> line and a linear model look similar but imply very different relationships.</li>
+</ul>
+<p>In the next chapter, we move from exploratory visualisation into the more statistically demanding territory of predictive modelling; where the stakes of an AI hallucination are highest.</p>
 
 </div>
 </div>
@@ -317,8 +335,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="getting-started.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="ai-assisted-visualisation.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="the-vibe-workflow.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="modeling-and-machine-learning.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

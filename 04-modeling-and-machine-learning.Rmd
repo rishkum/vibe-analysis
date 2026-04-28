@@ -1,6 +1,6 @@
 # Modeling and Machine Learning
 
-While data cleaning and visualization benefit greatly from vibe coding, machine learning requires much more caution.
+While data cleaning and visualisation benefit greatly from AI-assisted prompting, machine learning requires much more caution.
 
 When prompting for statistical models, the risk of "hallucinations" (the AI confidently generating statistically invalid methods or misinterpreting data) increases significantly. The AI does not inherently understand the assumptions of linear regression or the concept of data leakage.
 
@@ -55,7 +55,7 @@ By constraining Copilot to write the *plumbing* (the tidymodels syntax) while yo
 
 ## What Can Go Wrong in Modelling
 
-Machine learning is the chapter of Vibe Analysis where the gap between "code that runs" and "code that is correct" is widest.
+Machine learning is the chapter of AI-Augmented Analysis where the gap between "code that runs" and "code that is correct" is widest.
 
 *   **Data Leakage:** The AI may inadvertently include future information in the training features (e.g., using a post-event column as a predictor). Always inspect the recipe and ask yourself whether every feature could realistically be available at prediction time.
 *   **Wrong Metric for the Problem:** Copilot will default to common metrics like RMSE for regression and accuracy for classification. If your business problem has an imbalanced target class, accuracy is misleading. Explicitly ask for precision, recall, or AUC.

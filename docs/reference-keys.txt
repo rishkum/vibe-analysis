@@ -9,7 +9,7 @@ the-plan-act-review-cycle
 prioritizing-context
 prompting-for-data-manipulation-dplyr
 adding-iterative-chaining
-visualizing-with-vibes
+ai-assisted-visualisation
 prompting-for-plots
 iterating-on-the-design
 exploratory-data-analysis-eda

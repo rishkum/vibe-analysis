@@ -1,13 +1,13 @@
 # Getting Started
 
-To master Vibe Analysis in R, your environment needs to be properly set up. You need a frictionless way to communicate with your AI pair programmer so that writing a prompt feels as fluid as writing native R code.
+To master AI-Augmented Analysis in R, your environment needs to be properly set up. You need a frictionless way to communicate with your AI pair programmer so that writing a prompt feels as fluid as writing native R code.
 
 ## Choosing Your IDE
 
 While standard RStudio (Posit) is the classic choice for R users, the advent of AI assistants has made Visual Studio Code (VS Code) a highly competitive alternative.
 
-1.  **RStudio:** Recent versions of RStudio include native integration with GitHub Copilot. Setup is as straightforward as checking an option in the Global Options menu. The interface is optimized specifically for R, which handles environments and plotting seamlessly.
-2.  **VS Code:** Provides deeper customization and often earlier access to the most advanced Copilot features (like Copilot Chat). The `vscode-R` extension has made VS Code a robust R IDE.
+1.  **RStudio:** Recent versions of RStudio include native integration with GitHub Copilot. Setup is as straightforward as checking an option in the Global Options menu. The interface is optimised specifically for R, handling environments and plotting seamlessly.
+2.  **VS Code:** Provides deeper customisation and often earlier access to the most advanced Copilot features (like Copilot Chat). The `vscode-R` extension has made VS Code a robust R IDE.
 
 For the purpose of this book, we assume you are using **GitHub Copilot** as your assistant, integrated into whichever IDE you prefer.
 
@@ -51,7 +51,7 @@ By adding these project-level instructions, Copilot will stay consistent with yo
 
 ## Writing Your First Prompt
 
-With Copilot active, let's write our first vibe code. Open a new R script. Let's say you want to generate a random dataset to practice with.
+With Copilot active, let's write our first AI-assisted prompt. Open a new R script. Let's say you want to generate a random dataset to practice with.
 
 Instead of trying to remember the exact syntax for creating a data frame with random normal distributions, you simply write a comment describing what you want:
 
@@ -72,4 +72,4 @@ sales_data <- data.frame(
 )
 ```
 
-You've just completed your first Vibe Analysis task. You expressed the *intent*, and Copilot provided the *syntax*. In the next chapter, we'll explore the structured workflow for making this process reliable across more complex data manipulation.
+You've just completed your first AI-Augmented Analysis task. You expressed the *intent*, and Copilot provided the *syntax*. In the next chapter, we'll explore the structured workflow for making this process reliable across more complex data manipulation.

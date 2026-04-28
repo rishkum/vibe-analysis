@@ -1,12 +1,12 @@
 # Case Studies: What Can Go Wrong?
 
-Vibe coding can act as a force multiplier, but blindly trusting AI to generate complex analytical logic without the rigor of Vibe Analysis exposes you to several well-documented risks. 
+AI-assisted code generation can act as a force multiplier, but blindly trusting AI to generate complex analytical logic without the rigour of AI-Augmented Analysis exposes you to several well-documented risks.
 
-In this chapter, we explore realistic case studies and research demonstrating what happens when the "Review" phase of the vibe-coding workflow is skipped.
+In this chapter, we explore realistic case studies and research demonstrating what happens when the "Review" phase of the AI-Augmented Analysis workflow is skipped.
 
 ## The Illusion of Productivity
 
-A significant psychological trap of the vibe coding mechanism is the "Illusion of Productivity."
+A significant psychological trap in AI-assisted workflows is the "Illusion of Productivity."
 
 When you use GitHub Copilot, you *feel* extremely productive because lines of code appear on your screen instantaneously. However, empirical evidence paints a more complicated picture. In a 2024 study by GitClear (*"Coding on Copilot: 2023 Data Suggests Downward Pressure on Code Quality"*), researchers analyzed 153 million changed lines of code authored between 2020 and 2023. They found that as AI assistance increased, "code churn"; the percentage of code pushed to a repo that is reverted or updated within two weeks; grew rapidly.
 
@@ -16,7 +16,7 @@ Furthermore, empirical studies on pull request times echo this contradiction. A 
 
 ## Case Study 1: The "Happy Path" Data Join
 
-**The Context:** An analyst was tasked with combining two datasets: a primary `customer_transactions` table and a `regional_metadata` table. They vibe-coded the following prompt:
+**The Context:** An analyst was tasked with combining two datasets: a primary `customer_transactions` table and a `regional_metadata` table. They AI-generated the following prompt:
 
 ```r
 # Join the transaction data with the metadata to get the region for each customer.

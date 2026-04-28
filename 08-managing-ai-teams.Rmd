@@ -1,12 +1,12 @@
 # Managing AI Teams: Zero-Trust Auditing
 
-If you are managing a team of data scientists or analysts using Vibe Analysis, you must adapt your leadership style to catch AI-accelerated failures. The industry consensus; driven by studies covering millions of lines of AI-assisted code; is moving definitively toward a **Zero-Trust Review Mindset**.
+If you are managing a team of data scientists or analysts using AI-Augmented Analysis, you must adapt your leadership style to catch AI-accelerated failures. The industry consensus; driven by studies covering millions of lines of AI-assisted code; is moving definitively toward a **Zero-Trust Review Mindset**.
 
 Traditional code reviews assume human intent. A reviewer looks at the syntax and assumes the author understood the business requirements and edge cases. AI-generated code breaks this assumption entirely. Because LLMs predict *plausible* code rather than *secure* or *domain-aware* logic, managers must oversee the process as if reviewing work from a system that lacks any domain knowledge whatsoever.
 
 ## The Zero-Trust Review Mindset
 
-"Zero-Trust" is a term borrowed from cybersecurity. It means: assume nothing is safe until proven otherwise. Applied to Vibe Analysis, it translates into three principles:
+"Zero-Trust" is a term borrowed from cybersecurity. It means: assume nothing is safe until proven otherwise. Applied to AI-Augmented Analysis, it translates into three principles:
 
 *   **Redefine "Done":** Explicitly state that "AI-generated" is never an excuse for tech debt or lower quality. All code must meet the same team standards (readability, security, maintainability) regardless of its origin.
 *   **Explicit Human Ownership:** Every piece of AI-generated code must have a clear human owner who can explain, debug, and maintain it. **If an analyst cannot explain what a generated function does in plain language, it should not be merged.**
@@ -24,7 +24,7 @@ Managers shouldn't be reading every single line of generated `dplyr` or `pandas`
 
 Because AI-generated code looks neat and professional, managers must actively challenge the underlying domain logic rather than taking well-formatted output at face value.
 
-*   **Ask Adversarial Questions:** During reviews, probe the logic: *"Why did we choose an `inner_join` here instead of a `left_join`?"* or *"What happens to this calculation if the pricing data is missing for an entire region?"* An analyst practicing true Vibe Analysis can answer immediately. An analyst caught in the "Illusion of Productivity" will stumble.
+*   **Ask Adversarial Questions:** During reviews, probe the logic: *"Why did we choose an `inner_join` here instead of a `left_join`?"* or *"What happens to this calculation if the pricing data is missing for an entire region?"* An analyst practicing true AI-Augmented Analysis can answer immediately. An analyst caught in the "Illusion of Productivity" will stumble.
 *   **Assumption Checking:** Does the generated code make implicit assumptions about inputs, data size, or the environment? Require these assumptions to be written down explicitly in the PR description or analysis brief.
 
 ## A Note for Non-Technical Managers
@@ -80,4 +80,4 @@ While AI struggles to write perfect business logic from scratch, it is surprisin
 
 ## Closing the Loop
 
-The core message of this chapter is simple: the speed of Vibe Analysis demands a proportional increase in oversight discipline. As a manager, your role is shifting from "Did they write clean code?" to "Did they *understand* what the AI wrote for them?" If you embed these zero-trust principles into your team's workflow; adversarial questioning, boundary-testing evidence, non-technical summaries, and automated safety nets; you will capture the immense productivity benefits of AI without exposing your organisation to silent analytical failures.
+The core message of this chapter is simple: the speed of AI-Augmented Analysis demands a proportional increase in oversight discipline. As a manager, your role is shifting from "Did they write clean code?" to "Did they *understand* what the AI wrote for them?" If you embed these zero-trust principles into your team's workflow; adversarial questioning, boundary-testing evidence, non-technical summaries, and automated safety nets; you will capture the immense productivity benefits of AI without exposing your organisation to silent analytical failures.

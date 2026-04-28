@@ -1,6 +1,6 @@
-# Visualizing with Vibes
+# AI-Assisted Visualisation
 
-Data visualization is arguably where vibe coding shines the brightest. 
+Data visualisation is arguably where AI-assisted analysis shines the brightest. 
 
 The `ggplot2` package is incredibly powerful, but its granular grammar of graphics (themes, scales, geoms, facetting) requires remembering hundreds of specific arguments. Finding the right syntax to rotate x-axis labels by 45 degrees or move the legend to the bottom often leads analysts to Google.
 
@@ -41,7 +41,7 @@ ggplot(q1_summary, aes(x = reorder(region, -total_rev), y = total_rev)) +
 
 ## Iterating on the Design
 
-Often, the first plot is roughly correct, but you spot a visual flaw. Instead of digging into the `theme()` documentation, you keep vibe coding.
+Often, the first plot is roughly correct, but you spot a visual flaw. Instead of digging into the `theme()` documentation, you simply add another prompt.
 
 Imagine the revenue numbers are in the tens of thousands and look messy (e.g., `45000`).
 
@@ -72,7 +72,7 @@ ggplot(q1_summary, aes(x = reorder(region, -total_rev), y = total_rev)) +
 
 ## Exploratory Data Analysis (EDA)
 
-You can use vibe coding to rapid-fire through different visual hypotheses during EDA.
+You can use AI-assisted prompting to rapid-fire through different visual hypotheses during EDA.
 
 ```r
 # Create a scatter plot of revenue vs date from sales_data.

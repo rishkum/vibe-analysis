@@ -30,7 +30,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="visualizing-with-vibes.html"/>
+<link rel="prev" href="ai-assisted-visualisation.html"/>
 <link rel="next" href="troubleshooting.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -151,7 +151,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
 <ul>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#understanding-the-terminology-vibe-coding-vs.-vibe-analysis"><i class="fa fa-check"></i>Understanding the Terminology: Vibe Coding vs. Vibe Analysis</a>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#understanding-the-terminology"><i class="fa fa-check"></i>Understanding the Terminology</a>
 <ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#the-contrast-in-workflow"><i class="fa fa-check"></i>The Contrast in Workflow</a></li>
 </ul></li>
@@ -173,12 +173,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.4" data-path="the-vibe-workflow.html"><a href="the-vibe-workflow.html#prompting-for-data-manipulation-dplyr"><i class="fa fa-check"></i><b>2.4</b> Prompting for Data Manipulation (dplyr)</a></li>
 <li class="chapter" data-level="2.5" data-path="the-vibe-workflow.html"><a href="the-vibe-workflow.html#adding-iterative-chaining"><i class="fa fa-check"></i><b>2.5</b> Adding Iterative Chaining</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="visualizing-with-vibes.html"><a href="visualizing-with-vibes.html"><i class="fa fa-check"></i><b>3</b> Visualizing with Vibes</a>
+<li class="chapter" data-level="3" data-path="ai-assisted-visualisation.html"><a href="ai-assisted-visualisation.html"><i class="fa fa-check"></i><b>3</b> AI-Assisted Visualisation</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="visualizing-with-vibes.html"><a href="visualizing-with-vibes.html#prompting-for-plots"><i class="fa fa-check"></i><b>3.1</b> Prompting for Plots</a></li>
-<li class="chapter" data-level="3.2" data-path="visualizing-with-vibes.html"><a href="visualizing-with-vibes.html#iterating-on-the-design"><i class="fa fa-check"></i><b>3.2</b> Iterating on the Design</a></li>
-<li class="chapter" data-level="3.3" data-path="visualizing-with-vibes.html"><a href="visualizing-with-vibes.html#exploratory-data-analysis-eda"><i class="fa fa-check"></i><b>3.3</b> Exploratory Data Analysis (EDA)</a></li>
-<li class="chapter" data-level="3.4" data-path="visualizing-with-vibes.html"><a href="visualizing-with-vibes.html#the-review-step-for-visualisations"><i class="fa fa-check"></i><b>3.4</b> The Review Step for Visualisations</a></li>
+<li class="chapter" data-level="3.1" data-path="ai-assisted-visualisation.html"><a href="ai-assisted-visualisation.html#prompting-for-plots"><i class="fa fa-check"></i><b>3.1</b> Prompting for Plots</a></li>
+<li class="chapter" data-level="3.2" data-path="ai-assisted-visualisation.html"><a href="ai-assisted-visualisation.html#iterating-on-the-design"><i class="fa fa-check"></i><b>3.2</b> Iterating on the Design</a></li>
+<li class="chapter" data-level="3.3" data-path="ai-assisted-visualisation.html"><a href="ai-assisted-visualisation.html#exploratory-data-analysis-eda"><i class="fa fa-check"></i><b>3.3</b> Exploratory Data Analysis (EDA)</a></li>
+<li class="chapter" data-level="3.4" data-path="ai-assisted-visualisation.html"><a href="ai-assisted-visualisation.html#the-review-step-for-visualisations"><i class="fa fa-check"></i><b>3.4</b> The Review Step for Visualisations</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="modeling-and-machine-learning.html"><a href="modeling-and-machine-learning.html"><i class="fa fa-check"></i><b>4</b> Modeling and Machine Learning</a>
 <ul>
@@ -259,7 +259,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="modeling-and-machine-learning" class="section level1 hasAnchor" number="4">
 <h1><span class="header-section-number">Chapter 4</span> Modeling and Machine Learning<a href="modeling-and-machine-learning.html#modeling-and-machine-learning" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>While data cleaning and visualization benefit greatly from vibe coding, machine learning requires much more caution.</p>
+<p>While data cleaning and visualisation benefit greatly from AI-assisted prompting, machine learning requires much more caution.</p>
 <p>When prompting for statistical models, the risk of “hallucinations” (the AI confidently generating statistically invalid methods or misinterpreting data) increases significantly. The AI does not inherently understand the assumptions of linear regression or the concept of data leakage.</p>
 <p>You must be highly explicit about your research design.</p>
 <div id="prompting-for-tidymodels" class="section level2 hasAnchor" number="4.1">
@@ -295,7 +295,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="what-can-go-wrong-in-modelling" class="section level2 hasAnchor" number="4.4">
 <h2><span class="header-section-number">4.4</span> What Can Go Wrong in Modelling<a href="modeling-and-machine-learning.html#what-can-go-wrong-in-modelling" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Machine learning is the chapter of Vibe Analysis where the gap between “code that runs” and “code that is correct” is widest.</p>
+<p>Machine learning is the chapter of AI-Augmented Analysis where the gap between “code that runs” and “code that is correct” is widest.</p>
 <ul>
 <li><strong>Data Leakage:</strong> The AI may inadvertently include future information in the training features (e.g., using a post-event column as a predictor). Always inspect the recipe and ask yourself whether every feature could realistically be available at prediction time.</li>
 <li><strong>Wrong Metric for the Problem:</strong> Copilot will default to common metrics like RMSE for regression and accuracy for classification. If your business problem has an imbalanced target class, accuracy is misleading. Explicitly ask for precision, recall, or AUC.</li>
@@ -310,7 +310,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="visualizing-with-vibes.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="ai-assisted-visualisation.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="troubleshooting.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>

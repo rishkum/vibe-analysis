@@ -2,15 +2,15 @@
 
 ## Applying the Software Development Lifecycle (SDLC)
 
-In traditional Software Development Lifecycle (SDLC), teams move through distinct phases: requirements gathering, design, implementation, testing, and deployment. To ensure **Vibe Analysis** is high-quality and rigorous, we must adopt an SDLC mindset for our data projects. 
+In traditional Software Development Lifecycle (SDLC), teams move through distinct phases: requirements gathering, design, implementation, testing, and deployment. To ensure **AI-Augmented Analysis** is high-quality and rigorous, we must adopt an SDLC mindset for our data projects. 
 
-Instead of treating data analysis as an ad-hoc script, treat it as a software product. The AI writes the code, but you enforce the lifecycle: writing clear requirements (prompts), enforcing code reviews (auditing AI outputs), and rigorous testing (data validation and sanity checks). This structured approach minimizes hallucinations and ensures that the heavily automated coding process yields reliable, production-ready analytical pipelines.
+Instead of treating data analysis as an ad-hoc script, treat it as a software product. The AI writes the code, but you enforce the lifecycle: writing clear requirements (prompts), enforcing code reviews (auditing AI outputs), and rigorous testing (data validation and sanity checks). This structured approach minimises hallucinations and ensures that the heavily automated coding process yields reliable, production-ready analytical pipelines.
 
-When analyzing data, standard manual coding requires translating every logical step into its corresponding R function (e.g., "I need `group_by()` then `summarize()`"). Vibe coding allows you to stay at the conceptual level, but only if you provide effective prompts and maintain a strong workflow.
+When analysing data, standard manual coding requires translating every logical step into its corresponding R function (e.g., "I need `group_by()` then `summarize()`"). AI-assisted prompting allows you to stay at the conceptual level, but only if you provide effective prompts and maintain a strong workflow.
 
 ## The "Plan, Act, Review" Cycle
 
-Vibe Analysis is not magic; you are managing a very fast, sometimes overconfident junior analyst. You should adopt a "Plan, Act, Review" cycle:
+AI-Augmented Analysis is not magic; you are managing a very fast, sometimes overconfident junior analyst. You should adopt a "Plan, Act, Review" cycle:
 
 1.  **Plan:** Break down the analysis into steps. Don't ask for a final predictive model from a raw dataset in one prompt.
 2.  **Act:** Write a clear prompt for the *first* step.

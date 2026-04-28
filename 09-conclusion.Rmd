@@ -1,6 +1,6 @@
 # Conclusion
 
-Vibe Analysis is fundamentally changing what it means to be a data analyst or data scientist.
+AI-Augmented Analysis is fundamentally changing what it means to be a data analyst or data scientist.
 
 By abstracting away the syntax, GitHub Copilot allows us to operate closer to the speed of thought. However, that speed is dangerous without discipline.
 
@@ -13,7 +13,7 @@ As you adopt this workflow, remember that the AI is your fast-typing assistant. 
 3.  **Validate continuously.** Check your row counts after joins. Check your distributions after mutations.
 4.  **Embrace the conversational workflow.** When you hit an error, don't revert to manual debugging immediately. Paste the error into the chat and let the assistant figure it out.
 
-Consider a scenario of a junior analyst tasked with forecasting Q4 sales. A year ago, they would have spent two hours fighting `ggplot2` themes to get a legend aligned horizontally, and another three hours debugging a `lubridate` time zone issue. Today, using Vibe Analysis, they generate the chart and date logic in five minutes.
+Consider a scenario of a junior analyst tasked with forecasting Q4 sales. A year ago, they would have spent two hours fighting `ggplot2` themes to get a legend aligned horizontally, and another three hours debugging a `lubridate` time zone issue. Today, using AI-Augmented Analysis, they generate the chart and date logic in five minutes.
 
 Because they saved five hours of manual typing, they have the cognitive energy to actually look at the output. They notice a strange dip in November. Digging deeper, they realize the AI-generated data cleaning script silently omitted a specific region due to an implicit `inner_join`. They didn't just ship the code; they reviewed the logic, found the bias, and fixed it before the executive presentation. 
 
@@ -21,4 +21,4 @@ Because they saved five hours of manual typing, they have the cognitive energy t
 
 The goal of learning R or Python is no longer to be a walking syntax dictionary. The goal is to understand how to manipulate data conceptually so that you can effectively guide your AI to write the syntax for you.
 
-Welcome to the future of data analysis. Happy Vibe Analysis.
+Welcome to the future of rigorous, AI-assisted data analysis.

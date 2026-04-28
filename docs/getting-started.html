@@ -151,7 +151,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
 <ul>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#understanding-the-terminology-vibe-coding-vs.-vibe-analysis"><i class="fa fa-check"></i>Understanding the Terminology: Vibe Coding vs. Vibe Analysis</a>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#understanding-the-terminology"><i class="fa fa-check"></i>Understanding the Terminology</a>
 <ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#the-contrast-in-workflow"><i class="fa fa-check"></i>The Contrast in Workflow</a></li>
 </ul></li>
@@ -173,12 +173,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.4" data-path="the-vibe-workflow.html"><a href="the-vibe-workflow.html#prompting-for-data-manipulation-dplyr"><i class="fa fa-check"></i><b>2.4</b> Prompting for Data Manipulation (dplyr)</a></li>
 <li class="chapter" data-level="2.5" data-path="the-vibe-workflow.html"><a href="the-vibe-workflow.html#adding-iterative-chaining"><i class="fa fa-check"></i><b>2.5</b> Adding Iterative Chaining</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="visualizing-with-vibes.html"><a href="visualizing-with-vibes.html"><i class="fa fa-check"></i><b>3</b> Visualizing with Vibes</a>
+<li class="chapter" data-level="3" data-path="ai-assisted-visualisation.html"><a href="ai-assisted-visualisation.html"><i class="fa fa-check"></i><b>3</b> AI-Assisted Visualisation</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="visualizing-with-vibes.html"><a href="visualizing-with-vibes.html#prompting-for-plots"><i class="fa fa-check"></i><b>3.1</b> Prompting for Plots</a></li>
-<li class="chapter" data-level="3.2" data-path="visualizing-with-vibes.html"><a href="visualizing-with-vibes.html#iterating-on-the-design"><i class="fa fa-check"></i><b>3.2</b> Iterating on the Design</a></li>
-<li class="chapter" data-level="3.3" data-path="visualizing-with-vibes.html"><a href="visualizing-with-vibes.html#exploratory-data-analysis-eda"><i class="fa fa-check"></i><b>3.3</b> Exploratory Data Analysis (EDA)</a></li>
-<li class="chapter" data-level="3.4" data-path="visualizing-with-vibes.html"><a href="visualizing-with-vibes.html#the-review-step-for-visualisations"><i class="fa fa-check"></i><b>3.4</b> The Review Step for Visualisations</a></li>
+<li class="chapter" data-level="3.1" data-path="ai-assisted-visualisation.html"><a href="ai-assisted-visualisation.html#prompting-for-plots"><i class="fa fa-check"></i><b>3.1</b> Prompting for Plots</a></li>
+<li class="chapter" data-level="3.2" data-path="ai-assisted-visualisation.html"><a href="ai-assisted-visualisation.html#iterating-on-the-design"><i class="fa fa-check"></i><b>3.2</b> Iterating on the Design</a></li>
+<li class="chapter" data-level="3.3" data-path="ai-assisted-visualisation.html"><a href="ai-assisted-visualisation.html#exploratory-data-analysis-eda"><i class="fa fa-check"></i><b>3.3</b> Exploratory Data Analysis (EDA)</a></li>
+<li class="chapter" data-level="3.4" data-path="ai-assisted-visualisation.html"><a href="ai-assisted-visualisation.html#the-review-step-for-visualisations"><i class="fa fa-check"></i><b>3.4</b> The Review Step for Visualisations</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="modeling-and-machine-learning.html"><a href="modeling-and-machine-learning.html"><i class="fa fa-check"></i><b>4</b> Modeling and Machine Learning</a>
 <ul>
@@ -259,13 +259,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="getting-started" class="section level1 hasAnchor" number="1">
 <h1><span class="header-section-number">Chapter 1</span> Getting Started<a href="getting-started.html#getting-started" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>To master Vibe Analysis in R, your environment needs to be properly set up. You need a frictionless way to communicate with your AI pair programmer so that writing a prompt feels as fluid as writing native R code.</p>
+<p>To master AI-Augmented Analysis in R, your environment needs to be properly set up. You need a frictionless way to communicate with your AI pair programmer so that writing a prompt feels as fluid as writing native R code.</p>
 <div id="choosing-your-ide" class="section level2 hasAnchor" number="1.1">
 <h2><span class="header-section-number">1.1</span> Choosing Your IDE<a href="getting-started.html#choosing-your-ide" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>While standard RStudio (Posit) is the classic choice for R users, the advent of AI assistants has made Visual Studio Code (VS Code) a highly competitive alternative.</p>
 <ol style="list-style-type: decimal">
-<li><strong>RStudio:</strong> Recent versions of RStudio include native integration with GitHub Copilot. Setup is as straightforward as checking an option in the Global Options menu. The interface is optimized specifically for R, which handles environments and plotting seamlessly.</li>
-<li><strong>VS Code:</strong> Provides deeper customization and often earlier access to the most advanced Copilot features (like Copilot Chat). The <code>vscode-R</code> extension has made VS Code a robust R IDE.</li>
+<li><strong>RStudio:</strong> Recent versions of RStudio include native integration with GitHub Copilot. Setup is as straightforward as checking an option in the Global Options menu. The interface is optimised specifically for R, handling environments and plotting seamlessly.</li>
+<li><strong>VS Code:</strong> Provides deeper customisation and often earlier access to the most advanced Copilot features (like Copilot Chat). The <code>vscode-R</code> extension has made VS Code a robust R IDE.</li>
 </ol>
 <p>For the purpose of this book, we assume you are using <strong>GitHub Copilot</strong> as your assistant, integrated into whichever IDE you prefer.</p>
 </div>
@@ -302,7 +302,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="writing-your-first-prompt" class="section level2 hasAnchor" number="1.4">
 <h2><span class="header-section-number">1.4</span> Writing Your First Prompt<a href="getting-started.html#writing-your-first-prompt" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>With Copilot active, let’s write our first vibe code. Open a new R script. Let’s say you want to generate a random dataset to practice with.</p>
+<p>With Copilot active, let’s write our first AI-assisted prompt. Open a new R script. Let’s say you want to generate a random dataset to practice with.</p>
 <p>Instead of trying to remember the exact syntax for creating a data frame with random normal distributions, you simply write a comment describing what you want:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="getting-started.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a data frame &#39;sales_data&#39; with 100 rows.</span></span>
 <span id="cb2-2"><a href="getting-started.html#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Columns: &#39;date&#39; (random days in 2023), &#39;region&#39; (North, South, East, West), and &#39;revenue&#39; (random normal dist, mean 500)</span></span></code></pre></div>
@@ -314,7 +314,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb3-5"><a href="getting-started.html#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">region =</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">&quot;North&quot;</span>, <span class="st">&quot;South&quot;</span>, <span class="st">&quot;East&quot;</span>, <span class="st">&quot;West&quot;</span>), <span class="dv">100</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>),</span>
 <span id="cb3-6"><a href="getting-started.html#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">revenue =</span> <span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="at">mean =</span> <span class="dv">500</span>, <span class="at">sd =</span> <span class="dv">100</span>)</span>
 <span id="cb3-7"><a href="getting-started.html#cb3-7" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
-<p>You’ve just completed your first Vibe Analysis task. You expressed the <em>intent</em>, and Copilot provided the <em>syntax</em>. In the next chapter, we’ll explore the structured workflow for making this process reliable across more complex data manipulation.</p>
+<p>You’ve just completed your first AI-Augmented Analysis task. You expressed the <em>intent</em>, and Copilot provided the <em>syntax</em>. In the next chapter, we’ll explore the structured workflow for making this process reliable across more complex data manipulation.</p>
 
 </div>
 </div>

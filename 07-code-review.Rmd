@@ -65,7 +65,7 @@ If an AI generates `combined <- inner_join(sales, regions, by = "id")`, the revi
 **Python Example:**
 If an AI uses pandas and writes `df['price'] = df['price'].fillna(method='ffill')` for gap filling in time-series, the reviewer must catch the hallucinated metric check. Was forward-filling the correct domain treatment for pricing data, or will that skew financial aggregations artificially? The Reviewer should request alternative logic before approving.
 
-By enforcing this structure, you close the Velocity Gap. You ensure that the speed of vibe coding does not come at the expense of accuracy and reliability in your analytical output.
+By enforcing this structure, you close the Velocity Gap. You ensure that the speed of AI-assisted coding does not come at the expense of accuracy and reliability in your analytical output.
 
 ## Prompts for Code Review and Code Improvement
 

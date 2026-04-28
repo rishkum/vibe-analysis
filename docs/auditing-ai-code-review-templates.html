@@ -151,7 +151,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
 <ul>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#understanding-the-terminology-vibe-coding-vs.-vibe-analysis"><i class="fa fa-check"></i>Understanding the Terminology: Vibe Coding vs. Vibe Analysis</a>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#understanding-the-terminology"><i class="fa fa-check"></i>Understanding the Terminology</a>
 <ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#the-contrast-in-workflow"><i class="fa fa-check"></i>The Contrast in Workflow</a></li>
 </ul></li>
@@ -173,12 +173,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.4" data-path="the-vibe-workflow.html"><a href="the-vibe-workflow.html#prompting-for-data-manipulation-dplyr"><i class="fa fa-check"></i><b>2.4</b> Prompting for Data Manipulation (dplyr)</a></li>
 <li class="chapter" data-level="2.5" data-path="the-vibe-workflow.html"><a href="the-vibe-workflow.html#adding-iterative-chaining"><i class="fa fa-check"></i><b>2.5</b> Adding Iterative Chaining</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="visualizing-with-vibes.html"><a href="visualizing-with-vibes.html"><i class="fa fa-check"></i><b>3</b> Visualizing with Vibes</a>
+<li class="chapter" data-level="3" data-path="ai-assisted-visualisation.html"><a href="ai-assisted-visualisation.html"><i class="fa fa-check"></i><b>3</b> AI-Assisted Visualisation</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="visualizing-with-vibes.html"><a href="visualizing-with-vibes.html#prompting-for-plots"><i class="fa fa-check"></i><b>3.1</b> Prompting for Plots</a></li>
-<li class="chapter" data-level="3.2" data-path="visualizing-with-vibes.html"><a href="visualizing-with-vibes.html#iterating-on-the-design"><i class="fa fa-check"></i><b>3.2</b> Iterating on the Design</a></li>
-<li class="chapter" data-level="3.3" data-path="visualizing-with-vibes.html"><a href="visualizing-with-vibes.html#exploratory-data-analysis-eda"><i class="fa fa-check"></i><b>3.3</b> Exploratory Data Analysis (EDA)</a></li>
-<li class="chapter" data-level="3.4" data-path="visualizing-with-vibes.html"><a href="visualizing-with-vibes.html#the-review-step-for-visualisations"><i class="fa fa-check"></i><b>3.4</b> The Review Step for Visualisations</a></li>
+<li class="chapter" data-level="3.1" data-path="ai-assisted-visualisation.html"><a href="ai-assisted-visualisation.html#prompting-for-plots"><i class="fa fa-check"></i><b>3.1</b> Prompting for Plots</a></li>
+<li class="chapter" data-level="3.2" data-path="ai-assisted-visualisation.html"><a href="ai-assisted-visualisation.html#iterating-on-the-design"><i class="fa fa-check"></i><b>3.2</b> Iterating on the Design</a></li>
+<li class="chapter" data-level="3.3" data-path="ai-assisted-visualisation.html"><a href="ai-assisted-visualisation.html#exploratory-data-analysis-eda"><i class="fa fa-check"></i><b>3.3</b> Exploratory Data Analysis (EDA)</a></li>
+<li class="chapter" data-level="3.4" data-path="ai-assisted-visualisation.html"><a href="ai-assisted-visualisation.html#the-review-step-for-visualisations"><i class="fa fa-check"></i><b>3.4</b> The Review Step for Visualisations</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="modeling-and-machine-learning.html"><a href="modeling-and-machine-learning.html"><i class="fa fa-check"></i><b>4</b> Modeling and Machine Learning</a>
 <ul>
@@ -268,8 +268,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><strong>The Run Gate (Safety):</strong> Before you even assess if the code is logically correct, you must evaluate its impact; its “blast radius.” Does this code interact with a database? Does it write files to disk? Could it alter external states? <em>Do not execute the code locally until you have cleared it through the Run Gate.</em></li>
 <li><strong>The Ship Gate (Quality):</strong> Once deemed safe to run, review the logic, the edge cases, and whether it solves the actual business requirement.</li>
 </ol>
-<div class="DiagrammeR html-widget html-fill-item" id="htmlwidget-f096599e32ef14ca53f3" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-f096599e32ef14ca53f3">{"x":{"diagram":"\ngraph LR\n    A[\"AI Code Submitted\"] --> B{\"Run Gate (Safety)\"}\n    B -->|\"Unsafe / DB writes\"| C[\"Reject or Sandbox\"]\n    B -->|\"Safe / Local\"| D{\"Ship Gate (Quality)\"}\n    D -->|\"Logic Flaws\"| E[\"Request Changes\"]\n    D -->|\"Passes Evidence\"| F[\"Approve & Merge\"]\n    \n    style B fill:#ffeeba,stroke:#ffc107\n    style D fill:#cce5ff,stroke:#007bff\n    style C fill:#f8d7da,stroke:#dc3545\n    style F fill:#d4edda,stroke:#28a745\n"},"evals":[],"jsHooks":[]}</script>
+<div class="DiagrammeR html-widget html-fill-item" id="htmlwidget-b4a14b352e8caa911c1e" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-b4a14b352e8caa911c1e">{"x":{"diagram":"\ngraph LR\n    A[\"AI Code Submitted\"] --> B{\"Run Gate (Safety)\"}\n    B -->|\"Unsafe / DB writes\"| C[\"Reject or Sandbox\"]\n    B -->|\"Safe / Local\"| D{\"Ship Gate (Quality)\"}\n    D -->|\"Logic Flaws\"| E[\"Request Changes\"]\n    D -->|\"Passes Evidence\"| F[\"Approve & Merge\"]\n    \n    style B fill:#ffeeba,stroke:#ffc107\n    style D fill:#cce5ff,stroke:#007bff\n    style C fill:#f8d7da,stroke:#dc3545\n    style F fill:#d4edda,stroke:#28a745\n"},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="demanding-evidence" class="section level2 hasAnchor" number="7.2">
 <h2><span class="header-section-number">7.2</span> Demanding Evidence<a href="auditing-ai-code-review-templates.html#demanding-evidence" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -301,7 +301,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 If an AI generates <code>combined &lt;- inner_join(sales, regions, by = "id")</code>, the reviewer must enforce the <strong>Logic &amp; Data Integrity</strong> check. <code>inner_join</code> drops unmatched records natively. The reviewer should request evidence that no critical regional data was silently dismissed, or demand the code be refactored to a <code>left_join</code>.</p>
 <p><strong>Python Example:</strong>
 If an AI uses pandas and writes <code>df['price'] = df['price'].fillna(method='ffill')</code> for gap filling in time-series, the reviewer must catch the hallucinated metric check. Was forward-filling the correct domain treatment for pricing data, or will that skew financial aggregations artificially? The Reviewer should request alternative logic before approving.</p>
-<p>By enforcing this structure, you close the Velocity Gap. You ensure that the speed of vibe coding does not come at the expense of accuracy and reliability in your analytical output.</p>
+<p>By enforcing this structure, you close the Velocity Gap. You ensure that the speed of AI-assisted coding does not come at the expense of accuracy and reliability in your analytical output.</p>
 </div>
 </div>
 <div id="prompts-for-code-review-and-code-improvement" class="section level2 hasAnchor" number="7.4">
