@@ -1,13 +1,14 @@
 # Getting Started
 
-To master AI-Augmented Analysis in R, your environment needs to be properly set up. You need a frictionless way to communicate with your AI pair programmer so that writing a prompt feels as fluid as writing native R code.
+This book covers AI-Augmented Analysis in both **R** and **Python**. Whether you work in RStudio with `tidyverse` or in VS Code / Jupyter with `pandas`, the same structured principles apply. The tooling setup differs slightly between the two languages; this chapter walks through both.
 
 ## Choosing Your IDE
 
 While standard RStudio (Posit) is the classic choice for R users, the advent of AI assistants has made Visual Studio Code (VS Code) a highly competitive alternative.
 
-1.  **RStudio:** Recent versions of RStudio include native integration with GitHub Copilot. Setup is as straightforward as checking an option in the Global Options menu. The interface is optimised specifically for R, handling environments and plotting seamlessly.
-2.  **VS Code:** Provides deeper customisation and often earlier access to the most advanced Copilot features (like Copilot Chat). The `vscode-R` extension has made VS Code a robust R IDE.
+1.  **RStudio:** The classic choice for R users. Recent versions include native GitHub Copilot integration via `Tools -> Global Options -> Copilot`. Optimised for R environments, plotting, and the `tidyverse` ecosystem.
+2.  **VS Code:** The recommended environment for Python users, and an increasingly strong option for R as well. Install the **GitHub Copilot** and **GitHub Copilot Chat** extensions for full AI-assisted coding support. Python users should also install the **Pylance** extension for rich type-checking and IntelliSense.
+3.  **JupyterLab / Jupyter Notebooks:** Popular in the Python data science community. GitHub Copilot support is available via the JupyterLab extension (`@jupyterlab/ai`), though inline suggestions work best in VS Code.
 
 For the purpose of this book, we assume you are using **GitHub Copilot** as your assistant, integrated into whichever IDE you prefer.
 
@@ -72,4 +73,34 @@ sales_data <- data.frame(
 )
 ```
 
-You've just completed your first AI-Augmented Analysis task. You expressed the *intent*, and Copilot provided the *syntax*. In the next chapter, we'll explore the structured workflow for making this process reliable across more complex data manipulation.
+You've just completed your first AI-Augmented Analysis prompt. You expressed the *intent*, and Copilot provided the *syntax*. In the next chapter, we'll explore the structured workflow for making this process reliable across more complex data manipulation.
+
+### Python Equivalent
+
+The same approach works identically in Python. In a `.py` file or Jupyter notebook, write the intent as a comment:
+
+```python
+import pandas as pd
+import numpy as np
+
+# Create a DataFrame 'sales_data' with 100 rows.
+# Columns: 'date' (random days in 2023), 'region' (North/South/East/West), 'revenue' (normal dist, mean=500, std=100)
+```
+
+Copilot will generate:
+
+```python
+import pandas as pd
+import numpy as np
+
+np.random.seed(42)
+sales_data = pd.DataFrame({
+    'date': pd.to_datetime(
+        np.random.choice(pd.date_range('2023-01-01', '2023-12-31'), 100)
+    ),
+    'region': np.random.choice(['North', 'South', 'East', 'West'], 100),
+    'revenue': np.random.normal(loc=500, scale=100, size=100)
+})
+```
+
+The principle is identical: describe intent in a comment, accept the generated code, and immediately validate the output with `sales_data.head()` and `sales_data.dtypes` before moving on.

@@ -6,7 +6,7 @@ In traditional Software Development Lifecycle (SDLC), teams move through distinc
 
 Instead of treating data analysis as an ad-hoc script, treat it as a software product. The AI writes the code, but you enforce the lifecycle: writing clear requirements (prompts), enforcing code reviews (auditing AI outputs), and rigorous testing (data validation and sanity checks). This structured approach minimises hallucinations and ensures that the heavily automated coding process yields reliable, production-ready analytical pipelines.
 
-When analysing data, standard manual coding requires translating every logical step into its corresponding R function (e.g., "I need `group_by()` then `summarize()`"). AI-assisted prompting allows you to stay at the conceptual level, but only if you provide effective prompts and maintain a strong workflow.
+When analysing data, standard manual coding requires translating every logical step into its corresponding R or Python function (e.g., "I need `group_by()` then `summarize()`" in R, or `groupby()` then `agg()` in pandas). AI-assisted prompting allows you to stay at the conceptual level, but only if you provide effective prompts and maintain a strong workflow.
 
 ## The "Plan, Act, Review" Cycle
 
@@ -53,7 +53,25 @@ library(dplyr)
 # $ revenue: num  480.5 512.3 640.1 498.2 ...
 ```
 
-By pasting the `str()` or `glimpse()` output as a comment, Copilot now knows exactly what columns exist. 
+By pasting the `str()` or `glimpse()` output as a comment, Copilot now knows exactly what columns exist.
+
+**Python equivalent:** Use `df.info()` or `df.dtypes` output as a comment at the top of your notebook cell:
+
+```python
+import pandas as pd
+
+# sales_data.info() output:
+# <class 'pandas.core.frame.DataFrame'>
+# RangeIndex: 100 entries, 0 to 99
+# Data columns (total 3 columns):
+#  #   Column   Non-Null Count  Dtype
+# ---  ------   --------------  -----
+#  0   date     100 non-null    datetime64[ns]
+#  1   region   100 non-null    object
+#  2   revenue  100 non-null    float64
+```
+
+With this pasted above your prompt, Copilot knows the types and column names before generating any transformation code.
 
 ## Prompting for Data Manipulation (dplyr)
 
@@ -75,6 +93,26 @@ q1_summary <- sales_data %>%
   )
 ```
 
+**Python equivalent prompt:**
+
+```python
+# Using pandas, calculate the total revenue and average revenue per region for Q1 2023.
+```
+
+Copilot generates:
+
+```python
+q1_summary = (
+    sales_data[
+        (sales_data['date'] >= '2023-01-01') &
+        (sales_data['date'] <= '2023-03-31')
+    ]
+    .groupby('region')['revenue']
+    .agg(total_rev='sum', avg_rev='mean')
+    .reset_index()
+)
+```
+
 ## Adding Iterative Chaining
 
 If the result is almost what you want, but you forgot a detail, just add another comment to chain onto the pipeline:
@@ -82,6 +120,13 @@ If the result is almost what you want, but you forgot a detail, just add another
 ```r
 # Now arrange the previous result in descending order by total_rev
 q1_summary <- q1_summary %>% arrange(desc(total_rev))
+```
+
+**Python equivalent:**
+
+```python
+# Now sort the previous result in descending order by total_rev
+q1_summary = q1_summary.sort_values('total_rev', ascending=False)
 ```
 
 By working in chunks, reviewing the intermediate states, and feeding that state back as context, you maintain total control over your data analysis while typing a fraction of the code.

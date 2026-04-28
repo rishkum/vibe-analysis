@@ -43,6 +43,21 @@ Do not spend 15 minutes staring at the code trying to find the typo. Simply copy
 
 Copilot will immediately recognize that `revenue` is misspelled in your data frame, or that you forgot to load the dataset, or that it generated the wrong column name earlier.
 
+**Python equivalent:** The same technique works in Python. If you receive a `KeyError` or `AttributeError`, paste it directly into Copilot Chat with the `df.info()` output:
+
+```python
+# Error:
+# KeyError: 'reveue'
+
+# My DataFrame has these columns:
+# Index(['date', 'region', 'revenue'], dtype='object')
+
+# Fix the KeyError in the following code:
+total = sales_data['reveue'].sum()
+```
+
+Copilot will recognise the typo and emit the corrected line. The key habit in both languages is the same: **do not stare at the error; paste it into chat with context.**
+
 ## The "Rubber Duck" Technique
 
 Sometimes, the logic is just complex. If you are writing a custom simulation or a massive nested loop, Copilot might get confused.

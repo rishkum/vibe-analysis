@@ -39,6 +39,31 @@ ggplot(q1_summary, aes(x = reorder(region, -total_rev), y = total_rev)) +
   )
 ```
 
+**Python equivalent prompt:**
+
+```python
+import matplotlib.pyplot as plt
+
+# Create a bar chart of total revenue by region from q1_summary.
+# Sort bars highest to lowest. Use steelblue fill, minimal style, no gridlines.
+# Title: 'Q1 2023 Revenue by Region'. Remove x-axis label.
+```
+
+Copilot generates:
+
+```python
+fig, ax = plt.subplots(figsize=(8, 5))
+q1_sorted = q1_summary.sort_values('total_rev', ascending=False)
+ax.bar(q1_sorted['region'], q1_sorted['total_rev'], color='steelblue')
+ax.set_title('Q1 2023 Revenue by Region')
+ax.set_ylabel('Total Revenue')
+ax.set_xlabel('')
+ax.grid(False)
+plt.style.use('seaborn-v0_8-whitegrid')
+plt.tight_layout()
+plt.show()
+```
+
 ## Iterating on the Design
 
 Often, the first plot is roughly correct, but you spot a visual flaw. Instead of digging into the `theme()` documentation, you simply add another prompt.
@@ -78,6 +103,27 @@ You can use AI-assisted prompting to rapid-fire through different visual hypothe
 # Create a scatter plot of revenue vs date from sales_data.
 # Add a loess trend line in red.
 # Facet the plot by region.
+```
+
+**Python equivalent prompt:**
+
+```python
+import seaborn as sns
+
+# Create a scatter plot of revenue vs date from sales_data using seaborn.
+# Add a regression trend line. Create separate panels (facets) for each region.
+```
+
+Copilot generates:
+
+```python
+g = sns.FacetGrid(sales_data, col='region', col_wrap=2, height=4)
+g.map_dataframe(sns.regplot, x='date', y='revenue',
+                scatter_kws={'alpha': 0.5}, line_kws={'color': 'red'})
+g.set_titles(col_template='{col_name}')
+g.set_axis_labels('Date', 'Revenue')
+plt.tight_layout()
+plt.show()
 ```
 
 By conversationalising the visualisation step, you reduce the friction between a question ("Is revenue trending up differently in the South?") and the visual answer.
